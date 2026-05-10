@@ -1,0 +1,9 @@
+metabolism-group-poison = Яд
+metabolism-group-medicine = Лекарство
+metabolism-group-narcotic = Наркотический
+metabolism-group-alcohol = Алкоголь
+metabolism-group-food = Еда
+metabolism-group-drink = Напиток
+metabolism-group-gas = Газ
+metabolism-group-plant-metabolisms = Метаболизм растений
+metabolism-group-N14Virus = Вирусы

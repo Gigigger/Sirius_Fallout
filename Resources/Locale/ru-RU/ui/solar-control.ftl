@@ -1,0 +1,9 @@
+solar-control-window-title = Солнечная консоль управления
+solar-control-window-output-power = Выходная мощность:
+solar-control-window-watts = Вт
+solar-control-window-sun-angle = Угол Солнца:
+solar-control-window-degrees = None
+solar-control-window-panel-angle = Угол панели:
+solar-control-window-panel-angular-velocity = Угловая скорость панели:
+solar-control-window-degrees-per-minute = °/мин.
+solar-control-window-press-enter-to-confirm = Нажмите Enter для подтверждения.

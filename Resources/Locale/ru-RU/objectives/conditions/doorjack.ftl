@@ -1,0 +1,2 @@
+objective-condition-doorjack-title = Дверной домкрат {$count} дверей на станции.
+objective-condition-doorjack-description = Ваши перчатки могут создавать воздушные шлюзы. Сделайте это с дверьми {$count} на станции.

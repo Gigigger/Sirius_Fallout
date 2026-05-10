@@ -1,0 +1,11 @@
+traitor-death-match-redemption-component-interact-using-main-message = Машина гудит и отображает: {$secondMessage}.
+traitor-death-match-redemption-component-interact-using-no-mind-message = «ОШИБКА АУТЕНТИФИКАЦИИ (0045)»
+traitor-death-match-redemption-component-interact-using-no-user-mind-message = «ОШИБКА АУТЕНТИФИКАЦИИ (0052)»
+traitor-death-match-redemption-component-interact-using-no-pda-message = ДАННЫЙ КПК НЕ ЯВЛЯЕТСЯ КПК (0058)"
+traitor-death-match-redemption-component-interact-using-no-pda-owner-message = «ДАННЫЙ КПК НЕ ИМЕЕТ ВЛАДЕЛЬЦА (0064)»
+traitor-death-match-redemption-component-interact-using-pda-different-user-message = «ДАННЫЙ КПК, ПРИНАДЛЕЖАЩИЙ ПОЛЬЗОВАТЕЛЮ (0070)»
+traitor-death-match-redemption-component-interact-using-no-pda-in-pocket-message = «В КАРМАНЕ IDCARD (0083) НЕТ КПК ПОЛЬЗОВАТЕЛЯ»
+traitor-death-match-redemption-component-interact-using-tampering-detected = «ОБНАРУЖЕНО ВАКОНИРОВАНИЕ (0101)»
+traitor-death-match-redemption-component-interact-using-user-no-uplink-account-message = «У КПК ПОЛЬЗОВАТЕЛЯ НЕТ УЧЕТНОЙ ЗАПИСИ (0102)»
+traitor-death-match-redemption-component-interact-using-victim-no-uplink-account-message = «У КПК ПОЛЬЗОВАТЕЛЯ НЕТ УЧЕТНОЙ ЗАПИСИ (0108)»
+traitor-death-match-redemption-component-interact-using-success-message = Машина играет веселую мелодию и отображает: «УСПЕХ: {$tcAmount} TC ПЕРЕДАН».

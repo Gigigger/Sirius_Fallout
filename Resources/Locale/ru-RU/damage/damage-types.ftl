@@ -1,0 +1,14 @@
+damage-type-asphyxiation = Удушье
+damage-type-bloodloss = кровопотеря
+damage-type-blunt = Тупой
+damage-type-cellular = Сотовая связь
+damage-type-caustic = Каустик
+damage-type-cold = Холодный
+damage-type-heat = Нагревать
+damage-type-piercing = Пирсинг
+damage-type-poison = Яд
+damage-type-radiation = Радиация
+damage-type-shock = Шок
+damage-type-slash = Слэш
+damage-type-structural = Структурный
+damage-type-holy = Святой

@@ -1,0 +1,1 @@
+﻿station-event-communication-interception = Внимание! Связь противника перехвачена. Уровень безопасности повышен.

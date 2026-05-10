@@ -1,0 +1,33 @@
+hud-chatbox-info = {$talk-key} для разговора, {$cycle-key} для переключения каналов.
+hud-chatbox-info-talk = {$talk-key}, чтобы поговорить.
+hud-chatbox-info-cycle = Нажмите здесь, чтобы поговорить, {$cycle-key}, чтобы переключать каналы.
+hud-chatbox-info-unbound = Нажмите здесь, чтобы поговорить.
+
+hud-chatbox-select-name-prefixed = {$prefix} {$name}
+hud-chatbox-select-channel-Admin = Админ
+hud-chatbox-select-channel-Console = Консоль
+hud-chatbox-select-channel-Dead = Мертвый
+hud-chatbox-select-channel-Emotes = Эмоции
+hud-chatbox-select-channel-Local = Местный
+hud-chatbox-select-channel-Whisper = Шепот
+hud-chatbox-select-channel-LOOC = LOOC
+hud-chatbox-select-channel-OOC = ООС
+hud-chatbox-select-channel-Damage = Повреждать
+hud-chatbox-select-channel-Visual = Действия
+hud-chatbox-select-channel-Radio = Радио
+
+hud-chatbox-channel-Admin = Админ. Разное
+hud-chatbox-channel-AdminAlert = Оповещение администратора
+hud-chatbox-channel-AdminChat = Административный чат
+hud-chatbox-channel-Dead = Мертвый
+hud-chatbox-channel-Emotes = Эмоции
+hud-chatbox-channel-Local = Местный
+hud-chatbox-channel-Whisper = Шепот
+hud-chatbox-channel-LOOC = LOOC
+hud-chatbox-channel-OOC = ООС
+hud-chatbox-channel-Radio = Радио
+hud-chatbox-channel-Notifications = Уведомления
+hud-chatbox-channel-Server = Сервер
+hud-chatbox-channel-Visual = Действия
+hud-chatbox-channel-Damage = Повреждать
+hud-chatbox-channel-Unspecified = Не указано

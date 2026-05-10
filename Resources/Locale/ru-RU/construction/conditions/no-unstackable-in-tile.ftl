@@ -1,0 +1,2 @@
+construction-step-condition-no-unstackable-in-tile = Вы не можете составить стек из одинаковых устройств.
+pipe-restrict-overlap-popup-blocked = { CAPITALIZE(THE($pipe))} не помещается поверх других каналов!

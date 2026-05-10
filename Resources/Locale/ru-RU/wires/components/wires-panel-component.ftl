@@ -1,0 +1,2 @@
+wires-panel-component-on-examine-open = Панель [color=lightgray]обслуживания[/color] [color=red]open[/color].
+wires-panel-component-on-examine-closed = Панель [color=lightgray]обслуживания[/color] [color=darkgreen]закрыта[/color].

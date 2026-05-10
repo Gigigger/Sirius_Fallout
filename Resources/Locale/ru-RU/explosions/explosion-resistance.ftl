@@ -1,0 +1,2 @@
+explosion-resistance-coefficient-value = - Урон от [color=orange]Explosion[/color] уменьшен на [color=lightblue]{$value}%[/color].
+explosion-resistance-contents-coefficient-value = - [color=orange]Explosion[/color] ущерб [color=white] содержимому[/color] уменьшен на [color=lightblue]{$value}%[/color].

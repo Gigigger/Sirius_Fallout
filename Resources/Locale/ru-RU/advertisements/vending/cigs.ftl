@@ -1,0 +1,15 @@
+﻿advertisement-cigs-1 = Космические сигареты имеют приятный вкус, как и должна быть сигарета.
+advertisement-cigs-2 = Я предпочитаю ящик с инструментами, чем переключатель.
+advertisement-cigs-3 = Дым!
+advertisement-cigs-4 = Не верьте сообщениям – курите сегодня!
+advertisement-cigs-5 = Наверное, тебе не плохо!
+advertisement-cigs-6 = Не верьте учёным!
+advertisement-cigs-7 = Это хорошо для тебя!
+advertisement-cigs-8 = Не сдавайтесь, покупайте больше!
+advertisement-cigs-9 = Никотиновый рай.
+advertisement-cigs-10 = Лучшие сигареты с 2150 года.
+advertisement-cigs-11 = Сигареты, отмеченные наградами.
+advertisement-cigs-12 = Здесь, чтобы отвлечься от работы!
+thankyou-cigs-1 = Они у вас есть, теперь курите их!
+thankyou-cigs-2 = Вероятно, вы не пожалеете об этом!
+thankyou-cigs-3 = Вы в мгновение ока станете наркоманом!

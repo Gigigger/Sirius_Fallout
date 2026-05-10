@@ -1,0 +1,13 @@
+﻿advertisement-chefvend-1 = По меньшей мере шестьдесят процентов наших яиц целы и невредимы, это гарантировано!
+advertisement-chefvend-2 = Рис, рис, детка.
+advertisement-chefvend-3 = Налейте на него немного масла!
+advertisement-chefvend-4 = Ты стоишь своей соли? Мы.
+advertisement-chefvend-5 = Ммм, мясо.
+advertisement-chefvend-6 = Используйте силу муки.
+advertisement-chefvend-7 = Покажите своим клиентам, кто лучший шеф-повар в мире, с помощью знаменитого в галактике соуса для барбекю, отмеченного наградами.
+advertisement-chefvend-8 = Я люблю поесть сырых яиц.
+advertisement-chefvend-9 = Наслаждайтесь старыми добрыми сырыми яйцами!
+thankyou-chefvend-1 = Пора заняться готовкой!
+thankyou-chefvend-2 = Спасибо за доверие к нашим качественным ингредиентам!
+thankyou-chefvend-3 = Это должно дать им то, чего они жаждут!
+thankyou-chefvend-4 = Иди приготовь эти гамбургеры!

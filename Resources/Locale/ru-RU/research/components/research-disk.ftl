@@ -1,0 +1,1 @@
+research-disk-inserted = Вы вставляете диск, добавляя на сервер {$points} точек.

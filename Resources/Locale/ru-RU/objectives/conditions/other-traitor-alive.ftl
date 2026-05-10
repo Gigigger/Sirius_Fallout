@@ -1,0 +1,1 @@
+objective-condition-other-traitor-alive-title = Убедитесь, что товарищ-предатель {$targetName}, {CAPITALIZE($job)} останется в живых.

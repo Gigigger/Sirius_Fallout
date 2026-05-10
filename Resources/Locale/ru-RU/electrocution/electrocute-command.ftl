@@ -1,0 +1,2 @@
+electrocute-command-description = Убивает указанную сущность электрическим током, по умолчанию 10 секунд и 10 урона. Шокирует!
+electrocute-command-entity-cannot-be-electrocuted = Вы не можете ударить это существо электрическим током!

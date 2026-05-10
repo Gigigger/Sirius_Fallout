@@ -1,0 +1,11 @@
+credits-window-title = Кредиты
+credits-window-patrons-tab = Покровители
+credits-window-ss14contributorslist-tab = Кредиты
+credits-window-licenses-tab = Лицензии с открытым исходным кодом
+credits-window-become-patron-button = Стать покровителем
+credits-window-contributor-encouragement-label = Хотите попасть в этот список?
+credits-window-contribute-button = Способствовать!
+credits-window-contributors-section-title = Космическая станция 14 Авторы
+credits-window-codebases-section-title = Кодовые базы космической станции 13
+credits-window-original-remake-team-section-title = Команда ремейка оригинальной космической станции 13
+credits-window-special-thanks-section-title = Особая благодарность

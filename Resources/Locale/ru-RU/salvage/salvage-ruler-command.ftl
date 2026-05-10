@@ -1,0 +1,2 @@
+salvage-ruler-command-description = Измеряет сетки на этой карте, чтобы получить общую картину мира AABB. Используется для определения границ восстановления.
+salvage-ruler-command-help-text = Использование: {$command}

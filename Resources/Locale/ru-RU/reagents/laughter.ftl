@@ -1,0 +1,1 @@
+﻿laughter-effect-control-laughter = Ты не можешь сдержать смех!

@@ -1,0 +1,1 @@
+objective-condition-kill-person-title = Убейте или бордовый {$targetName}, {CAPITALIZE($job)}

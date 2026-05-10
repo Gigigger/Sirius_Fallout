@@ -1,0 +1,14 @@
+advertisement-goodcleanfun-1 = Сбегите в фантастический мир!
+advertisement-goodcleanfun-2 = Подпитывайте свою игровую зависимость!
+advertisement-goodcleanfun-3 = Разрушьте вашу дружбу!
+advertisement-goodcleanfun-4 = Бросайте инициативу!
+advertisement-goodcleanfun-5 = Эльфы и гномы!
+advertisement-goodcleanfun-6 = Параноидальные компьютеры!
+advertisement-goodcleanfun-7 = Совершенно не сатанинский!
+advertisement-goodcleanfun-8 = Веселые времена навсегда!
+advertisement-goodcleanfun-9 = Склепы и Карпы!
+advertisement-goodcleanfun-10 = Играйте с друзьями!
+thankyou-goodcleanfun-1 = Веселиться!
+thankyou-goodcleanfun-2 = Теперь вы играете с силой!
+thankyou-goodcleanfun-3 = Включай свою игру!
+thankyou-goodcleanfun-4 = Начните создавать листы персонажей!

@@ -1,0 +1,26 @@
+advertisement-block-game-1 = Юридически отдельно!
+advertisement-block-game-2 = Что, черт возьми, такое Т-образный поворот?
+advertisement-block-game-3 = Эти блоки не очистятся сами собой!
+advertisement-block-game-4 = Бип-буп! Фууууп!
+advertisement-block-game-5 = Давайте поиграем в игру!
+advertisement-block-game-6 = 6 целых красок геймплея!
+advertisement-block-game-7 = Горячий 8-битный экшен!
+advertisement-block-game-8 = Блоки, блоки, блоки!
+advertisement-block-game-9 = Думаете, ВЫ сможете претендовать на высокий балл?
+advertisement-block-game-10 = Nanotrasen Block Game — ЭТО то, чего НЕТ Тетри!
+advertisement-block-game-11 = Теперь с дробеструйной обработкой!
+advertisement-block-game-12 = Наши юристы рядом!
+advertisement-block-game-13 = Аллилуйя, идет дождь из блоков!
+
+thankyou-block-game-1 = Скоро снова сыграйте!
+thankyou-block-game-2 = Отлично сработано!
+thankyou-block-game-3 = Еще одна игра?
+thankyou-block-game-4 = Остановиться так скоро?
+thankyou-block-game-5 = Блоки будут скучать по тебе.
+thankyou-block-game-6 = Спасибо за игру!
+thankyou-block-game-7 = Возвращайся скорее!
+thankyou-block-game-8 = Бип-бууп!
+thankyou-block-game-9 = Всегда есть время для новой игры!
+thankyou-block-game-10 = Не сдавайтесь сейчас!
+thankyou-block-game-11 = Блоков всегда больше!
+thankyou-block-game-12 = Блоки ждут вашего возвращения!

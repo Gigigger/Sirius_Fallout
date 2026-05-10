@@ -1,0 +1,17 @@
+cargoproduct-category-name-armory = Оружейная палата
+cargoproduct-category-name-atmospherics = Атмосфера
+cargoproduct-category-name-cargo = Груз
+cargoproduct-category-name-circuitboards = Печатные платы
+cargoproduct-category-name-emergency = Чрезвычайная ситуация
+cargoproduct-category-name-engineering = Инженерное дело
+cargoproduct-category-name-food = Еда
+cargoproduct-category-name-fun = Веселье
+cargoproduct-category-name-hardsuits = Хардкостюмы
+cargoproduct-category-name-hydroponics = Гидропоника
+cargoproduct-category-name-livestock = Домашний скот
+cargoproduct-category-name-materials = Материалы
+cargoproduct-category-name-medical = Медицинский
+cargoproduct-category-name-science = Наука
+cargoproduct-category-name-security = Безопасность
+cargoproduct-category-name-service = Услуга
+cargoproduct-category-name-shuttle = Трансфер

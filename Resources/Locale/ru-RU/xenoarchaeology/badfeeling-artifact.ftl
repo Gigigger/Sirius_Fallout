@@ -1,0 +1,22 @@
+badfeeling-artifact-1 = Что-то не так.
+badfeeling-artifact-2 = У вас возникает странное ощущение в животе.
+badfeeling-artifact-3 = Ваши инстинкты пытаются вас о чем-то предупредить.
+badfeeling-artifact-4 = Кто-то только что прошел по твоей могиле.
+badfeeling-artifact-5 = В воздухе витает странное ощущение.
+badfeeling-artifact-6 = В воздухе странный запах.
+badfeeling-artifact-7 = Кончики пальцев покалывают.
+badfeeling-artifact-8 = Вы чувствуете себя ведьмой.
+badfeeling-artifact-9 = У вас ужасное предчувствие.
+badfeeling-artifact-10 = У тебя плохое предчувствие по этому поводу.
+badfeeling-artifact-11 = Голову покалывает.
+badfeeling-artifact-12 = Кажется, что свет мерцает.
+badfeeling-artifact-13 = Тени как будто удлиняются.
+badfeeling-artifact-14 = Стены становятся ближе.
+badfeeling-artifact-15 = Что-то не так.
+
+badfeeling-artifact-drastic-1 = Кто-то пытается тебя убить!
+badfeeling-artifact-drastic-2 = Там что-то есть!
+badfeeling-artifact-drastic-3 = Что с тобой происходит?
+badfeeling-artifact-drastic-4 = О БОЖЕ!
+badfeeling-artifact-drastic-5 = ПОМОГИ МНЕ!
+badfeeling-artifact-drastic-6 = Ты должен уйти отсюда!

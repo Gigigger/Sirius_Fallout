@@ -1,0 +1,14 @@
+﻿advertisement-happyhonk-1 = Сигнал! Сигнал! Почему бы не заказать Happy Honk Meal сегодня?
+advertisement-happyhonk-2 = Клоуны заслуживают объятий, если вы их увидите, обязательно выразите свою признательность.
+advertisement-happyhonk-3 = Если вы найдете Золотой Хонкер, помолитесь богам, вам повезло.
+advertisement-happyhonk-4 = Хэппи Хонк: это еда, это сделка, у него есть пластиковая игрушка, которая заставит вас визжать.
+advertisement-happyhonk-5 = Что здесь черно-бело-красного? Мим и она умерли от тупой травмы головы.
+advertisement-happyhonk-6 = Сколько сотрудников службы безопасности нужно, чтобы вас арестовать? Трое: один забьет вас до смерти, один наденет на вас наручники и один отправит ваше тело на ремонт.
+advertisement-happyhonk-7 = Happy Honk не несет ответственности за качество еды, помещенной в наши коробки для еды Happy Honk.
+advertisement-happyhonk-8 = Почему бы не попросить нашу ограниченную серию Mime Happy Honk Meal?
+advertisement-happyhonk-9 = Happy Honk — торговая марка Honk! компания и намного превосходит компанию Robust Nukie Food.
+advertisement-happyhonk-10 = Наши блюда Happy Honk обязательно преподнесут большой сюрприз!
+thankyou-happyhonk-1 = Сигнал!
+thankyou-happyhonk-2 = Хок-хок!
+thankyou-happyhonk-3 = Иди, поделись весельем! Сигнал!
+thankyou-happyhonk-4 = Идите, люди! Сигнал!

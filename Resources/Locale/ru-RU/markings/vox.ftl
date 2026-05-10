@@ -1,0 +1,10 @@
+marking-VoxBeak = Вокс-клюв
+marking-VoxLArmScales = Вокс левая рука
+marking-VoxLFootScales = Вокс левая нога
+marking-VoxLHandScales = Вокс левая рука
+marking-VoxLLegScales = Вокс левая рука
+marking-VoxRArmScales = Вокс Правая рука
+marking-VoxRFootScales = Вокс Правая нога
+marking-VoxRHandScales = Вокс Правая рука
+marking-VoxRLegScales = Вокс Правая нога
+marking-VoxTail = Вокс-хвост

@@ -1,0 +1,15 @@
+war-declarator-not-working = Устройство издает звуковые сигналы, но ничего не происходит...
+war-declarator-ui-header = Объявление войны
+war-declarator-ui-war-button = ОБЪЯВЛЯЕМ ВОЙНУ!
+war-declarator-ui-try-war-button = Попробуйте объявить войну
+war-declarator-conditions-small-crew = Не хватает ядерщиков, чтобы объявить войну!
+war-declarator-conditions-left-outpost = Шаттл покинул аванпост синдиката
+war-declarator-conditions-time-out = Время объявления войны прошло
+war-declarator-conditions-ready = Шаттл может покинуть заставу!
+war-declarator-conditions-unknown = Неизвестный
+war-declarator-boost-possible = Возможность объявить войну
+war-declarator-boost-impossible = Невозможно объявить войну
+war-declarator-boost-declared = Война объявлена! Трансфер может быть отключен из-за...
+war-declarator-boost-timer = Осталось времени: {$time} минут.
+war-declarator-default-message = Маргинальная группа синдиката заявила о своем намерении полностью уничтожить станцию ​​с помощью ядерного устройства и осмеливается экипаж попытаться остановить их.
+war-declarator-message-placeholder = Напишите здесь таможенное объявление войны...

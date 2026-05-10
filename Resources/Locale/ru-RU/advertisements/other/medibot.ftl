@@ -1,0 +1,9 @@
+advertisement-medibot-1 = Что это за медотсек? Все мрут как дохлые мухи.
+advertisement-medibot-2 = Я знал это, мне следовало стать пластическим хирургом.
+advertisement-medibot-3 = Всегда есть подвох, и я лучший из всех, что есть.
+advertisement-medibot-4 = Яблоко в день меня отпугивает.
+advertisement-medibot-5 = Я другой!
+advertisement-medibot-6 = Черт возьми.
+advertisement-medibot-7 = Почему мы все еще здесь? Просто страдать?
+advertisement-medibot-8 = Я... я никогда раньше не терял пациентов. Я имею в виду не сегодня.
+advertisement-medibot-9 = Лексорин в.

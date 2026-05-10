@@ -1,0 +1,12 @@
+comp-storage-no-item-size = Н/Д
+comp-storage-cant-insert = Не могу вставить.
+comp-storage-too-big = Слишком большой!
+comp-storage-insufficient-capacity = Нет места!
+comp-storage-invalid-container = Это туда не идет!
+comp-storage-anchored-failure = Невозможно вставить привязанный элемент.
+comp-storage-cant-drop = Вы не можете отпустить { THE($entity) }!
+comp-storage-window-title = Объект хранения
+comp-storage-window-weight = { $weight }/{ $maxWeight }, максимальный размер: {$size}
+comp-storage-window-slots = Слоты: { $itemCount }/{ $maxCount }, максимальный размер: {$size}
+comp-storage-verb-open-storage = Открытое хранилище
+comp-storage-verb-close-storage = Закрыть хранилище

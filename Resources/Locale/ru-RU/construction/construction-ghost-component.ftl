@@ -1,0 +1,1 @@
+construction-ghost-examine-message = Здание: [color=cyan]{$name}[/color]

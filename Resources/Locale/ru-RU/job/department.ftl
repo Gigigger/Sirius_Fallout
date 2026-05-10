@@ -1,0 +1,10 @@
+department-Cargo = Груз
+department-Civilian = Гражданский
+department-Command = Команда
+department-Engineering = Инженерное дело
+department-Medical = Медицинский
+department-Security = Безопасность
+department-Science = Наука
+department-Silicon = Силиконы
+department-Specific = Зависит от станции
+department-Dignitary = Сановник
