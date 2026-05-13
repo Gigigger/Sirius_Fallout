@@ -4952,3 +4952,10 @@ Entries:
   id: 5870
   time: '2026-05-12T23:54:47.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/491
+- author: Dpellowski
+  changes:
+    - type: Fix
+      message: Ranger time Fixes + MPs
+  id: 5871
+  time: '2026-05-13T00:57:55.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/494
