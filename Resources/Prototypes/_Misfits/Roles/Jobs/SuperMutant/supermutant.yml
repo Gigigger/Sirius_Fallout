@@ -360,6 +360,7 @@
 - type: startingGear
   id: SuperMutantTribalGear
   equipment:
+    head: ClothingSuperMutantSkullHelmetTribal
     jumpsuit: ClothingSuperMutantTribalLoincloth
     shoes: ClothingSuperMutantGladiatorBoots
     back: N14ClothingBackpackTrekker # Corvax-Change
