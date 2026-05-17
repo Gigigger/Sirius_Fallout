@@ -416,6 +416,21 @@
         Slash: 0.5
         Piercing: 0.5
 
+# #Misfits Add - Supermutant Tribal Gloves
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingSuperMutantTribalGloves
+  name: supermutant tribal gloves
+  description: A pair of gloves made at a larger size by the tribe meant for supermutants.
+  components:
+  - type: Sprite
+    sprite: _Misfits/Clothing/SuperMutant/supermutant_tribal_gloves.rsi
+  - type: Clothing
+    sprite: _Misfits/Clothing/SuperMutant/supermutant_tribal_gloves.rsi
+  - type: Tag
+    tags:
+    - SuperMutantWearable
+
 # Misfits Add - Follower Supermutant sprites.
 - type: entity
   parent: ClothingHandsBase
