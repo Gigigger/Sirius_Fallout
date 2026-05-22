@@ -5543,3 +5543,12 @@ Entries:
   id: 5930
   time: '2026-05-22T23:29:01.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/572
+- author: NajaTheNaja
+  changes:
+    - type: Add
+      message: Epoetine (dexalin but different), uses uranium instead of plasma
+    - type: Add
+      message: Beta Epoetine (dexp but different)
+  id: 5931
+  time: '2026-05-22T23:37:29.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/573
