@@ -26,8 +26,8 @@
         - !type:HealthChange
           damage:
             groups:
-              Burn: -9 # 9/3 = 3 | 3*25 = 75 of every type in 25 seconds. 
-              Brute: -9 # 9/3 = 3 | 3*25 = 75 of every type in 25 seconds. 
+              Burn: -9 # 9/3 = 3 | 3*25 = 75 of every type in 25 seconds.
+              Brute: -9 # 9/3 = 3 | 3*25 = 75 of every type in 25 seconds.
               Airloss: -3
         - !type:ModifyBleedAmount
           amount: -2
@@ -581,3 +581,56 @@
       # conditions:
       # - !type:ReagentThreshold
       #   min: 25
+
+- type: reagent
+  id: Epoetine
+  name: reagent-name-epoetine
+  desc: reagent-desc-epoetine
+  physicalDesc: reagent-physical-desc-refreshing
+  color: "#0041a8"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: -1
+            Bloodloss: -0.5
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+        damage:
+          types:
+            Asphyxiation: 3
+            Cold: 1
+
+- type: reagent
+  id: BetaEpoetine
+  name: reagent-name-beta-epoetine
+  desc: reagent-desc-beta-epoetine
+  physicalDesc: reagent-physical-desc-tangy
+  color: "#4da0bd"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: -3.5
+            Bloodloss: -3
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentThreshold
+          reagent: HeartbreakerToxin
+          min: 1
+        reagent: HeartbreakerToxin
+        amount: -3
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 25
+        damage:
+          types:
+            Asphyxiation: 5
+            Cold: 3
