@@ -5414,3 +5414,82 @@ Entries:
   id: 5918
   time: '2026-05-20T22:29:54.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/563
+- author: NajaTheNaja
+  changes:
+    - type: Remove
+      message: >-
+        took common encryption key out of robots... this is the wasteland not a
+        space station
+    - type: Remove
+      message: 'GPS module from police protectron and mr gutsy '
+    - type: Tweak
+      message: >-
+        gutsy now shoots smaller bullets again, Todd Howard called and said its
+        only a pistol not a caster
+    - type: Tweak
+      message: >-
+        laser assaultron now has less damaging laser but it can be fired several
+        times on a battery instead of once. total damage if you land every laser
+        is theoretically higher, but takes multiple shots. 
+  id: 5919
+  time: '2026-05-21T00:57:33.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/566
+- author: Dpellowski
+  changes:
+    - type: Tweak
+      message: Readjusted layout and settings (Readjust)
+    - type: Tweak
+      message: Updated loadout descriptions (Loadouts descriptions)
+    - type: Add
+      message: Added job descriptions (Job Descriptions)
+    - type: Tweak
+      message: Improved kit update accuracy (Kit updates accuracy)
+    - type: Tweak
+      message: Normalized names (Normalizating names)
+    - type: Tweak
+      message: 'Merged pull request #1 (loading-out-the-ncr)'
+    - type: Tweak
+      message: Refactored kits with new weapons and descriptions
+    - type: Tweak
+      message: Refactored NCRA loadout kits and updated comments
+    - type: Tweak
+      message: Increased magazine capacity from 7 to 8 rounds
+    - type: Add
+      message: Added rank spawns in hand
+    - type: Tweak
+      message: Applied NCR changes
+  id: 5920
+  time: '2026-05-21T01:03:47.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/565
+- author: NajaTheNaja
+  changes:
+    - type: Add
+      message: NCRPlatoonLeader Spawnpoint
+  id: 5921
+  time: '2026-05-21T01:39:14.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/568
+- author: Chance
+  changes:
+    - type: Add
+      message: Added PL spawn to CO office.
+    - type: Tweak
+      message: >-
+        Added invisible walls near rocket launcher, and deleted excess ones
+        (greedy people will die, god speed)
+  id: 5922
+  time: '2026-05-21T12:55:30.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/569
+- author: Lucky
+  changes:
+    - type: Add
+      message: lots of prototypes have been added for mapping
+  id: 5923
+  time: '2026-05-21T15:29:13.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/533
+- author: HungryCuban
+  changes:
+    - type: Add
+      message: Ported Goob vehicle system.
+  id: 5924
+  time: '2026-05-22T19:02:07.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/510
