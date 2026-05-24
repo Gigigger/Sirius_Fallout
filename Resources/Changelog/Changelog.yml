@@ -5581,3 +5581,10 @@ Entries:
   id: 5934
   time: '2026-05-24T14:16:14.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/584
+- author: HungryCuban
+  changes:
+    - type: Tweak
+      message: You can shoot over Bradhos now
+  id: 5935
+  time: '2026-05-24T14:17:53.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/582
