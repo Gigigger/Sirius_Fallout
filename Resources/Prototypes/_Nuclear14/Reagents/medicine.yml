@@ -31,17 +31,6 @@
               Airloss: -3
         - !type:ModifyBleedAmount
           amount: -2
-        - !type:HealthChange # Bonus for poison
-          conditions:
-          - !type:ReagentThreshold
-            min: 27
-          damage:
-            groups:
-              Burn: -1.0
-              Brute: -1.0
-              Airloss: -1.0
-            types:
-              Poison: 3
         - !type:GenericStatusEffect
           conditions:
           - !type:ReagentThreshold

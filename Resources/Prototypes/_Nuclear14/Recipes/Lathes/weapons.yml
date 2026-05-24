@@ -318,7 +318,7 @@
 # Misfits Add: Recipes for payloads because there is none for modular mines.
 - type: latheRecipe
   id: N14ChemicalPayload
-  result: ChemicalPayload
+  result: ChemicalPayload 
   category: N14Weapons
   completetime: 10
   materials:

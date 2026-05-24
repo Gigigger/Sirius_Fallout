@@ -229,6 +229,7 @@
     - N14BPNCRAmmoMag762Rifle
     - N14BPNCRAmmoMag10mmSMG
     - N14BPNCRAmmoMag12mmSMG
+    - N14BPNCRAmmo40mmGrenade
 
 - type: entity
   parent: N14BlueprintBase

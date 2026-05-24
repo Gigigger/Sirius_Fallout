@@ -188,8 +188,8 @@
   - type: Clothing
     sprite: Corvax/Clothing/OuterClothing/Armor/veteranarmor.rsi
   - type: ClothingSpeedModifier
-    walkModifier: 1.1 # makes veterans a big threat (not really) -Bill
-    sprintModifier: 1.1
+    walkModifier: 1.05 # makes veterans a big threat (not really) -Bill
+    sprintModifier: 1.05
   - type: Armor
     modifiers:
       coefficients:

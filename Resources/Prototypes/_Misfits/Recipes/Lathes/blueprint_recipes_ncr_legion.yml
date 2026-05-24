@@ -1271,6 +1271,21 @@
 
     N14Gunpowder: 20
 
+- type: latheRecipe
+  id: N14BPNCRAmmo40mmGrenade
+  result: N14CartridgeGrenade40mm
+  category: N14BlueprintNCRAmmoT3
+  completetime: 8
+  requiresBlueprint: true
+  availableFaction:
+  - CaesarLegion
+  materials:
+    Steel: 800
+
+    N14Gunpowder: 1000
+
+    N14Iron: 500
+
 
 # --- NCR Tier 4 Ammo ---
 - type: latheRecipe
@@ -2362,11 +2377,11 @@
   availableFaction:
   - CaesarLegion
   materials:
-    Steel: 2500
+    Steel: 800
 
-    N14Gunpowder: 200
+    N14Gunpowder: 1000
 
-    N14Iron: 100
+    N14Iron: 500
 
 
 # #Misfits Add - T3 ammo parity: 7.62mm for SKS, and craftable dynamite (Legion explosive doctrine)

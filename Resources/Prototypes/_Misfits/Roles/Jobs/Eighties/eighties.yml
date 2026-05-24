@@ -13,7 +13,7 @@
   name: job-name-eighties-the-block
   description: job-description-eighties-the-block
   playTimeTracker: EightiesTheBlock
-  whitelisted: true
+  whitelisted: false
   requirements:
   - !type:MinPlayersRequirement
     min: 0
@@ -72,7 +72,7 @@
   name: job-name-eighties-cylinders
   description: job-description-eighties-cylinders
   playTimeTracker: EightiesCylinders
-  whitelisted: true
+  whitelisted: false
   requirements:
   - !type:MinPlayersRequirement
     min: 0
@@ -128,7 +128,7 @@
   name: job-name-eighties-pistons
   description: job-description-eighties-pistons
   playTimeTracker: EightiesPistons
-  whitelisted: true
+  whitelisted: false
   requirements:
   - !type:MinPlayersRequirement
     min: 0
@@ -184,7 +184,7 @@
   name: job-name-eighties-oilers
   description: job-description-eighties-oilers
   playTimeTracker: EightiesOilers
-  whitelisted: true
+  whitelisted: false
   requirements:
   - !type:MinPlayersRequirement
     min: 0
@@ -240,7 +240,7 @@
   name: job-name-eighties-road-rash
   description: job-description-eighties-road-rash
   playTimeTracker: EightiesRoadRash
-  whitelisted: true
+  whitelisted: false
   requirements:
   - !type:MinPlayersRequirement
     min: 0
@@ -248,6 +248,9 @@
     species:
     - Human
     - Ghoul
+  - !type:CharacterPlaytimeRequirement
+    tracker: Wastelander
+    min: 36000 # 10 hours
   startingGear: EightiesRoadRashGear
   alwaysUseSpawner: true
   icon: "JobIconEighties"
