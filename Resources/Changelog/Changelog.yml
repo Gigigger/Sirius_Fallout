@@ -5619,3 +5619,10 @@ Entries:
   id: 5937
   time: '2026-05-24T17:26:39.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/564
+- author: Oli
+  changes:
+    - type: Add
+      message: Guitars to loadout
+  id: 5938
+  time: '2026-05-24T18:57:58.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/588
