@@ -5691,3 +5691,10 @@ Entries:
   id: 5945
   time: '2026-05-25T03:06:37.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/593
+- author: NajaTheNaja
+  changes:
+    - type: Fix
+      message: paracusia-hallucination-0 now exists
+  id: 5946
+  time: '2026-05-25T11:22:04.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/596
