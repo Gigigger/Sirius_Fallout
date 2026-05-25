@@ -1,11 +1,14 @@
 using Content.Shared._Misfits.Special;
 using Content.Shared._Misfits.Special.Components;
 using Content.Shared.Damage;
+using Content.Shared.Item;
 using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
+using Content.Shared.Wieldable;
+using Content.Shared.Wieldable.Components;
 using Robust.Shared.Random;
 
 namespace Content.Server._Misfits.Special;
@@ -19,9 +22,34 @@ public sealed class SpecialCombatSystem : EntitySystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<ItemComponent, GetMeleeDamageEvent>(OnGetItemMeleeDamage, after: [typeof(WieldableSystem)]);
+        SubscribeLocalEvent<WieldableComponent, GetMeleeDamageEvent>(OnWieldableMeleeDamage, after: [typeof(WieldableSystem)]);
         SubscribeLocalEvent<MeleeWeaponComponent, MeleeHitEvent>(OnMeleeHit);
         SubscribeLocalEvent<ProjectileComponent, ProjectileHitEvent>(OnProjectileHit);
         SubscribeLocalEvent<SpecialComponent, SpecialModifyHitscanDamageEvent>(OnModifyHitscanDamage);
+    }
+
+    private void OnGetItemMeleeDamage(EntityUid uid, ItemComponent component, ref GetMeleeDamageEvent args)
+    {
+        if (HasComp<WieldableComponent>(uid))
+            return;
+
+        ApplyStrengthMeleeDamage(args.User, ref args);
+    }
+
+    private void OnWieldableMeleeDamage(EntityUid uid, WieldableComponent component, ref GetMeleeDamageEvent args)
+    {
+        ApplyStrengthMeleeDamage(args.User, ref args);
+    }
+
+    private void ApplyStrengthMeleeDamage(EntityUid user, ref GetMeleeDamageEvent args)
+    {
+        if (!TryComp<SpecialComponent>(user, out var special))
+            return;
+
+        var damage = args.Damage;
+        ApplyStrengthMeleeModifier(user, ref damage, special);
+        args.Damage = damage;
     }
 
     private void OnMeleeHit(EntityUid uid, MeleeWeaponComponent component, MeleeHitEvent args)
@@ -33,7 +61,6 @@ public sealed class SpecialCombatSystem : EntitySystem
             return;
 
         var damage = args.BaseDamage;
-        ApplyStrengthMeleeModifier(args.User, ref damage, special);
 
         // Melee weapons use the same Luck outcome curve as ranged weapons.
         TryApplyLuckDamageOutcome(args.User, ref damage, special);
