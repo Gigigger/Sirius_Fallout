@@ -60,7 +60,7 @@
   id: NCRPlatoonLeaderPins
   jobs:
     - NCRPlatoonLeader
-  tracker: NCRPleatoonLeader
+  tracker: NCRPlatoonLeader
   departmentTracker: false
   thresholds:
     - min: 0
@@ -101,7 +101,7 @@
     - min: 144000  # 40 hours
       entity: ClothingNeckPinNCRSergeant
 
-# Weapon Specialist: PV2 (E-2) → PFC (E-3) at 20h NCR dept → SPC (E-4) at 40h
+# Weapon Specialist: PV2 (E-2) → PFC (E-3) at 20h → SPC (E-4) at 40h
 - type: ncrRankPinProgression
   id: NCRSpecialistPins
   jobs:
@@ -116,7 +116,7 @@
     - min: 144000  # 40 hours
       entity: ClothingNeckPinNCRSpecialist
 
-# Engineer: PV2 (E-2) → PFC (E-3) at 20h NCR dept → SPC (E-4) at 40h
+# Engineer: PV2 (E-2) → PFC (E-3) at 20h → SPC (E-4) at 40h
 - type: ncrRankPinProgression
   id: NCREngineerPins
   jobs:
@@ -131,7 +131,7 @@
     - min: 144000  # 40 hours
       entity: ClothingNeckPinNCRSpecialist
 
-# Heavy Trooper: PV2 (E-2) → PFC (E-3) at 15h → SPC (E-4) at 40h
+# Heavy Trooper: PV2 (E-2) → PFC (E-3) at 20h → SPC (E-4) at 40h
 - type: ncrRankPinProgression
   id: NCRHeavyTrooperPins
   jobs:
