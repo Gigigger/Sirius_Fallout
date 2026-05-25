@@ -206,6 +206,30 @@ public sealed class SharedSpecialSystem : EntitySystem
         return (int) Math.Round(GetCurvedEffectDelta(charisma) * 2f, MidpointRounding.AwayFromZero);
     }
 
+    /// <summary>
+    /// Returns the Intelligence speed multiplier used by medical actions with do-after timers.
+    /// </summary>
+    public float GetIntelligenceMedicalActionSpeed(EntityUid uid, SpecialComponent? component = null)
+    {
+        if (!Resolve(uid, ref component, false))
+            return 1f;
+
+        return GetIntelligenceMedicalActionSpeed(GetEffective(uid, SpecialStat.Intelligence, component));
+    }
+
+    public static float GetIntelligenceMedicalActionSpeed(int intelligence)
+    {
+        return MathF.Max(0.1f, 1f + (intelligence - SpecialProfile.DefaultValue) * 0.1f);
+    }
+
+    /// <summary>
+    /// Applies the Intelligence medical speed multiplier to a timed medical action.
+    /// </summary>
+    public TimeSpan GetIntelligenceMedicalActionDelay(EntityUid uid, TimeSpan baseDelay, SpecialComponent? component = null)
+    {
+        return baseDelay / GetIntelligenceMedicalActionSpeed(uid, component);
+    }
+
     public int GetCharismaChatFontSize(EntityUid uid, int baseFontSize, SpecialComponent? component = null)
     {
         return GetEffective(uid, SpecialStat.Charisma, component) >= 7

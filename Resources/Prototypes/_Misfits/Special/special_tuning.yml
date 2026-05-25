@@ -29,4 +29,5 @@
   luckCriticalChancePerPoint: 0.005
   luckSingleShotCriticalChanceAtTen: 0.25
   luckCriticalDamageMultiplier: 1.5
+  luckUnluckyDamageMultiplier: 0.5
   luckLootChancePerPoint: 0.025

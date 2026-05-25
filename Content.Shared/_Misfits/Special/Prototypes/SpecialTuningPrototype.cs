@@ -118,6 +118,9 @@ public sealed partial class SpecialTuningPrototype : IPrototype
     [DataField("luckCriticalDamageMultiplier")]
     public float LuckCriticalDamageMultiplier = 1.5f;
 
+    [DataField("luckUnluckyDamageMultiplier")]
+    public float LuckUnluckyDamageMultiplier = 0.5f;
+
     [DataField("luckLootChancePerPoint")]
     public float LuckLootChancePerPoint = 0.025f;
 }
