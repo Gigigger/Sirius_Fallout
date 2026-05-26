@@ -64,6 +64,9 @@
           - Wastelander
           - Followers # #Misfits Add - enables Followers death-alert targeting
       - type: CPRTraining
+  - !type:AddTraitSpecial
+    traits:
+    - FiremanCarry
 
 - type: startingGear
   id: FollowerHeadGear
@@ -137,6 +140,9 @@
           - Wastelander
           - Followers # #Misfits Add - enables Followers death-alert targeting
       - type: CPRTraining
+  - !type:AddTraitSpecial
+    traits:
+    - FiremanCarry
 
 - type: startingGear
   id: FollowerDoctorGear
@@ -204,6 +210,9 @@
           - Wastelander
           - Followers # #Misfits Add - enables Followers death-alert targeting
       - type: CPRTraining
+  - !type:AddTraitSpecial
+    traits:
+    - FiremanCarry
 
 - type: startingGear
   id: FollowerVolunteerGear

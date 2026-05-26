@@ -1,6 +1,8 @@
 using Content.Shared._Misfits.Special;
 using Content.Shared._Misfits.Special.Components;
+using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
+using Content.Shared.Wieldable.Components;
 
 namespace Content.Shared._Misfits.SpecialStats;
 
@@ -39,10 +41,33 @@ public sealed class SpecialPerceptionSystem : EntitySystem
         args.AngleIncrease = new Angle((double) args.AngleIncrease * keepFraction);
         args.CameraRecoilScalar *= (float) keepFraction;
 
+        ApplyHeavyGunHandling(holder, ref args, special);
+
         if (args.FireRate <= 0f)
             return;
 
         args.FireRate *= 1f / GetFireDelayMultiplier(holder, special);
+    }
+
+    private void ApplyHeavyGunHandling(EntityUid holder, ref GunRefreshModifiersEvent args, SpecialComponent special)
+    {
+        if (!HasComp<GunRequiresWieldComponent>(args.Gun.Owner) &&
+            !HasComp<WieldableComponent>(args.Gun.Owner))
+            return;
+
+        var tuning = _special.GetTuning();
+        var modifier = _special.GetCurvedEffectScale(
+            holder,
+            SpecialStat.Perception,
+            tuning.PerceptionHeavyGunPenaltyAtOne,
+            -tuning.PerceptionHeavyGunReductionAtTen,
+            special);
+        var keepFraction = Math.Clamp(1.0 + modifier, 0.70, 1.40);
+
+        args.MinAngle = new Angle((double) args.MinAngle * keepFraction);
+        args.MaxAngle = new Angle((double) args.MaxAngle * keepFraction);
+        args.AngleIncrease = new Angle((double) args.AngleIncrease * keepFraction);
+        args.CameraRecoilScalar *= (float) keepFraction;
     }
 
     private float GetFireDelayMultiplier(EntityUid uid, SpecialComponent special)

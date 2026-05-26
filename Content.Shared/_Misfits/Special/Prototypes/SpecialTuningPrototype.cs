@@ -15,7 +15,7 @@ public sealed partial class SpecialTuningPrototype : IPrototype
     [IdDataField]
     public string ID { get; private set; } = default!;
 
-    // Strength: melee output and heavy/carry handling.
+    // Strength: melee output and carry handling.
     [DataField("strengthMeleeDamageMultiplierPerPoint")]
     public float StrengthMeleeDamageMultiplierPerPoint = 0.02f;
 
@@ -25,13 +25,7 @@ public sealed partial class SpecialTuningPrototype : IPrototype
     [DataField("strengthCarryPullSpeedBonusAtTen")]
     public float StrengthCarryPullSpeedBonusAtTen = 0.10f;
 
-    [DataField("strengthHeavyGunPenaltyAtOne")]
-    public float StrengthHeavyGunPenaltyAtOne = 0.18f;
-
-    [DataField("strengthHeavyGunReductionAtTen")]
-    public float StrengthHeavyGunReductionAtTen = 0.10f;
-
-    // Perception: ranged accuracy, mining speed, and fire delay.
+    // Perception: ranged accuracy, heavy gun handling, mining speed, and fire delay.
     [DataField("perceptionSpreadReductionPerPoint")]
     public float PerceptionSpreadReductionPerPoint = 0.004f;
 
@@ -40,6 +34,12 @@ public sealed partial class SpecialTuningPrototype : IPrototype
 
     [DataField("perceptionSpreadReductionAtTen")]
     public float PerceptionSpreadReductionAtTen = 0.25f;
+
+    [DataField("perceptionHeavyGunPenaltyAtOne")]
+    public float PerceptionHeavyGunPenaltyAtOne = 0.18f;
+
+    [DataField("perceptionHeavyGunReductionAtTen")]
+    public float PerceptionHeavyGunReductionAtTen = 0.10f;
 
     [DataField("perceptionMineDelayPenaltyAtOne")]
     public float PerceptionMineDelayPenaltyAtOne = 0.25f;

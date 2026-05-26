@@ -3,10 +3,10 @@
   strengthMeleeDamageMultiplierPerPoint: 0.02
   strengthCarryPullSpeedPenaltyAtOne: 0.08
   strengthCarryPullSpeedBonusAtTen: 0.10
-  strengthHeavyGunPenaltyAtOne: 0.18
-  strengthHeavyGunReductionAtTen: 0.10
   perceptionSpreadPenaltyAtOne: 0.15
   perceptionSpreadReductionAtTen: 0.25
+  perceptionHeavyGunPenaltyAtOne: 0.18
+  perceptionHeavyGunReductionAtTen: 0.10
   perceptionMineDelayPenaltyAtOne: 0.25
   perceptionMineDelayReductionAtTen: 0.25
   perceptionFireDelayPenaltyAtOne: 0.08

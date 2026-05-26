@@ -2526,12 +2526,8 @@ namespace Content.Client.Lobby.UI
                 delta,
                 -tuning.StrengthCarryPullSpeedPenaltyAtOne,
                 tuning.StrengthCarryPullSpeedBonusAtTen);
-            var heavyGun = SharedSpecialSystem.GetCurvedEffectScale(
-                delta,
-                tuning.StrengthHeavyGunPenaltyAtOne,
-                -tuning.StrengthHeavyGunReductionAtTen);
 
-            return $"melee damage {FormatSignedPercent(melee)}, carry/pull speed {FormatSignedPercent(carry)}, heavy gun spread/recoil {FormatSignedPercent(heavyGun)}.";
+            return $"melee damage {FormatSignedPercent(melee)}, carry/pull speed {FormatSignedPercent(carry)}.";
         }
 
         private static string GetPerceptionEffectDetails(int value, SpecialTuningPrototype tuning)
@@ -2541,12 +2537,16 @@ namespace Content.Client.Lobby.UI
                 delta,
                 tuning.PerceptionSpreadPenaltyAtOne,
                 -tuning.PerceptionSpreadReductionAtTen);
+            var heavyGun = SharedSpecialSystem.GetCurvedEffectScale(
+                delta,
+                tuning.PerceptionHeavyGunPenaltyAtOne,
+                -tuning.PerceptionHeavyGunReductionAtTen);
             var fireDelay = SharedSpecialSystem.GetCurvedEffectScale(
                 delta,
                 tuning.PerceptionFireDelayPenaltyAtOne,
                 -tuning.PerceptionFireDelayReductionAtTen);
 
-            return $"gun spread/recoil {FormatSignedPercent(spread)}, gun fire delay {FormatSignedPercent(fireDelay)}.";
+            return $"gun spread/recoil {FormatSignedPercent(spread)}, heavy gun spread/recoil {FormatSignedPercent(heavyGun)}, gun fire delay {FormatSignedPercent(fireDelay)}.";
         }
 
         private static string GetEnduranceEffectDetails(int value, SpecialTuningPrototype tuning)
@@ -2936,6 +2936,9 @@ namespace Content.Client.Lobby.UI
             _traits.Clear();
             foreach (var trait in _prototypeManager.EnumeratePrototypes<TraitPrototype>())
             {
+                if (trait.Hidden)
+                    continue;
+
                 var usable = _characterRequirementsSystem.CheckRequirementsValid(
                     trait.Requirements,
                     highJob,
