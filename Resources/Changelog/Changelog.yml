@@ -5828,3 +5828,10 @@ Entries:
   id: 5959
   time: '2026-05-26T16:43:07.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/600
+- author: pierow
+  changes:
+    - type: Add
+      message: 'Mechanical Idol Plushie (based off SEVER: The Machine Gods Prophet).'
+  id: 5960
+  time: '2026-05-26T20:00:03.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/605
