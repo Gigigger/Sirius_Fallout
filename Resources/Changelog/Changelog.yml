@@ -5882,3 +5882,10 @@ Entries:
   id: 5963
   time: '2026-05-26T21:34:04.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/606
+- author: Bradysgaming
+  changes:
+    - type: Tweak
+      message: Removed Shock debuff from C27's
+  id: 5964
+  time: '2026-05-26T21:50:03.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/612
