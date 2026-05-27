@@ -101,6 +101,13 @@
   - type: NpcFactionMember
     factions:
     - SimpleNeutral
+  - type: GhostRole
+    name: ghost-role-information-n14pet-eyebot-name
+    description: ghost-role-information-n14pet-eyebot-description
+    rules: ghost-role-component-default-rules
+    makeSentient: false
+    allowMovement: true
+  - type: GhostTakeoverAvailable
   - type: Sprite
     sprite: _Nuclear14/Mobs/Pets/eyebot_smile.rsi
     layers:
@@ -264,6 +271,12 @@
   - type: NpcFactionMember
     factions:
     - SimpleNeutral
+  - type: GhostRole
+    name: ghost-role-information-n14pet-eyebot-mbos-name
+    description: ghost-role-information-n14pet-eyebot-description
+    rules: ghost-role-component-default-rules
+    makeSentient: false
+    allowMovement: true
   - type: Sprite
     sprite: _Nuclear14/Mobs/Pets/eyebot_mbos.rsi
     layers:

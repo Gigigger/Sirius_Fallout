@@ -20,6 +20,7 @@
     rules: ghost-role-component-default-rules
     makeSentient: false
     allowMovement: true
+  - type: GhostTakeoverAvailable
   - type: MobThresholds # #Misfits Add - allow revival by medics
     allowRevives: true
   - type: Puller # #Misfits Add - explicit puller for drag mechanic (SimpleMobBase doesn't define one)
@@ -52,6 +53,7 @@
     rules: ghost-role-component-default-rules
     makeSentient: false
     allowMovement: true
+  - type: GhostTakeoverAvailable
   - type: MobThresholds # #Misfits Add - allow revival by medics
     allowRevives: true
   - type: Puller # #Misfits Add - explicit puller for drag mechanic
@@ -84,6 +86,7 @@
     rules: ghost-role-component-default-rules
     makeSentient: false
     allowMovement: true
+  - type: GhostTakeoverAvailable
   - type: MobThresholds # #Misfits Add - allow revival by medics
     allowRevives: true
   - type: Puller # #Misfits Add - explicit puller for drag mechanic
@@ -119,6 +122,7 @@
     rules: ghost-role-component-default-rules
     makeSentient: false
     allowMovement: true
+  - type: GhostTakeoverAvailable
   - type: MobThresholds
     allowRevives: true
   - type: PassiveDamage
@@ -149,6 +153,7 @@
     rules: ghost-role-component-default-rules
     makeSentient: false
     allowMovement: true
+  - type: GhostTakeoverAvailable
   - type: MobThresholds
     allowRevives: true
   - type: PassiveDamage
