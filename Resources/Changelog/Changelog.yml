@@ -5956,3 +5956,22 @@ Entries:
   id: 5972
   time: '2026-05-28T10:25:24.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/620
+- author: Squagg
+  changes:
+    - type: Add
+      message: Added Followers of the Apocalypse Guard.
+    - type: Add
+      message: More doors for mappers
+    - type: Tweak
+      message: Removes the funny one shot bullets from Lucky Drops.
+    - type: Fix
+      message: Fixed propane grills and stoves not heating food properly.
+    - type: Add
+      message: >-
+        Added a hotbar toggle for the medical HUD effect granted by 10
+        Intelligence.
+    - type: Tweak
+      message: Increased Followers of the Apocalypse Doctor slots by one.
+  id: 5973
+  time: '2026-05-28T10:32:27.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/622
