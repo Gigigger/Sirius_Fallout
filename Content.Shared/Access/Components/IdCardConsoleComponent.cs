@@ -81,11 +81,12 @@ public sealed partial class IdCardConsoleComponent : Component
         "NCRMedic",
         "NCRLT",
         "NCRRanger",
-        "BoSMidwest",
-        "Knight",
-        "Scribe",
-        "Paladin",
-        "PaladinCommander",
+        "BOS",
+        "BOSInitiate",
+        "BOSKnight",
+        "BOSScribe",
+        "BOSPaladin",
+        "BOSPaladinCommander",
         "80s", //Misfit Addition
         "80sHead", //Misfit Addition
     };
