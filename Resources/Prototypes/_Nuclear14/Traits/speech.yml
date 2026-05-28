@@ -63,7 +63,7 @@
   - !type:CharacterDepartmentRequirement
     departments:
     - BrotherhoodOfSteel
-  - !type:CharacterDepartmentRequirement # Misfit Change
+  - !type:CharacterJobRequirement # Misfit Change
     inverted: true
     jobs:
     - BoSMidScribe
