@@ -51,7 +51,7 @@
           TribalShaman: [ 3, 3 ] # #Misfits Change - renamed from TribalHealer
           TownMayor: [ 1, 1 ]
           TownSheriff: [ 1, 1 ]
-          TownDeputy: [ 1, 2 ]
+          TownDeputy: [ 4, 4 ]
           # TownDoctor: [ 1, 1 ] # #Misfits Tweak - disabled; FoTA FollowerDoctor slots replace town medical coverage.
           TownMechanic: [ 2, 2 ]
           TownShopkeeper: [ 1, 1 ]
@@ -139,7 +139,8 @@
           WhiteLegsStormDrummer: [ 0, 0 ] # #Misfits Add - prototype-ready rank, no placed map marker yet.
           # WhiteLegsPainMaker: [ 0, 0 ] # #Misfits Change - legacy hidden rank removed from join rotation; WhiteLegs now covers the visible tribal entry slot.
           FollowerVolunteer: [ 2, 2 ] # #Misfits Change - Followers job replaced by ranked hierarchy
-          FollowerDoctor: [ 1, 1 ]   # #Misfits Add - Doctor rank slot
+          FollowerGuard: [ 2, 2 ]      # #Misfits Add - FOTA compound guards
+          FollowerDoctor: [ 2, 2 ]   # #Misfits Add - Doctor rank slot
           FollowerHead: [ 1, 1 ]     # #Misfits Fix - allow Head to round-start as well as latejoin
           SyntheticMrHandy: [ 1, 3 ]
           SyntheticProtectron: [ 1, 3 ]
