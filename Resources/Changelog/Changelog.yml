@@ -6057,3 +6057,16 @@ Entries:
   id: 5981
   time: '2026-05-29T10:34:13.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/631
+- author: Bradysgaming
+  changes:
+    - type: Add
+      message: Added Supermutant Armored Followers Labcoat
+    - type: Tweak
+      message: >-
+        Gave the actual armor for the supermutats their armor from before,
+        (still slightly nerfed.)
+    - type: Add
+      message: Added Nightvision to the Ranger supermutant's gasmask
+  id: 5982
+  time: '2026-05-29T18:12:11.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/632
