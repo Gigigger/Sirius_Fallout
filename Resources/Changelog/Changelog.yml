@@ -6106,3 +6106,24 @@ Entries:
   id: 5986
   time: '2026-05-29T22:50:44.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/637
+- author: Bradysgaming
+  changes:
+    - type: Add
+      message: Added Monstrum (Mutant)  to latin
+    - type: Add
+      message: Added Legio (legion)  to latin
+    - type: Add
+      message: Added Deus (god)  to latin
+    - type: Add
+      message: Added Amicus (friend)  to latin
+    - type: Add
+      message: Added Mors (dead) to latin
+    - type: Add
+      message: Added Mortuus (death) to latin
+    - type: Add
+      message: Added Servus (slave) to latin
+    - type: Tweak
+      message: Removed auxilla timelock, women dont need to be slaves at the start now
+  id: 5987
+  time: '2026-05-30T05:09:36.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/639
