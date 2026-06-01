@@ -6259,3 +6259,10 @@ Entries:
   id: 5998
   time: '2026-05-31T23:39:16.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/653
+- author: Bradysgaming
+  changes:
+    - type: Fix
+      message: Fixed SM FOTA Armored Labcoat sprite being called on wrongly
+  id: 5999
+  time: '2026-06-01T00:04:07.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/654
