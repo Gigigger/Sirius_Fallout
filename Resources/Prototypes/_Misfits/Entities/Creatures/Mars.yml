@@ -10,8 +10,8 @@
     layers:
     - state: Mars
   - type: AnnounceOnSpawn
-    message: Mars, has awoken!
-    sender: "???"
+    message: mars-has-awoken
+    sender: mars-has-awoken-sender
     color: red
   - type: ContentEye
     maxZoom: 2.0,2.0
@@ -83,6 +83,5 @@
         Slash: 120
         Blunt: 150
   - type: MovementSpeedModifier
-    modifier:
-    baseSprintSpeed: 5.5
     baseWalkSpeed: 5.5
+    baseSprintSpeed: 5.5
