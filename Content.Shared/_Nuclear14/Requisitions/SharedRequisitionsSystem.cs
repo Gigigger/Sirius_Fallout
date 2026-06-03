@@ -122,11 +122,12 @@ public abstract class SharedRequisitionsSystem : EntitySystem
 
         var saleValue = 0;
         var saleCount = 0;
+        var saleItems = new List<RequisitionsSaleItem>();
         TimeSpan? busyStart = null;
         TimeSpan? busyEnd = null;
         if (elevator != null)
         {
-            saleValue = AppraisePlatform(elevator.Value, out saleCount);
+            saleValue = AppraisePlatform(elevator.Value, out saleCount, out saleItems);
 
             if (elevator.Value.Comp.ToggledAt is { } toggledAt)
             {
@@ -147,9 +148,12 @@ public abstract class SharedRequisitionsSystem : EntitySystem
         comp.Capacity = capacity;
         comp.PlatformSaleValue = saleValue;
         comp.PlatformSaleCount = saleCount;
+        comp.PlatformItems = saleItems;
+        comp.Storage = account != null ? new Dictionary<string, int>(account.Storage) : new Dictionary<string, int>();
         comp.Purchased = account != null ? new Dictionary<string, int>(account.Purchased) : new Dictionary<string, int>();
         comp.History = account != null ? new List<RequisitionsHistoryEntry>(account.History) : new List<RequisitionsHistoryEntry>();
         comp.CompletedBounties = account != null ? new List<string>(account.CompletedBounties) : new List<string>();
+        comp.BountyProgress = account != null ? new Dictionary<string, int>(account.BountyProgress) : new Dictionary<string, int>();
         comp.PendingOrders = pendingOrders;
 
         var uid = computer.Owner;
@@ -164,15 +168,19 @@ public abstract class SharedRequisitionsSystem : EntitySystem
         DirtyField(uid, comp, nameof(RequisitionsComputerComponent.Capacity));
         DirtyField(uid, comp, nameof(RequisitionsComputerComponent.PlatformSaleValue));
         DirtyField(uid, comp, nameof(RequisitionsComputerComponent.PlatformSaleCount));
+        DirtyField(uid, comp, nameof(RequisitionsComputerComponent.PlatformItems));
+        DirtyField(uid, comp, nameof(RequisitionsComputerComponent.Storage));
         DirtyField(uid, comp, nameof(RequisitionsComputerComponent.Purchased));
         DirtyField(uid, comp, nameof(RequisitionsComputerComponent.History));
         DirtyField(uid, comp, nameof(RequisitionsComputerComponent.CompletedBounties));
+        DirtyField(uid, comp, nameof(RequisitionsComputerComponent.BountyProgress));
         DirtyField(uid, comp, nameof(RequisitionsComputerComponent.PendingOrders));
     }
 
-    protected virtual int AppraisePlatform(Entity<RequisitionsElevatorComponent> elevator, out int count)
+    protected virtual int AppraisePlatform(Entity<RequisitionsElevatorComponent> elevator, out int count, out List<RequisitionsSaleItem> items)
     {
         count = 0;
+        items = new List<RequisitionsSaleItem>();
         return 0;
     }
 

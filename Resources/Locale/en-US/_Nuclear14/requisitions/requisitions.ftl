@@ -10,3 +10,9 @@ n14-requisition-paper-print-manifest = [head=2]
     LOT {$lot}
     S/N {$serialNumber}[/head]
 n14-requisition-paper-print-content = - {$count} {$item}
+
+# History transcript
+n14-requisition-transcript-name = requisitions transcript
+n14-requisition-transcript-header = [head=2]{$group} REQUISITIONS LOG[/head]
+n14-requisition-transcript-bought = {$buyer}: bought {$amount}x {$item} for ${$cost}
+n14-requisition-transcript-sold = Sold {$amount}x {$item} for ${$cost}

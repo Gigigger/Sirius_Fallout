@@ -26,6 +26,7 @@ public sealed partial class RequisitionsWindow : DefaultWindow
         TabContainer.SetTabTitle(ProductsTab, Loc.GetString("n14-requisitions-tab-products"));
         TabContainer.SetTabTitle(CartTab, Loc.GetString("n14-requisitions-tab-cart"));
         TabContainer.SetTabTitle(SellTab, Loc.GetString("n14-requisitions-tab-sell"));
+        TabContainer.SetTabTitle(StorageTab, Loc.GetString("n14-requisitions-tab-storage"));
         TabContainer.SetTabTitle(PendingTab, Loc.GetString("n14-requisitions-tab-pending"));
         TabContainer.SetTabTitle(HistoryTab, Loc.GetString("n14-requisitions-tab-history"));
         TabContainer.SetTabTitle(BountiesTab, Loc.GetString("n14-requisitions-tab-bounties"));

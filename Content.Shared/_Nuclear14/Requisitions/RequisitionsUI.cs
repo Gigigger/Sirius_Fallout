@@ -37,12 +37,13 @@ public sealed class RequisitionsPendingOrder(RequisitionsEntry entry, int amount
 }
 
 [Serializable, NetSerializable]
-public sealed class RequisitionsHistoryEntry(string buyer, string crate, int amount, int cost)
+public sealed class RequisitionsHistoryEntry(string buyer, string crate, int amount, int cost, bool sold = false)
 {
     public string Buyer = buyer;
     public string Crate = crate;
     public int Amount = amount;
     public int Cost = cost;
+    public bool Sold = sold;
 }
 
 [Serializable, NetSerializable]
@@ -53,3 +54,22 @@ public sealed class RequisitionsPlatformMsg(bool raise) : BoundUserInterfaceMess
 
 [Serializable, NetSerializable]
 public sealed class RequisitionsRefreshMsg : BoundUserInterfaceMessage;
+
+[Serializable, NetSerializable]
+public sealed class RequisitionsPrintHistoryMsg : BoundUserInterfaceMessage;
+
+[Serializable, NetSerializable]
+public sealed class RequisitionsWithdrawStorageMsg : BoundUserInterfaceMessage
+{
+    public string? Proto;
+    public int Amount;
+}
+
+[Serializable, NetSerializable]
+public sealed class RequisitionsSaleItem(string proto, int count, int value)
+{
+    public string Proto = proto;
+    public int Count = count;
+    public int Value = value;
+    public List<string> Outputs = new();
+}

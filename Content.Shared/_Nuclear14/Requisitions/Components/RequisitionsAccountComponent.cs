@@ -37,4 +37,10 @@ public sealed partial class RequisitionsAccountComponent : Component
 
     [DataField]
     public List<string> CompletedBounties = new();
+
+    [DataField]
+    public Dictionary<string, int> BountyProgress = new();
+
+    [DataField]
+    public Dictionary<string, int> Storage = new();
 }

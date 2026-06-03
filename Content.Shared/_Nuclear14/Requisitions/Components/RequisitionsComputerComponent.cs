@@ -41,6 +41,9 @@ public sealed partial class RequisitionsComputerComponent : Component
     public List<string> CompletedBounties = new();
 
     [AutoNetworkedField]
+    public Dictionary<string, int> BountyProgress = new();
+
+    [AutoNetworkedField]
     public RequisitionsElevatorMode? PlatformLowered;
 
     [AutoNetworkedField]
@@ -72,6 +75,12 @@ public sealed partial class RequisitionsComputerComponent : Component
 
     [AutoNetworkedField]
     public int PlatformSaleCount;
+
+    [AutoNetworkedField]
+    public List<RequisitionsSaleItem> PlatformItems = new();
+
+    [AutoNetworkedField]
+    public Dictionary<string, int> Storage = new();
 
     [AutoNetworkedField]
     public Dictionary<string, int> Purchased = new();

@@ -28,6 +28,9 @@ public sealed partial class RequisitionsEntry
 
     [DataField]
     public List<EntProtoId> Entities = new();
+
+    [DataField]
+    public Dictionary<string, int> Contents = new();
 }
 
 [DataDefinition]
@@ -63,6 +66,9 @@ public sealed partial class RequisitionsBounty
     [DataField]
     public int Amount = 1;
 
-    [DataField(required: true)]
+    [DataField]
     public int Reward;
+
+    [DataField]
+    public EntProtoId? RewardCrate;
 }

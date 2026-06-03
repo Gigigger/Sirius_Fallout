@@ -141,6 +141,9 @@ public sealed class RequisitionsBui : BoundUserInterface
         label.SetMessage(FormattedMessage.FromMarkupOrThrow(markup));
         row.AddChild(label);
 
+        row.TooltipSupplier = _ => BuildCrateTooltip(proto);
+        row.MouseFilter = Control.MouseFilterMode.Pass;
+
         var spin = new SpinBox { Value = count, MinWidth = 90, VerticalAlignment = Control.VAlignment.Center };
         spin.IsValid = i => i >= 1 && i <= count;
         spin.InitDefaultButtons();
@@ -204,7 +207,8 @@ public sealed class RequisitionsBui : BoundUserInterface
                     ("reward", rewardText));
             }
 
-            _window.BountiesContainer.AddChild(MakeIconRow(bounty.Item.Id, markup));
+            var rewardIcons = rewardCrate is { } rc ? new List<EntProtoId> { rc } : null;
+            _window.BountiesContainer.AddChild(MakeIconRow(bounty.Item.Id, markup, rewardIcons));
         }
     }
 
@@ -943,7 +947,6 @@ public sealed class RequisitionsBui : BoundUserInterface
             }
         }
 
-        // Trailing spacer keeps the icons/text left-aligned.
         row.AddChild(new Control { HorizontalExpand = true });
 
         row.TooltipSupplier = _ => BuildCrateTooltip(itemProto);
