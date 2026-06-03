@@ -116,13 +116,47 @@ public sealed class RequisitionsBui : BoundUserInterface
         }
 
         _window.StorageStatusLabel.SetMessage(FormattedMessage.FromUnformatted(string.Empty));
-        _window.WithdrawButton.Disabled = _state is not { Linked: true } || (_state.Full);
+        var canWithdraw = _state is { Linked: true, Full: false };
+        _window.WithdrawButton.Disabled = !canWithdraw;
         foreach (var (proto, count) in storage)
+            _window.StorageContainer.AddChild(BuildStorageRow(proto, count, canWithdraw));
+    }
+
+    private Control BuildStorageRow(string proto, int count, bool canWithdraw)
+    {
+        var name = _prototypes.TryIndex<EntityPrototype>(proto, out var p) ? p.Name : proto;
+        var markup = Loc.GetString("n14-requisitions-storage-item", ("item", name), ("count", count));
+
+        var row = new BoxContainer
         {
-            var name = _prototypes.TryIndex<EntityPrototype>(proto, out var p) ? p.Name : proto;
-            var markup = Loc.GetString("n14-requisitions-storage-item", ("item", name), ("count", count));
-            _window.StorageContainer.AddChild(MakeIconRow(proto, markup));
-        }
+            Orientation = BoxContainer.LayoutOrientation.Horizontal,
+            HorizontalExpand = true,
+            Margin = new Thickness(0, 2),
+        };
+
+        row.AddChild(MakeIcon(proto, 32));
+        row.AddChild(new Control { MinWidth = 6 });
+
+        var label = new RichTextLabel { VerticalAlignment = Control.VAlignment.Center, HorizontalExpand = true };
+        label.SetMessage(FormattedMessage.FromMarkupOrThrow(markup));
+        row.AddChild(label);
+
+        var spin = new SpinBox { Value = count, MinWidth = 90, VerticalAlignment = Control.VAlignment.Center };
+        spin.IsValid = i => i >= 1 && i <= count;
+        spin.InitDefaultButtons();
+        row.AddChild(spin);
+        row.AddChild(new Control { MinWidth = 6 });
+
+        var button = new Button
+        {
+            Text = Loc.GetString("n14-requisitions-storage-bring-up"),
+            Disabled = !canWithdraw,
+            VerticalAlignment = Control.VAlignment.Center,
+        };
+        button.OnPressed += _ => SendMessage(new RequisitionsWithdrawStorageMsg { Proto = proto, Amount = spin.Value });
+        row.AddChild(button);
+
+        return row;
     }
 
     private void UpdateBounties()
@@ -218,8 +252,13 @@ public sealed class RequisitionsBui : BoundUserInterface
             foreach (var item in platformItems)
             {
                 var itemName = _prototypes.TryIndex<EntityPrototype>(item.Proto, out var ip) ? ip.Name : item.Proto;
-                var markup = Loc.GetString("n14-requisitions-sell-item", ("item", itemName), ("count", item.Count), ("value", item.Value));
-                _window.SellItemsContainer.AddChild(MakeIconRow(item.Proto, markup));
+                var markup = item.Value > 0
+                    ? Loc.GetString("n14-requisitions-sell-item", ("item", itemName), ("count", item.Count), ("value", item.Value))
+                    : Loc.GetString("n14-requisitions-sell-item-trade", ("item", itemName), ("count", item.Count));
+                var outputs = item.Outputs.Count > 0
+                    ? item.Outputs.Select(o => (EntProtoId) o).ToList()
+                    : null;
+                _window.SellItemsContainer.AddChild(MakeIconRow(item.Proto, markup, outputs));
             }
         }
 
