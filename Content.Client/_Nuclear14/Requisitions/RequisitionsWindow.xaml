@@ -103,19 +103,21 @@
                               HorizontalExpand="True"
                               VerticalExpand="True">
                     <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
-                        <Button Name="SellButton"
-                                Access="Public"
-                                Text="{Loc n14-requisitions-sell-lower}"
-                                StyleClasses="ButtonSquare"
-                                HorizontalExpand="True" />
-                        <Control MinWidth="5" />
+                        <Label Text="{Loc n14-requisitions-sell-onplatform}" StyleClasses="LabelKeyText" HorizontalExpand="True" />
                         <Button Name="SellRefreshButton"
                                 Access="Public"
                                 Text="{Loc n14-requisitions-sell-refresh}"
                                 StyleClasses="ButtonSquare"
                                 MinWidth="90" />
                     </BoxContainer>
-                    <RichTextLabel Name="SellStatusLabel" Access="Public" />
+                    <Control MinHeight="4" />
+                    <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" MinHeight="120">
+                        <BoxContainer Name="SellItemsContainer"
+                                      Access="Public"
+                                      Orientation="Vertical"
+                                      HorizontalExpand="True" />
+                    </ScrollContainer>
+                    <RichTextLabel Name="SellTotalLabel" Access="Public" />
                     <Control MinHeight="8" />
                     <Label Text="{Loc n14-requisitions-sell-catalog-title}" StyleClasses="LabelKeyText" />
                     <Control MinHeight="4" />
@@ -130,6 +132,28 @@
                                       Orientation="Vertical"
                                       HorizontalExpand="True" />
                     </ScrollContainer>
+                </BoxContainer>
+                <BoxContainer Name="StorageTab"
+                              Orientation="Vertical"
+                              Margin="8 8 8 8"
+                              HorizontalExpand="True"
+                              VerticalExpand="True">
+                    <ScrollContainer HorizontalExpand="True"
+                                     VerticalExpand="True"
+                                     HScrollEnabled="False">
+                        <BoxContainer Name="StorageContainer"
+                                      Access="Public"
+                                      Orientation="Vertical"
+                                      HorizontalExpand="True" />
+                    </ScrollContainer>
+                    <RichTextLabel Name="StorageStatusLabel" Access="Public" />
+                    <Control MinHeight="6" />
+                    <Button Name="WithdrawButton"
+                            Access="Public"
+                            Text="{Loc n14-requisitions-storage-withdraw}"
+                            StyleClasses="ButtonSquare"
+                            HorizontalAlignment="Left"
+                            MinWidth="180" />
                 </BoxContainer>
                 <BoxContainer Name="PendingTab"
                               Orientation="Vertical"
@@ -160,6 +184,13 @@
                                       HorizontalExpand="True" />
                     </ScrollContainer>
                     <RichTextLabel Name="HistoryStatusLabel" Access="Public" />
+                    <Control MinHeight="6" />
+                    <Button Name="PrintHistoryButton"
+                            Access="Public"
+                            Text="{Loc n14-requisitions-history-print}"
+                            StyleClasses="ButtonSquare"
+                            HorizontalAlignment="Left"
+                            MinWidth="160" />
                 </BoxContainer>
                 <BoxContainer Name="BountiesTab"
                               Orientation="Vertical"
