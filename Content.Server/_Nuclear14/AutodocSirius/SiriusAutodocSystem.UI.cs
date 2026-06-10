@@ -28,6 +28,7 @@ public sealed partial class SiriusAutodocSystem
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    private readonly Dictionary<EntityUid, TimeSpan> _treatmentStartTime = new();
 
     private const string StimulantsReagentId = "Stimulants";
     private const int StimulantsRequired = 30;
@@ -167,6 +168,9 @@ public sealed partial class SiriusAutodocSystem
         }
 
         entity.Comp.IsTreating = true;
+
+        _treatmentStartTime[entity.Owner] = _gameTiming.CurTime;
+
         UpdateUiState(entity);
         UpdateAppearance(entity.Owner, entity.Comp);
 
@@ -181,6 +185,8 @@ public sealed partial class SiriusAutodocSystem
 
     private void OnTreatmentFinished(Entity<SiriusAutodocComponent> entity, ref AutodocTreatmentDoAfterEvent args)
     {
+        _treatmentStartTime.Remove(entity.Owner);
+
         if (args.Cancelled || args.Handled)
         {
             entity.Comp.IsTreating = false;
@@ -368,10 +374,17 @@ public sealed partial class SiriusAutodocSystem
             }
         }
 
+        var treatmentProgress = 0f;
+        if (component.IsTreating && _treatmentStartTime.TryGetValue(entity.Owner, out var startTime))
+        {
+            var elapsed = (float) (_gameTiming.CurTime - startTime).TotalSeconds;
+            treatmentProgress = Math.Clamp(elapsed / component.TreatmentDuration, 0, 1);
+        }
+
         var canTreat = CanStartTreatment(entity, out var errorMessage);
         var treatButtonEnabled = canTreat && !component.IsTreating;
 
-        _sawmill.Debug($"GetUiState FINAL: HasBeaker={hasBeaker}, HasOccupant={hasOccupant}, TreatButtonEnabled={treatButtonEnabled}, IsTreating={component.IsTreating}, ErrorMessage={errorMessage}");
+        _sawmill.Debug($"GetUiState FINAL: HasBeaker={hasBeaker}, HasOccupant={hasOccupant}, TreatButtonEnabled={treatButtonEnabled}, IsTreating={component.IsTreating}, Progress={treatmentProgress:F2}");
 
         return new AutodocBoundUserInterfaceState(
             component.IsOpen,
@@ -386,7 +399,8 @@ public sealed partial class SiriusAutodocSystem
             FixedPoint2.Zero,
             beakerStimulants,
             errorMessage,
-            treatButtonEnabled
+            treatButtonEnabled,
+            treatmentProgress 
         );
     }
 
