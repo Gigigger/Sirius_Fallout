@@ -80,15 +80,6 @@
     state: tribalpaintcazador
 
 - type: marking
-  id: tribalpaintthorns
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Human, Ghoul]
-  sprites:
-  - sprite: _Misfits/Mobs/Customization/tribal_warpaint.rsi
-    state: tribalpaintthorns
-
-- type: marking
   id: tribalpaintarmwrap_l_arm
   bodyPart: LArm
   markingCategory: LeftArm

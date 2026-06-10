@@ -12,7 +12,6 @@ marking-tribalpaintclaw = Claw
 marking-tribalpaintlizard = Lizard
 marking-tribalpaintspider = Spider
 marking-tribalpaintcazador = Cazador
-marking-tribalpaintthorns = Thorns
 marking-tribalpaintarmwrap_l_arm = Arm Wrap (Left)
 marking-tribalpaintarmwrap_r_arm = Arm Wrap (Right)
 marking-tribalpaintlegwrap_l_leg = Leg Wrap (Left)
