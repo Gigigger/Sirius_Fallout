@@ -15,8 +15,6 @@ namespace Content.Client._Nuclear14.AutodocSirius;
 [GenerateTypedNameReferences]
 public sealed partial class SiriusAutodocWindow : DefaultWindow
 {
-    private static readonly ISawmill _sawmill = Logger.GetSawmill("autodoc");
-
     private static readonly Color ColorMinor = Color.FromHex("#33FF33");
     private static readonly Color ColorModerate = Color.FromHex("#FFAA33");
     private static readonly Color ColorSevere = Color.FromHex("#FF5533");

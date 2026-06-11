@@ -40,13 +40,11 @@ public sealed partial class SiriusAutodocSystem
     {
         if (args.Container.ID == SiriusAutodocComponent.SiriusBeakerSlotId)
         {
-            _sawmill.Debug($"Beaker inserted into slot {args.Container.ID}");
             UpdateUiState(entity);
         }
         else if (args.Container.ID == "autodoc-body")
         {
             entity.Comp.CurrentPatient = args.Entity;
-            _sawmill.Debug($"Patient inserted into autodoc: {args.Entity}");
             UpdateUiState(entity);
         }
     }
@@ -55,13 +53,11 @@ public sealed partial class SiriusAutodocSystem
     {
         if (args.Container.ID == SiriusAutodocComponent.SiriusBeakerSlotId)
         {
-            _sawmill.Debug($"Beaker removed from slot {args.Container.ID}");
             UpdateUiState(entity);
         }
         else if (args.Container.ID == "autodoc-body")
         {
             entity.Comp.CurrentPatient = null;
-            _sawmill.Debug($"Patient removed from autodoc");
             UpdateUiState(entity);
         }
     }
@@ -69,7 +65,6 @@ public sealed partial class SiriusAutodocSystem
     private void OnPowerChanged(Entity<SiriusAutodocComponent> entity, ref PowerChangedEvent args)
     {
         entity.Comp.Powered = args.Powered;
-        _sawmill.Debug($"Power changed: {args.Powered}");
         UpdateAppearance(entity.Owner, entity.Comp);
         UpdateUiState(entity);
 
@@ -82,21 +77,17 @@ public sealed partial class SiriusAutodocSystem
 
     private void OnBoundUIOpened(Entity<SiriusAutodocComponent> entity, ref BoundUIOpenedEvent args)
     {
-        _sawmill.Debug($"=== BOUND UI OPENED for autodoc {entity.Owner}, user: {args.Actor} ===");
         _lastUiUpdate[entity.Owner] = _gameTiming.CurTime;
         UpdateUiState(entity);
     }
 
     private void OnBoundUIClosed(Entity<SiriusAutodocComponent> entity, ref BoundUIClosedEvent args)
     {
-        _sawmill.Debug($"=== BOUND UI CLOSED for autodoc {entity.Owner} ===");
         _lastUiUpdate.Remove(entity.Owner);
     }
 
     private void OnEjectBeakerMessage(Entity<SiriusAutodocComponent> entity, EntityUid user)
     {
-        _sawmill.Debug($"EjectBeakerMessage received, IsTreating={entity.Comp.IsTreating}");
-
         if (entity.Comp.IsTreating)
         {
             _popupSystem.PopupEntity(Loc.GetString("autodoc-cant-eject-beaker-treating"), entity, user);
@@ -105,8 +96,6 @@ public sealed partial class SiriusAutodocSystem
         }
 
         var result = _itemSlots.TryEject(entity.Owner, SiriusAutodocComponent.SiriusBeakerSlotId, user, out var ejected);
-        _sawmill.Debug($"TryEject result: {result}, ejected: {ejected}");
-
         if (result)
         {
             _popupSystem.PopupEntity(Loc.GetString("autodoc-beaker-ejected"), entity, user);
@@ -117,11 +106,8 @@ public sealed partial class SiriusAutodocSystem
 
     private void OnStartTreatmentMessage(Entity<SiriusAutodocComponent> entity, EntityUid user)
     {
-        _sawmill.Debug($"StartTreatmentMessage received");
-
         if (!CanStartTreatment(entity, out var errorMessage))
         {
-            _sawmill.Debug($"Cannot start treatment: {errorMessage}");
             _popupSystem.PopupEntity(errorMessage, entity, user);
             UpdateUiState(entity);
             return;
@@ -139,13 +125,10 @@ public sealed partial class SiriusAutodocSystem
 
         UpdateUiState(entity);
         UpdateAppearance(entity.Owner, entity.Comp);
-        _sawmill.Debug($"Treatment started on autodoc {entity.Owner}, will complete in {entity.Comp.TreatmentDuration} seconds");
     }
 
     private void OnUiButtonPressed(Entity<SiriusAutodocComponent> entity, ref AutodocUiButtonPressedMessage message)
     {
-        _sawmill.Debug($"OnUiButtonPressed: Button={message.Button}, Actor={message.Actor}");
-
         switch (message.Button)
         {
             case AutodocUiButton.OpenDoor:
@@ -184,7 +167,6 @@ public sealed partial class SiriusAutodocSystem
                 {
                     if (entity.Comp.IsEjecting)
                     {
-                        _sawmill.Debug("Eject already in progress, ignoring");
                         return;
                     }
 
@@ -285,17 +267,13 @@ public sealed partial class SiriusAutodocSystem
 
         try
         {
-            _sawmill.Debug($"UpdateUiState called for {entity.Owner}");
-
             if (!_uiSystem.HasUi(entity.Owner, SiriusAutodocUiKey.Key))
             {
-                _sawmill.Debug($"No UI for {entity.Owner}");
                 return;
             }
 
             var state = GetUiState(entity);
             _uiSystem.SetUiState(entity.Owner, SiriusAutodocUiKey.Key, state);
-            _sawmill.Debug($"UpdateUiState completed");
         }
         finally
         {
@@ -305,7 +283,6 @@ public sealed partial class SiriusAutodocSystem
 
     private AutodocBoundUserInterfaceState GetUiState(Entity<SiriusAutodocComponent> entity)
     {
-        _sawmill.Debug($"=== GetUiState START for {entity.Owner} ===");
         var component = entity.Comp;
         var hasOccupant = component.BodyContainer.ContainedEntity != null;
         var occupantDamage = new Dictionary<string, FixedPoint2>();
@@ -360,9 +337,6 @@ public sealed partial class SiriusAutodocSystem
 
         var canTreat = CanStartTreatment(entity, out var errorMessage);
         var treatButtonEnabled = canTreat && !component.IsTreating;
-
-        _sawmill.Debug($"GetUiState FINAL: HasBeaker={hasBeaker}, HasOccupant={hasOccupant}, TreatButtonEnabled={treatButtonEnabled}, IsTreating={component.IsTreating}, Progress={treatmentProgress:F2}");
-        _sawmill.Debug($"GetUiState: IsOpen={component.IsOpen}, HasOccupant={hasOccupant}, TreatButtonEnabled={treatButtonEnabled}");
         return new AutodocBoundUserInterfaceState(
             component.IsOpen,
             component.Powered,
@@ -439,8 +413,6 @@ public sealed partial class SiriusAutodocSystem
 
     private void CompleteTreatment(Entity<SiriusAutodocComponent> entity)
     {
-        _sawmill.Debug($"Completing treatment for {entity.Owner}");
-
         if (!entity.Comp.IsTreating)
             return;
 

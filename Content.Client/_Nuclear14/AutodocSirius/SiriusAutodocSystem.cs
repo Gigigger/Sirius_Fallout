@@ -13,15 +13,9 @@ public sealed class SiriusAutodocSystem : SharedSiriusAutodocSystem
     [Dependency] private readonly SpriteSystem _spriteSystem = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
-
-    private ISawmill _sawmill = default!;
-
     public override void Initialize()
     {
         base.Initialize();
-
-        _sawmill = Logger.GetSawmill("autodoc");
-
         SubscribeLocalEvent<SiriusAutodocComponent, AppearanceChangeEvent>(OnAppearanceChange);
         SubscribeLocalEvent<InsideAutodocComponent, ComponentStartup>(OnInsideStartup);
         SubscribeLocalEvent<InsideAutodocComponent, ComponentRemove>(OnInsideRemove);
