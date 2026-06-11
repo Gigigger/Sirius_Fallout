@@ -43,7 +43,7 @@ autodoc-door-closed = ДВЕРЬ ЗАКРЫТА
 
 autodoc-status-alive = ПОКАЗАНИЯ: СТАБИЛЬНО
 autodoc-status-critical = ПОКАЗАНИЯ: КРИТИЧЕСКИ
-autodoc-status-dead = ПОКАЗАНИЯ: ОТСУТСТВУЮТ - СКОНЧАЛСЯ
+autodoc-status-dead = ПОКАЗАНИЯ: МЁРТВ
 autodoc-status-unknown = СТАТУС: НЕИЗВЕСТЕН
 autodoc-status-awaiting = ОЖИДАНИЕ ПАЦИЕНТА
 autodoc-no-patient = НЕТ ПАЦИЕНТА
