@@ -55,7 +55,7 @@
 
         <PanelContainer Name="SepMid3" MinHeight="1" HorizontalExpand="True" />
 
-        <!-- Door Controls - ИЗМЕНЕНЫ ИМЕНА -->
+        <!-- Door Controls -->
         <BoxContainer Orientation="Horizontal" SeparationOverride="10" HorizontalExpand="True">
             <Button Name="DoorOpenButton"
                     Text="OPEN DOOR"

@@ -27,13 +27,13 @@ public sealed partial class SiriusAutodocWindow : DefaultWindow
 
     private readonly Dictionary<string, string> _damageDisplayNames = new()
     {
-        { "Blunt", "PHYSICAL" },
-        { "Slash", "LACERATION" },
-        { "Piercing", "PUNCTURE" },
-        { "Heat", "THERMAL" },
-        { "Cold", "CRYOGENIC" },
-        { "Shock", "ELECTRICAL" },
-        { "Caustic", "CHEMICAL" },
+        { "Blunt", "BRUTE" },
+        { "Slash", "SLASH" },
+        { "Piercing", "PIERCING" },
+        { "Heat", "BURN" },
+        { "Cold", "FROSTBITE" },
+        { "Shock", "ELECTROCUTION" },
+        { "Caustic", "ACID" },
         { "Radiation", "RADIATION" },
         { "Bloodloss", "BLOOD LOSS" },
         { "Asphyxiation", "ASPHYXIA" },
@@ -137,30 +137,25 @@ public sealed partial class SiriusAutodocWindow : DefaultWindow
         }
     }
 
-    private void UpdateDoorButtonsState(AutodocBoundUserInterfaceState state)
-    {
-        var disabled = state.IsTreating;
-
-        DoorOpenButton.Disabled = disabled || state.IsOpen;
-        DoorCloseButton.Disabled = disabled || !state.IsOpen;
-
-        DoorOpenButton.ModulateSelfOverride = (disabled || state.IsOpen) ? ColorInactive : null;
-        DoorCloseButton.ModulateSelfOverride = (disabled || !state.IsOpen) ? ColorInactive : null;
-
-        DoorOpenButton.Text = state.IsOpen ? "DOOR OPEN" : "OPEN DOOR";
-        DoorCloseButton.Text = !state.IsOpen ? "DOOR CLOSED" : "CLOSE DOOR";
-    }
-
     private void UpdateDamageDisplay(AutodocBoundUserInterfaceState state)
     {
         DamageContainer.RemoveAllChildren();
 
-        if (!state.HasOccupant || state.OccupantDamage == null || state.OccupantDamage.Count == 0)
+        if (!state.HasOccupant)
+        {
+            var emptyLabel = MakeDiagnosticLine("NO PATIENT", ColorDim);
+            DamageContainer.AddChild(emptyLabel);
+            return;
+        }
+
+        if (state.OccupantDamage == null || state.OccupantDamage.Count == 0)
         {
             var emptyLabel = MakeDiagnosticLine("NO DAMAGE DETECTED", ColorDim);
             DamageContainer.AddChild(emptyLabel);
             return;
         }
+        var maxDamage = state.OccupantDamage.Values.Max(x => x.Float());
+        maxDamage = Math.Max(maxDamage, 100f);
 
         var sortedDamage = state.OccupantDamage
             .OrderByDescending(x => x.Value.Float())
@@ -176,11 +171,11 @@ public sealed partial class SiriusAutodocWindow : DefaultWindow
             var displayName = _damageDisplayNames.GetValueOrDefault(damageType, damageType.ToUpperInvariant());
             var color = GetDamageColor(amount.Float());
 
-            DamageContainer.AddChild(MakeDamageLine(displayName, amount.Float(), color));
+            DamageContainer.AddChild(MakeDamageLine(displayName, amount.Float(), color, maxDamage));
         }
     }
 
-    private BoxContainer MakeDamageLine(string damageName, float amount, Color color)
+    private BoxContainer MakeDamageLine(string damageName, float amount, Color color, float maxDamage)
     {
         var container = new BoxContainer
         {
@@ -206,7 +201,7 @@ public sealed partial class SiriusAutodocWindow : DefaultWindow
             PanelOverride = new StyleBoxFlat(Color.FromHex("#1a3a1a"))
         };
 
-        var barWidth = 120f * Math.Clamp(amount / 100f, 0.05f, 1f);
+        var barWidth = 120f * Math.Clamp(amount / maxDamage, 0.05f, 1f);
         var fillPanel = new PanelContainer
         {
             MinWidth = barWidth,
@@ -217,7 +212,7 @@ public sealed partial class SiriusAutodocWindow : DefaultWindow
 
         var amountLabel = new Label
         {
-            Text = $"{amount:F0}%",
+            Text = $"{amount:F0}",
             FontColorOverride = color,
             StyleClasses = { "monospace" },
             MinWidth = 50,
@@ -265,6 +260,20 @@ public sealed partial class SiriusAutodocWindow : DefaultWindow
             StimulantsLabel.Text = "NONE";
             StimulantsLabel.FontColorOverride = ColorDim;
         }
+    }
+
+    private void UpdateDoorButtonsState(AutodocBoundUserInterfaceState state)
+    {
+        var disabled = state.IsTreating;
+
+        DoorOpenButton.Disabled = disabled || state.IsOpen;
+        DoorCloseButton.Disabled = disabled || !state.IsOpen;
+
+        DoorOpenButton.ModulateSelfOverride = (disabled || state.IsOpen) ? ColorInactive : null;
+        DoorCloseButton.ModulateSelfOverride = (disabled || !state.IsOpen) ? ColorInactive : null;
+
+        DoorOpenButton.Text = state.IsOpen ? "DOOR OPEN" : "OPEN DOOR";
+        DoorCloseButton.Text = !state.IsOpen ? "DOOR CLOSED" : "CLOSE DOOR";
     }
 
     private void UpdateActionButtonsState(AutodocBoundUserInterfaceState state)
