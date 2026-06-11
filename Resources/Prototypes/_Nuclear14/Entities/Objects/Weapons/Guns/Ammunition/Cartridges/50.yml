@@ -30,6 +30,11 @@
       collection: N14RifleCasingEject
       params:
         volume: -1
+  - type: GunDamageBonus
+    bonusDamage:
+      types:
+        Piercing: 20
+    fireCostMultiplier: 1.0
 
 - type: entity
   parent: BaseCartridge

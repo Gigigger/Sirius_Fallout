@@ -15,8 +15,8 @@
   - type: MovementSpeedModifier
     acceleration: 6
     friction: 0.1
-    baseWalkSpeed: 8
-    baseSprintSpeed: 10
+    baseWalkSpeed: 6
+    baseSprintSpeed: 7.5
   - type: ItemSlots
     slots:
       key_slot:

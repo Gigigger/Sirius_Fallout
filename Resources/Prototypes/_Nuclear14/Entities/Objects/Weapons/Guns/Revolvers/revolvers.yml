@@ -38,7 +38,7 @@
     maxAngle: 5
     angleIncrease: 0.5
     angleDecay: 4
-    fireRate: 3
+    fireRate: 6
     soundGunshot:
       collection: N14Revolver9mmGunshot
   - type: StaticPrice
@@ -87,7 +87,7 @@
         - SpeedLoader44
     proto: N14Cartridge44Magnum
   - type: Gun
-    fireRate: 3
+    fireRate: 6
     soundGunshot:
       collection: N14RevolverMagnunGunshot
   - type: StaticPrice
@@ -127,6 +127,7 @@
         - SpeedLoader44
     proto: N14Cartridge44Magnum
   - type: Gun
+    fireRate: 3
     soundGunshot:
       collection: N14RevolverMagnunGunshot
   - type: StaticPrice
@@ -139,7 +140,7 @@
   description: A true freedom fighter carries his flag everywhere, even on his gun. Uses .44 magnum ammo.
   components:
   - type: Gun
-    fireRate: 2
+    fireRate: 4
     resetOnHandSelected: false
     soundGunshot:
       collection: N14RevolverMagnunGunshot
@@ -163,6 +164,7 @@
   description: A heavy revolver with a long barrel designed to hunt small animals, but it also works for people. Uses .45-70 gov't ammo.
   components:
   - type: Gun
+    fireRate: 3
     soundGunshot:
       collection: N14HunterRevolverGunshot
   - type: Sprite
@@ -185,7 +187,7 @@
   description: "It's said that after a troublemaker gets shot down with this revolver ghostly words are whispered to their ears. No one knows what the question is, but the answer spoken is always 'innocent'. Uses .45-70 gov't ammo."
   components:
   - type: Gun
-    fireRate: 2
+    fireRate: 3
     resetOnHandSelected: false
     soundGunshot:
       collection: N14HunterRevolverGunshot
@@ -213,7 +215,7 @@
   - type: Clothing
     sprite: _Nuclear14/Objects/Weapons/Guns/Revolvers/ranger_sequoia.rsi
   - type: Gun
-    fireRate: 2
+    fireRate: 3
     resetOnHandSelected: false
     soundGunshot:
       collection: N14HunterRevolverGunshot
@@ -248,7 +250,7 @@
   - type: Gun
     soundGunshot:
       collection: N14RevolverMagnunGunshot
-    fireRate: 1
+    fireRate: 2
   - type: StaticPrice
     price: 40
 
@@ -272,7 +274,7 @@
   - type: Gun
     soundGunshot:
       collection: N14RevolverMagnunGunshot
-    fireRate: 1.5
+    fireRate: 3
   - type: StaticPrice
     price: 50
 
@@ -298,7 +300,7 @@
   - type: Gun
     soundGunshot:
       collection: N14RevolverMagnunGunshot
-    fireRate: 2
+    fireRate: 4
   - type: StaticPrice
     price: 60
 
@@ -313,7 +315,7 @@
   - type: Clothing
     sprite: _Nuclear14/Objects/Weapons/Guns/Revolvers/tribalhandcannon.rsi
   - type: Gun
-    fireRate: 1
+    fireRate: 2
     resetOnHandSelected: false
     soundGunshot:
       collection: N14HunterRevolverGunshot
@@ -340,7 +342,7 @@
   - type: Clothing
     sprite: _Nuclear14/Objects/Weapons/Guns/Revolvers/tribalhandcannon2.rsi
   - type: Gun
-    fireRate: 2
+    fireRate: 3
     resetOnHandSelected: false
     soundGunshot:
       collection: N14HunterRevolverGunshot
@@ -387,7 +389,7 @@
     maxAngle: 6
     angleIncrease: 0.5
     angleDecay: 5
-    fireRate: 3
+    fireRate: 6
     soundGunshot:
       collection: N14RevolverMagnunGunshot
   - type: StaticPrice
@@ -408,7 +410,7 @@
     maxAngle: 5
     angleIncrease: 0.5
     angleDecay: 6
-    fireRate: 4
+    fireRate: 7
     soundGunshot:
       collection: N14RevolverMagnunGunshot
   - type: StaticPrice
@@ -444,7 +446,7 @@
     maxAngle: 15
     angleIncrease: 2
     angleDecay: 6
-    fireRate: 5
+    fireRate: 10
     soundGunshot:
       collection: N14RevolverMagnunGunshot
   - type: StaticPrice

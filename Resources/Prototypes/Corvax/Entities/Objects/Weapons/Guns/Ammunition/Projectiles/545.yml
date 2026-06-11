@@ -7,4 +7,4 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 21
+        Piercing: 23 #sirius change
