@@ -13,7 +13,6 @@ namespace Content.Server._Nuclear14.AutodocSirius;
 public sealed partial class SiriusAutodocSystem : SharedSiriusAutodocSystem
 {
     private ISawmill _sawmill = default!;
-
     public override void Initialize()
     {
         base.Initialize();

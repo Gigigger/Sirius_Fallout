@@ -114,6 +114,7 @@ public sealed partial class SiriusAutodocSystem
 
         UpdateUiState(entity);
     }
+
     private void OnStartTreatmentMessage(Entity<SiriusAutodocComponent> entity, EntityUid user)
     {
         _sawmill.Debug($"StartTreatmentMessage received");
@@ -140,6 +141,7 @@ public sealed partial class SiriusAutodocSystem
         UpdateAppearance(entity.Owner, entity.Comp);
         _sawmill.Debug($"Treatment started on autodoc {entity.Owner}, will complete in {entity.Comp.TreatmentDuration} seconds");
     }
+
     private void OnUiButtonPressed(Entity<SiriusAutodocComponent> entity, ref AutodocUiButtonPressedMessage message)
     {
         _sawmill.Debug($"OnUiButtonPressed: Button={message.Button}, Actor={message.Actor}");
@@ -243,7 +245,7 @@ public sealed partial class SiriusAutodocSystem
             return false;
         }
 
-        if (!_solutionContainer.TryGetSolution(beaker.Value, "beaker", out _, out var solution))
+        if (!_solutionContainer.TryGetFitsInDispenser(beaker.Value, out var soln, out var solution))
         {
             errorMessage = Loc.GetString("autodoc-error-beaker-empty");
             return false;
@@ -343,12 +345,7 @@ public sealed partial class SiriusAutodocSystem
         if (beaker != null)
         {
             hasBeaker = true;
-
-            if (_solutionContainer.TryGetSolution(beaker.Value, "beaker", out _, out var solution))
-            {
-                beakerStimulants = solution.GetReagentQuantity(new(StimulantsReagentId, null));
-            }
-            else if (_solutionContainer.TryGetSolution(beaker.Value, "solution", out _, out solution))
+            if (_solutionContainer.TryGetFitsInDispenser(beaker.Value, out _, out var solution))
             {
                 beakerStimulants = solution.GetReagentQuantity(new(StimulantsReagentId, null));
             }
@@ -460,7 +457,7 @@ public sealed partial class SiriusAutodocSystem
             HealPatient(patient);
 
             var beaker = _itemSlots.GetItemOrNull(entity.Owner, SiriusAutodocComponent.SiriusBeakerSlotId);
-            if (beaker != null && _solutionContainer.TryGetSolution(beaker.Value, "beaker", out var soln, out var solution))
+            if (beaker != null && _solutionContainer.TryGetFitsInDispenser(beaker.Value, out var soln, out var solution))
             {
                 var stimulantsAmount = solution.GetReagentQuantity(new(StimulantsReagentId, null));
                 var toRemove = FixedPoint2.Min(StimulantsRequired, stimulantsAmount);
