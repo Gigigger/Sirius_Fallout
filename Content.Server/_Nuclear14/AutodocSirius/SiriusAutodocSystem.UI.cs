@@ -152,7 +152,6 @@ public sealed partial class SiriusAutodocSystem
                     entity.Comp.IsOpen = true;
                     UpdateAppearance(entity.Owner, entity.Comp);
                     UpdateUiState(entity);
-                    _popupSystem.PopupEntity("Door opened", entity, message.Actor);
                 }
                 break;
 
@@ -164,14 +163,12 @@ public sealed partial class SiriusAutodocSystem
                         entity.Comp.IsOpen = false;
                         UpdateAppearance(entity.Owner, entity.Comp);
                         UpdateUiState(entity);
-                        _popupSystem.PopupEntity("Door closed", entity, message.Actor);
                     }
                     else
                     {
                         entity.Comp.IsOpen = false;
                         UpdateAppearance(entity.Owner, entity.Comp);
                         UpdateUiState(entity);
-                        _popupSystem.PopupEntity("Door closed - Patient secured", entity, message.Actor);
                     }
                 }
                 break;
@@ -202,7 +199,6 @@ public sealed partial class SiriusAutodocSystem
                 }
                 else
                 {
-                    _popupSystem.PopupEntity("Cannot eject: Door is closed!", entity, message.Actor);
                 }
                 break;
 

@@ -26,28 +26,30 @@ public sealed partial class SiriusAutodocWindow : DefaultWindow
     private static readonly Color ColorInactive = Color.FromHex("#3a5c3a");
 
     private readonly Dictionary<string, string> _damageDisplayNames = new()
-    {
-        { "Blunt", "BRUTE" },
-        { "Slash", "SLASH" },
-        { "Piercing", "PIERCING" },
-        { "Heat", "BURN" },
-        { "Cold", "FROSTBITE" },
-        { "Shock", "ELECTROCUTION" },
-        { "Caustic", "ACID" },
-        { "Radiation", "RADIATION" },
-        { "Bloodloss", "BLOOD LOSS" },
-        { "Asphyxiation", "ASPHYXIA" },
-        { "Toxin", "TOXIN" },
-        { "Genetic", "GENETIC" },
-        { "Cellular", "CELLULAR" }
-    };
+{
+    { "Blunt", Loc.GetString("autodoc-damage-blunt") },
+    { "Slash", Loc.GetString("autodoc-damage-slash") },
+    { "Piercing", Loc.GetString("autodoc-damage-piercing") },
+    { "Heat", Loc.GetString("autodoc-damage-heat") },
+    { "Cold", Loc.GetString("autodoc-damage-cold") },
+    { "Shock", Loc.GetString("autodoc-damage-shock") },
+    { "Caustic", Loc.GetString("autodoc-damage-caustic") },
+    { "Radiation", Loc.GetString("autodoc-damage-radiation") },
+    { "Bloodloss", Loc.GetString("autodoc-damage-bloodloss") },
+    { "Asphyxiation", Loc.GetString("autodoc-damage-asphyxiation") },
+    { "Toxin", Loc.GetString("autodoc-damage-toxin") },
+    { "Poison", Loc.GetString("autodoc-damage-poison") },
+    { "Toxins", Loc.GetString("autodoc-damage-toxins") },
+    { "Genetic", Loc.GetString("autodoc-damage-genetic") },
+    { "Cellular", Loc.GetString("autodoc-damage-cellular") }
+};
 
     public event Action<AutodocUiButton>? OnAutodocButton;
 
     public SiriusAutodocWindow()
     {
         RobustXamlLoader.Load(this);
-        Title = "SIRIUS MD-3 - AUTODOC";
+        Title = Loc.GetString("autodoc-window-title");
 
         ApplyBackgroundStyles();
         WireButtons();
@@ -73,11 +75,7 @@ public sealed partial class SiriusAutodocWindow : DefaultWindow
         DoorOpenButton.OnPressed += _ => OnAutodocButton?.Invoke(AutodocUiButton.OpenDoor);
         DoorCloseButton.OnPressed += _ => OnAutodocButton?.Invoke(AutodocUiButton.CloseDoor);
         EjectBeakerButton.OnPressed += _ => OnAutodocButton?.Invoke(AutodocUiButton.EjectBeaker);
-        EjectPatientButton.OnPressed += _ =>
-        {
-            _sawmill.Debug("EjectPatientButton pressed - sending message");
-            OnAutodocButton?.Invoke(AutodocUiButton.EjectPatient);
-        };
+        EjectPatientButton.OnPressed += _ => OnAutodocButton?.Invoke(AutodocUiButton.EjectPatient);
         StartTreatmentButton.OnPressed += _ => OnAutodocButton?.Invoke(AutodocUiButton.StartTreatment);
     }
 
@@ -113,10 +111,10 @@ public sealed partial class SiriusAutodocWindow : DefaultWindow
 
             var statusText = state.OccStatus switch
             {
-                OccupantStatus.Alive => "VITAL SIGNS: STABLE",
-                OccupantStatus.Critical => "VITAL SIGNS: CRITICAL",
-                OccupantStatus.Dead => "VITAL SIGNS: NONE - DECEASED",
-                _ => "STATUS: UNKNOWN"
+                OccupantStatus.Alive => Loc.GetString("autodoc-status-alive"),
+                OccupantStatus.Critical => Loc.GetString("autodoc-status-critical"),
+                OccupantStatus.Dead => Loc.GetString("autodoc-status-dead"),
+                _ => Loc.GetString("autodoc-status-unknown")
             };
 
             StatusLabel.Text = statusText;
@@ -130,9 +128,9 @@ public sealed partial class SiriusAutodocWindow : DefaultWindow
         }
         else
         {
-            PatientNameLabel.Text = "NO PATIENT";
+            PatientNameLabel.Text = Loc.GetString("autodoc-no-patient");
             PatientNameLabel.FontColorOverride = ColorDim;
-            StatusLabel.Text = "AWAITING SUBJECT";
+            StatusLabel.Text = Loc.GetString("autodoc-status-awaiting");
             StatusLabel.FontColorOverride = ColorDim;
         }
     }
@@ -143,17 +141,18 @@ public sealed partial class SiriusAutodocWindow : DefaultWindow
 
         if (!state.HasOccupant)
         {
-            var emptyLabel = MakeDiagnosticLine("NO PATIENT", ColorDim);
+            var emptyLabel = MakeDiagnosticLine(Loc.GetString("autodoc-damage-no-patient"), ColorDim);
             DamageContainer.AddChild(emptyLabel);
             return;
         }
 
         if (state.OccupantDamage == null || state.OccupantDamage.Count == 0)
         {
-            var emptyLabel = MakeDiagnosticLine("NO DAMAGE DETECTED", ColorDim);
+            var emptyLabel = MakeDiagnosticLine(Loc.GetString("autodoc-damage-none"), ColorDim);
             DamageContainer.AddChild(emptyLabel);
             return;
         }
+
         var maxDamage = state.OccupantDamage.Values.Max(x => x.Float());
         maxDamage = Math.Max(maxDamage, 100f);
 
@@ -257,7 +256,7 @@ public sealed partial class SiriusAutodocWindow : DefaultWindow
         }
         else
         {
-            StimulantsLabel.Text = "NONE";
+            StimulantsLabel.Text = Loc.GetString("autodoc-stimulants-none");
             StimulantsLabel.FontColorOverride = ColorDim;
         }
     }
@@ -272,8 +271,8 @@ public sealed partial class SiriusAutodocWindow : DefaultWindow
         DoorOpenButton.ModulateSelfOverride = (disabled || state.IsOpen) ? ColorInactive : null;
         DoorCloseButton.ModulateSelfOverride = (disabled || !state.IsOpen) ? ColorInactive : null;
 
-        DoorOpenButton.Text = state.IsOpen ? "DOOR OPEN" : "OPEN DOOR";
-        DoorCloseButton.Text = !state.IsOpen ? "DOOR CLOSED" : "CLOSE DOOR";
+        DoorOpenButton.Text = state.IsOpen ? Loc.GetString("autodoc-door-open") : Loc.GetString("autodoc-door-open-button");
+        DoorCloseButton.Text = !state.IsOpen ? Loc.GetString("autodoc-door-closed") : Loc.GetString("autodoc-door-close-button");
     }
 
     private void UpdateActionButtonsState(AutodocBoundUserInterfaceState state)
@@ -290,7 +289,9 @@ public sealed partial class SiriusAutodocWindow : DefaultWindow
         EjectPatientButton.ModulateSelfOverride = ejectPatientDisabled ? ColorInactive : null;
         StartTreatmentButton.ModulateSelfOverride = startDisabled ? ColorInactive : null;
 
-        StartTreatmentButton.Text = state.IsTreating ? "TREATMENT IN PROGRESS" : "START TREATMENT";
+        StartTreatmentButton.Text = state.IsTreating
+            ? Loc.GetString("autodoc-treatment-progress")
+            : Loc.GetString("autodoc-start-treatment");
 
         ProgressContainer.Visible = state.IsTreating;
     }
@@ -324,32 +325,32 @@ public sealed partial class SiriusAutodocWindow : DefaultWindow
     {
         if (state.IsTreating)
         {
-            FooterLabel.Text = "[ TREATMENT IN PROGRESS ]";
+            FooterLabel.Text = Loc.GetString("autodoc-footer-treatment");
             FooterLabel.FontColorOverride = ColorModerate;
         }
         else if (!state.Powered)
         {
-            FooterLabel.Text = "[ NO POWER ]";
+            FooterLabel.Text = Loc.GetString("autodoc-footer-no-power");
             FooterLabel.FontColorOverride = ColorCritical;
         }
         else if (state.HasOccupant && state.IsOpen)
         {
-            FooterLabel.Text = "[ DOOR OPEN - CLOSE TO START TREATMENT ]";
+            FooterLabel.Text = Loc.GetString("autodoc-footer-door-open");
             FooterLabel.FontColorOverride = ColorModerate;
         }
         else if (state.HasOccupant && !state.TreatButtonEnabled)
         {
-            FooterLabel.Text = "[ INSUFFICIENT STIMULANTS ]";
+            FooterLabel.Text = Loc.GetString("autodoc-footer-insufficient-stimulants");
             FooterLabel.FontColorOverride = ColorModerate;
         }
         else if (state.HasOccupant && !state.IsOpen)
         {
-            FooterLabel.Text = "[ SYSTEM READY - PRESS START ]";
+            FooterLabel.Text = Loc.GetString("autodoc-footer-ready");
             FooterLabel.FontColorOverride = ColorMinor;
         }
         else
         {
-            FooterLabel.Text = "[ SYSTEM READY ]";
+            FooterLabel.Text = Loc.GetString("autodoc-footer-ready");
             FooterLabel.FontColorOverride = ColorDim;
         }
     }
