@@ -60,7 +60,7 @@
     maxAngle: 105
     angleIncrease: 4
     angleDecay: 16
-    fireRate: 1.5
+    fireRate: 2 #sirius change
     soundGunshot:
       collection: N14SniperHuntingGunshot
   - type: BallisticAmmoProvider
@@ -150,6 +150,10 @@
     backStrength: 3
   - type: StaticPrice
     price: 200
+  - type: GunDamageBonus
+    bonusDamage:
+      types:
+        Piercing: 20
 
 - type: entity
   name: .50 NCR rifle
@@ -427,7 +431,7 @@
   name: huntstick
   parent: N14WeaponSniperHunting
   id: N14WeaponSniper308Tribal
-  description: A tribal lever action rifle. Uses .308 ammo.
+  description: A tribal lever action rifle. Uses .45-70gov't ammo.
   components:
   - type: Clothing
     sprite: _Nuclear14/Objects/Weapons/Guns/Snipers/tribalhuntstick.rsi
@@ -437,6 +441,13 @@
     fireRate: 1.2
     soundGunshot:
       collection: N14LeverRifleGunshot
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - N14Cartridge45-70 #sirius change
+      - SpeedLoaderInternal
+    capacity: 8
+    proto: N14Cartridge45-70 #sirius change
   - type: FollowDistance
     backStrength: 3
   - type: StaticPrice
@@ -446,7 +457,7 @@
   name: master huntstick
   parent: N14WeaponSniperHunting
   id: N14WeaponSniper308TribalUpgraded
-  description: A tribal decorated lever action rifle. Uses .308 ammo.
+  description: A tribal decorated lever action rifle. Uses .45-70gov't ammo.
   components:
   - type: Clothing
     sprite: _Nuclear14/Objects/Weapons/Guns/Snipers/tribalhuntstick2.rsi
@@ -456,6 +467,13 @@
     fireRate: 2
     soundGunshot:
       collection: N14LeverRifleGunshot
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - N14Cartridge45-70 #sirius change
+      - SpeedLoaderInternal
+    capacity: 10 #sirius change
+    proto: N14Cartridge45-70 #sirius change
   - type: FollowDistance
     backStrength: 3
   - type: StaticPrice
@@ -495,7 +513,7 @@
     minAngle: -23
     maxAngle: -104
   - type: Gun
-    fireRate: 1.5
+    fireRate: 2.5 #sirius change
   - type: BallisticAmmoProvider
     whitelist:
       tags:
@@ -537,7 +555,7 @@
     angleDecay: 16
     soundGunshot:
       collection: N14MarksmanGunshot
-    fireRate: 2
+    fireRate: 2.5 #sirius change
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -572,7 +590,7 @@
   name: cowboy repeater
   parent: N14WeaponSniperHunting
   id: N14WeaponSniperCowboyRepeater
-  description: A lever-action rifle in .357 Magnum with worn brown furniture. The weapon of gunslingers and honest wastelanders. Holds twelve rounds in the tubular magazine and cycles fast enough to feel semi-automatic.
+  description: A lever-action rifle in .45-70gov't with worn brown furniture. The weapon of gunslingers and honest wastelanders. Holds twelve rounds in the tubular magazine and cycles fast enough to feel semi-automatic.
   components:
   - type: Clothing
     sprite: _Nuclear14/Objects/Weapons/Guns/Snipers/cowboyrepeater.rsi
@@ -601,9 +619,10 @@
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-      - N14CartridgePistol357
+      - N14Cartridge45-70 #sirius change
+      - SpeedLoaderInternal
     capacity: 12
-    proto: N14CartridgePistol357
+    proto: N14Cartridge45-70 #sirius change
   - type: FollowDistance
     backStrength: 3
   - type: StaticPrice
@@ -638,9 +657,10 @@
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-      - N14Cartridge308Rifle
+      - N14Cartridge45-70 #sirius change
+      - SpeedLoaderInternal
     capacity: 3
-    proto: N14Cartridge308Rifle
+    proto: N14Cartridge45-70 #sirius change
   - type: FollowDistance
     backStrength: 4
   - type: StaticPrice
@@ -667,7 +687,7 @@
     maxAngle: 80
     angleIncrease: 3
     angleDecay: 16
-    fireRate: 2.2
+    fireRate: 3 #sirius change
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -714,9 +734,9 @@
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-      - N14CartridgePistol10
+      - N14Cartridge556Rifle #sirius change
     capacity: 12
-    proto: N14CartridgePistol10
+    proto: N14Cartridge556Rifle #sirius change
   - type: FollowDistance
     backStrength: 4
   - type: StaticPrice

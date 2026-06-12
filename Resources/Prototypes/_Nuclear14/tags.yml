@@ -490,3 +490,12 @@
 
 - type: Tag
   id: MotorbikeKeys
+
+- type: Tag
+  id: N14MagazineSMG9mmP90
+
+- type: Tag
+  id: N14Magazine50ammoBelt
+
+- type: Tag
+  id: MechKey

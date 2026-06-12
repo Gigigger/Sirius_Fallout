@@ -368,10 +368,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.6
-        Slash: 0.65
-        Piercing: 0.65
-        Heat: 0.6
+        Blunt: 0.75 #sirius change
+        Slash: 0.75 #sirius change
+        Piercing: 0.75 #sirius change
+        Heat: 0.7 #sirius change
   - type: ToggleableClothing
     clothingPrototype: NCClothingHeadHatBoSReaconHood
 
@@ -537,13 +537,16 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.7
-        Slash: 0.7
-        Piercing: 0.7
-        Heat: 0.7
-    priceMultiplier: 0.6
+        Blunt: 0.70
+        Slash: 0.75
+        Piercing: 0.725
+        Heat: 0.725
+    priceMultiplier: 0.5
   - type: ExplosionResistance
-    damageCoefficient: 0.7
+    damageCoefficient: 0.85
+  - type: ClothingSpeedModifier
+    walkModifier: 1.15
+    sprintModifier: 1.15
 
 - type: entity
   parent: N14ClothingOuterBase
@@ -596,3 +599,13 @@
     sprite: Corvax/Clothing/OuterClothing/Armor/RangerStandartArmor.rsi
   - type: Clothing
     sprite: Corvax/Clothing/OuterClothing/Armor/RangerStandartArmor.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.775
+        Slash: 0.8
+        Piercing: 0.725
+        Heat: 0.80
+    priceMultiplier: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.85

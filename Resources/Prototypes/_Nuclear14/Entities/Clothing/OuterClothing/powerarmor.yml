@@ -42,9 +42,16 @@
         Blunt: 0.75
         Slash: 0.75
         Piercing: 0.75
-        Heat: 0.75
+        Heat: 0.55
         Caustic: 0.75
         Radiation: 0.6
+      flatReductions:  #sirius change
+        Blunt: 2
+        Slash: 2
+        Piercing: 2
+        Heat: 2
+        Caustic: 1
+        Radiation: 1
   - type: UserInterface
     interfaces:
       enum.ToggleClothingUiKey.Key:
@@ -192,6 +199,13 @@
         Heat: 0.725
         Caustic: 0.75
         Radiation: 0.6
+      flatReductions:  #sirius change
+        Blunt: 4
+        Slash: 4
+        Piercing: 4
+        Heat: 4
+        Caustic: 3
+        Radiation: 4
   - type: UserInterface
     interfaces:
       enum.ToggleClothingUiKey.Key:
@@ -313,6 +327,13 @@
         Heat: 0.70
         Caustic: 0.75
         Radiation: 0.6
+      flatReductions:  #sirius change
+        Blunt: 4
+        Slash: 4
+        Piercing: 4
+        Heat: 4
+        Caustic: 3
+        Radiation: 4
   - type: ExplosionResistance
     damageCoefficient: 0.10 # #Misfits Tweak: X-02 blast resistance — ~12 HP at ground zero
   - type: UserInterface

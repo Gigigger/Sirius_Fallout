@@ -28,15 +28,18 @@
     sprite: _Misfits/Clothing/80s/OuterClothing/80signarmorgreen.rsi
   - type: Clothing
     sprite: _Misfits/Clothing/80s/OuterClothing/80signarmorgreen.rsi
-  - type: Armor
+  - type: Armor #sirius change
     modifiers:
       coefficients:
-        Blunt: 0.80   # slightly better than NCR Private (0.85) — metal plates absorb impact
-        Slash: 0.82   # near-baseline — metal edges still deflect cuts
-        Piercing: 0.78 # slightly better than baseline (0.80) — layered roadsign metal
-        Heat: 0.85    # slightly worse than baseline (0.80) — metal conducts heat
+        Blunt: 0.75   # slightly better than NCR Private (0.85) — metal plates absorb impact
+        Slash: 0.72   # near-baseline — metal edges still deflect cuts
+        Piercing: 0.7240 # slightly better than baseline (0.80) — layered roadsign metal
+        Heat: 0.72    # slightly worse than baseline (0.80) — metal conducts heat
   - type: ExplosionResistance
     damageCoefficient: 0.88 # near NCR Private baseline (0.90) — bulky metal helps slightly
+  - type: ClothingSpeedModifier
+    walkModifier: 0.98
+    sprintModifier: 0.98
 
 - type: entity
   parent: N14FalloutArmorBase
@@ -48,15 +51,18 @@
     sprite: _Misfits/Clothing/80s/OuterClothing/80signarmorgreenvariant.rsi
   - type: Clothing
     sprite: _Misfits/Clothing/80s/OuterClothing/80signarmorgreenvariant.rsi
-  - type: Armor
+  - type: Armor #sirius change
     modifiers:
       coefficients:
-        Blunt: 0.80   # slightly better than NCR Private (0.85) — metal plates absorb impact
-        Slash: 0.82   # near-baseline — metal edges still deflect cuts
-        Piercing: 0.78 # slightly better than baseline (0.80) — layered roadsign metal
-        Heat: 0.85    # slightly worse than baseline (0.80) — metal conducts heat
+        Blunt: 0.72   # slightly better than NCR Private (0.85) — metal plates absorb impact
+        Slash: 0.70   # near-baseline — metal edges still deflect cuts
+        Piercing: 0.69 # slightly better than baseline (0.80) — layered roadsign metal
+        Heat: 0.695    # slightly worse than baseline (0.80) — metal conducts heat
   - type: ExplosionResistance
     damageCoefficient: 0.88 # near NCR Private baseline (0.90) — bulky metal helps slightly
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
 
 - type: entity
   parent: N14FalloutArmorBase
@@ -68,15 +74,18 @@
     sprite: _Misfits/Clothing/80s/OuterClothing/80signarmor.rsi
   - type: Clothing
     sprite: _Misfits/Clothing/80s/OuterClothing/80signarmor.rsi
-  - type: Armor
+  - type: Armor #sirius change
     modifiers:
       coefficients:
-        Blunt: 0.80   # slightly better than NCR Private (0.85) — metal plates absorb impact
-        Slash: 0.82   # near-baseline — metal edges still deflect cuts
-        Piercing: 0.78 # slightly better than baseline (0.80) — layered roadsign metal
-        Heat: 0.85    # slightly worse than baseline (0.80) — metal conducts heat
+        Blunt: 0.654321   # slightly better than NCR Private (0.85) — metal plates absorb impact
+        Slash: 0.77011   # near-baseline — metal edges still deflect cuts
+        Piercing: 0.649 # slightly better than baseline (0.80) — layered roadsign metal
+        Heat: 0.6595    # slightly worse than baseline (0.80) — metal conducts heat
   - type: ExplosionResistance
     damageCoefficient: 0.88 # near NCR Private baseline (0.90) — bulky metal helps slightly
+  - type: ClothingSpeedModifier
+    walkModifier: 0.954321
+    sprintModifier: 0.954321
 
 - type: entity
   parent: N14FalloutArmorBase
@@ -88,10 +97,10 @@
     sprite: _Misfits/Clothing/80s/OuterClothing/theblockarmor.rsi
   - type: Clothing
     sprite: _Misfits/Clothing/80s/OuterClothing/theblockarmor.rsi
-  - type: Armor
+  - type: Armor #sirius change
     modifiers:
       coefficients:
-        Blunt: 0.45
-        Slash: 0.45
-        Piercing: 0.45
-        Heat: 0.45
+        Blunt: 0.67
+        Slash: 0.67
+        Piercing: 0.67
+        Heat: 0.67

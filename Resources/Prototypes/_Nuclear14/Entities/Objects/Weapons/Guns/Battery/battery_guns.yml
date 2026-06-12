@@ -905,6 +905,12 @@
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
+  - type: GunDamageBonus
+    hitscanProtoOverride: N14MFLaserYellow
+    bonusDamage:
+      types:
+        Heat: 33 #sirius change
+    fireCostMultiplier: 2.0
   - type: FollowDistance
     backStrength: 5
   - type: StaticPrice
@@ -1019,7 +1025,7 @@
     hitscanProtoOverride: N14MFLaserYellow
     bonusDamage:
       types:
-        Heat: 23
+        Heat: 33 #sirius change
     fireCostMultiplier: 2.0
 
 - type: entity
@@ -1076,7 +1082,7 @@
     hitscanProtoOverride: N14MFLaserYellow
     bonusDamage:
       types:
-        Heat: 13
+        Heat: 28 #sirius change
     fireCostMultiplier: 2.0
 
 #MARK: Heavy

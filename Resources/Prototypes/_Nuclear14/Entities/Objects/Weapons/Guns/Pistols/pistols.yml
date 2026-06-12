@@ -446,7 +446,7 @@
   - type: Item
     sprite: _Nuclear14/Objects/Weapons/Guns/Pistols/22lr.rsi
   - type: Gun
-    fireRate: 4
+    fireRate: 5 #sirius change
     soundGunshot:
       collection: N14PistolSpyGunshot
   - type: ItemSlots
@@ -560,6 +560,10 @@
   - type: Item
     sprite: _Nuclear14/Objects/Weapons/Guns/Pistols/laserdeserteagle.rsi
   - type: Gun
+    minAngle: 1 #sirius change
+    maxAngle: 3 #sirius change
+    angleIncrease: 0.5 #sirius change
+    angleDecay: 4 #sirius change
     fireRate: 3
     soundGunshot:
       collection: N14PistolDesertEagleGunshot
