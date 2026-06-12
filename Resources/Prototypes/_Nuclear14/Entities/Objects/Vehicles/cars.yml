@@ -104,9 +104,9 @@
     sprite: _Nuclear14/Objects/Vehicles/highwayman.rsi
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
-      state: highwayman2
+      state: highwayman3
   - type: Mech
-    baseState: highwayman2
+    baseState: highwayman3
     openState: highwayman1
     brokenState: highwayman_open
     engineOnState: highwayman_open
