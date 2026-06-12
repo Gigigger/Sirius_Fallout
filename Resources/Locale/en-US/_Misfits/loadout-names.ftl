@@ -484,6 +484,7 @@ loadout-name-MisfitsLoadoutHeadNCRSidecap = NCR sidecap
 loadout-name-MisfitsLoadoutHeadNCRBeretOfficer = NCR officer beret
 loadout-name-MisfitsLoadoutHeadNCRBeretMedic = NCR medic beret
 loadout-name-MisfitsLoadoutHeadNCRBeretQM = NCR quartermaster beret
+loadout-name-MisfitsLoadoutHeadNCRSlouch = NCR slouch hat
 loadout-name-N14ClothingHeadHatNCRSlouch = NCR slouch hat
 # Head — NCR Rangers
 loadout-name-MisfitsLoadoutHeadArmyBeretRanger = ranger beret
@@ -499,6 +500,14 @@ loadout-name-MisfitsLoadoutHeadEnclaveIntel = Enclave recon beret
 loadout-name-MisfitsLoadoutHeadEnclavePeacekeeperCap = Enclave peacekeeper cap
 loadout-name-MisfitsLoadoutHeadEnclaveOfficer = Enclave officer cap
 loadout-name-MisfitsLoadoutHeadEnclaveScientist = Enclave scientist beret
+# Head — Eighties bike helmets
+loadout-name-MisfitsLoadoutHeadEightiesHelmetBlue = blue bike helmet
+loadout-name-MisfitsLoadoutHeadEightiesHelmetWhite = white bike helmet
+loadout-name-MisfitsLoadoutHeadEightiesHelmetRed = red bike helmet
+loadout-name-MisfitsLoadoutHeadEightiesHelmetBlack = black bike helmet
+loadout-name-MisfitsLoadoutHeadEightiesHelmetYellow = yellow bike helmet
+loadout-name-MisfitsLoadoutHeadEightiesHelmetOlive = olive bike helmet
+loadout-name-MisfitsLoadoutHeadEightiesHelmetBeige = beige bike helmet
 # Head — Townsfolk
 loadout-name-MisfitsLoadoutHeadDeputy = deputy hat
 loadout-name-MisfitsLoadoutHeadSheriff = sheriff hat

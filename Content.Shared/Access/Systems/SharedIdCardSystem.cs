@@ -1,6 +1,8 @@
 using System.Globalization;
 using Content.Shared.Access.Components;
+using Content.Shared.Access.Events;
 using Content.Shared.Administration.Logs;
+using Content.Shared._Misfits.Pets;
 using Content.Shared.Database;
 using Content.Shared.Hands.Components;
 using Content.Shared.IdentityManagement;
@@ -82,6 +84,13 @@ public abstract class SharedIdCardSystem : EntitySystem
     {
         if (TryComp(uid, out IdCardComponent? idCardComp))
         {
+            if (TryComp(uid, out PetCollarComponent? _) &&
+                (!TryComp<TransformComponent>(uid, out var xform) || !TryComp<PetCollarHolderComponent>(xform.ParentUid, out _)))
+            {
+                idCard = default;
+                return false;
+            }
+
             idCard = (uid, idCardComp);
             return true;
         }
@@ -205,6 +214,7 @@ public abstract class SharedIdCardSystem : EntitySystem
         id.FullName = fullName;
         Dirty(uid, id);
         UpdateEntityName(uid, id);
+        RaiseLocalEvent(uid, new IdCardFullNameChangedEvent(fullName));
 
         if (player != null)
         {

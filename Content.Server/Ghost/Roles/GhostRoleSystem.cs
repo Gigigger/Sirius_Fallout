@@ -819,6 +819,9 @@ namespace Content.Server.Ghost.Roles
             var spawnedEvent = new GhostRoleSpawnerUsedEvent(uid, mob);
             RaiseLocalEvent(mob, spawnedEvent);
 
+            if (TryComp<MisfitsPetSpawnerOwnerComponent>(uid, out _))
+                EntitySystem.Get<PetCollarSystem>().EquipDefaultCollar(mob);
+
             if (ghostRole.MakeSentient)
                 MakeSentientCommand.MakeSentient(mob, EntityManager, ghostRole.AllowMovement, ghostRole.AllowSpeech);
 

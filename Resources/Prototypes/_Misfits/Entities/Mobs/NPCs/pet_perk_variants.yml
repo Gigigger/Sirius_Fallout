@@ -56,9 +56,6 @@
   - type: GhostTakeoverAvailable
   - type: MobThresholds # #Misfits Add - allow revival by medics
     allowRevives: true
-  - type: Inventory
-    speciesId: cat
-    templateId: cat_pet
   - type: Puller # #Misfits Add - explicit puller for drag mechanic
     needsHands: false
   - type: Hands # #Misfits Add - allows dragging; no hand slots so no actual item holding
@@ -80,7 +77,6 @@
   name: cat
   id: N14MobPetCat
   parent: MobCat
-  categories: [ HideSpawnMenu ]
   description: A basic wasteland cat, somehow your companion.
   components:
   - type: GhostRole
@@ -92,10 +88,21 @@
   - type: GhostTakeoverAvailable
   - type: MobThresholds # #Misfits Add - allow revival by medics
     allowRevives: true
+  - type: Inventory
+    speciesId: cat
+    templateId: cat_pet
   - type: Puller # #Misfits Add - explicit puller for drag mechanic
     needsHands: false
-  - type: Hands # #Misfits Add - allows dragging; no hand slots so no actual item holding
-  - type: MisfitsPetNoPickup # #Misfits Add - cancels PickupAttemptEvent; drag only, no item pickup
+  - type: Hands # #Misfits Add - allows dragging and item handling
+  - type: BorgHands # #Misfits Add - gives cats actual holdable hand slots
+    handCount: 2
+  - type: InventorySlots
+  - type: Strippable
+  - type: PetCollarHolder
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: PassiveDamage # #Misfits Add - slow natural regeneration for player-controlled pet cats
     allowedStates:
     - Alive
@@ -112,7 +119,6 @@
   name: black cat
   id: N14MobPetCatBlack
   parent: N14MobPetCat
-  categories: [ HideSpawnMenu ]
   description: A black cat, somehow your companion.
   components:
   - type: GhostRole
@@ -139,7 +145,6 @@
   name: brown tabby cat
   id: N14MobPetCatBrownTabby
   parent: N14MobPetCat
-  categories: [ HideSpawnMenu ]
   description: A brown tabby cat, somehow your companion.
   components:
   - type: GhostRole
@@ -166,7 +171,6 @@
   name: calico cat
   id: N14MobPetCatCalico
   parent: N14MobPetCat
-  categories: [ HideSpawnMenu ]
   description: A calico cat, somehow your companion.
   components:
   - type: GhostRole
@@ -193,7 +197,6 @@
   name: ginger tabby cat
   id: N14MobPetCatGingerTabby
   parent: N14MobPetCat
-  categories: [ HideSpawnMenu ]
   description: A ginger tabby cat, somehow your companion.
   components:
   - type: GhostRole
@@ -220,7 +223,6 @@
   name: gray tabby cat
   id: N14MobPetCatGrayTabby
   parent: N14MobPetCat
-  categories: [ HideSpawnMenu ]
   description: A gray tabby cat, somehow your companion.
   components:
   - type: GhostRole
@@ -247,7 +249,6 @@
   name: mela cat
   id: N14MobPetCatMela
   parent: N14MobPetCat
-  categories: [ HideSpawnMenu ]
   description: A melanistic cat, somehow your companion.
   components:
   - type: GhostRole
@@ -274,7 +275,6 @@
   name: ocicat
   id: N14MobPetCatOcicat
   parent: N14MobPetCat
-  categories: [ HideSpawnMenu ]
   description: An ocicat, somehow your companion.
   components:
   - type: GhostRole
@@ -301,7 +301,6 @@
   name: siamese cat
   id: N14MobPetCatSiamese
   parent: N14MobPetCat
-  categories: [ HideSpawnMenu ]
   description: A siamese cat, somehow your companion.
   components:
   - type: GhostRole
@@ -328,7 +327,6 @@
   name: sphinx cat
   id: N14MobPetCatSphinx
   parent: N14MobPetCat
-  categories: [ HideSpawnMenu ]
   description: A sphinx cat, somehow your companion.
   components:
   - type: GhostRole
@@ -355,7 +353,6 @@
   name: spoon cat
   id: N14MobPetCatSpoon
   parent: N14MobPetCat
-  categories: [ HideSpawnMenu ]
   description: A spoon cat, somehow your companion.
   components:
   - type: GhostRole
@@ -382,7 +379,6 @@
   name: tortoiseshell cat
   id: N14MobPetCatTortoiseshell
   parent: N14MobPetCat
-  categories: [ HideSpawnMenu ]
   description: A tortoiseshell cat, somehow your companion.
   components:
   - type: GhostRole
@@ -409,7 +405,6 @@
   name: white cat
   id: N14MobPetCatWhite
   parent: N14MobPetCat
-  categories: [ HideSpawnMenu ]
   description: A white cat, somehow your companion.
   components:
   - type: GhostRole
