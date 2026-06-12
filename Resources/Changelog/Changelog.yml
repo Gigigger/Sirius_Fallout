@@ -6824,3 +6824,12 @@ Entries:
   id: 6052
   time: '2026-06-12T18:02:04.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/759
+- author: Cythisiax
+  changes:
+    - type: Add
+      message: Added pet companion variants and cat perk options
+    - type: Fix
+      message: Added owner approval for companion ghost-role requests
+  id: 6053
+  time: '2026-06-12T18:08:56.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/770
