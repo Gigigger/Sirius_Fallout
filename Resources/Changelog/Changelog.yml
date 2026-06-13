@@ -6903,3 +6903,17 @@ Entries:
   id: 6058
   time: '2026-06-13T17:10:14.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/782
+- author: Squagg
+  changes:
+    - type: Add
+      message: >-
+        Redesigned the character SPECIAL screen with a Pip-Boy-style layout,
+        segmented stat gauges, and an optional info button showing each stat's
+        effects.
+    - type: Tweak
+      message: >-
+        Reskinned the lobby and character setup menus with a Fallout-inspired
+        Pip-Boy terminal theme.
+  id: 6059
+  time: '2026-06-13T17:13:18.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/783
