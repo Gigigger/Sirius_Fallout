@@ -171,7 +171,7 @@ trait-description-N14IronFist =
 
 trait-name-N14RadClaws = Радкогти
 trait-description-N14RadClaws = 
-    Being a ghoul is not that all bad, you got very neat sharp claws that you can use in a brawl.
+    Бытиё гулем не так уж и плохо - у вас есть острые когти, которые вы можете использовать в бою.
     Вы наносите [color=green]+1[/color] [color=yellow]Режущего[/color] и [color=yellow]радиационного[/color] урона в рукопашном бою без оружия.
 
 trait-name-N14WeakLiquor = Слабость к алкоголю
@@ -200,13 +200,13 @@ trait-description-N14ScriptedDeath =
     и что тебе придется умереть, когда они пройдут через врата Солитьюда.
     Ваш [color=yellow]порог смерти[/color] снижается на [color=red][/color] на [color=red]100 пунктов[/color].
 
-trait-name-N14LifeTaker = Похититель жизни
+trait-name-N14LifeTaker = Болезненный
 trait-description-N14LifeTaker = 
-    You were always sickly and easy to knock out. Hopefully this won't cost your life.
+    Вы всегда были болезненным и легко отрубались. Надеюсь, это не будет стоить вам жизни?
     Ваш [color=yellow]порог критического урона[/color] [color=red]уменьшен на 10 пунктов[/color].
     И весь урон, необходимый [color=yellow]для смерти[/color] [color=red]уменьшен на 20 пунктов[/color].
 
-trait-name-N14LifeGiver = Податель жизни
+trait-name-N14LifeGiver = Крепыш
 trait-description-N14LifeGiver = 
     Будь то благодаря упорству, силе воли или какому-то аугменту, убить вас гораздо труднее.
     Ваш [color=yellow]порог критического урона[/color] [color=green]увеличен на 5 пунктов[/color].
