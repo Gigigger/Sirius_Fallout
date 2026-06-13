@@ -18,11 +18,11 @@ language-N14BrotherBeep-name = Кодекс Братства
 language-N14BrotherBeep-description = Вы можете понимать и «говорить» на бинарном языке своих агументированных братьев и сестер.
 chat-language-N14BrotherBeep-name = Б
 
-language-N14Dog-name = Кора языка
+language-N14Dog-name = Лай
 language-N14Dog-description = Вы можете лаять и надеяться, что найдется кто-то, кто сможет это понять.
 chat-language-N14Dog-name = Х
 
-language-N14Insect-name = Криттер болтовня
+language-N14Insect-name = Криттер
 language-N14Insect-description = Независимо от того, вышли ли вы из грязи или из воды, вы все равно сможете общаться с другими насекомыми.
 chat-language-N14Insect-name = Х
 
