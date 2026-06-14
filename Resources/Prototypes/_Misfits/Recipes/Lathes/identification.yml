@@ -5,7 +5,7 @@
   category: N14Identification
   completetime: 5
   materials:
-    Steel: 20
+    Steel: 100
 
 - type: latheRecipe
   id: HolotagBoSSquire
@@ -13,7 +13,7 @@
   category: N14Identification
   completetime: 5
   materials:
-    Steel: 20
+    Steel: 100
 
 - type: latheRecipe
   id: HolotagBoSScribe
@@ -21,7 +21,7 @@
   category: N14Identification
   completetime: 5
   materials:
-    Steel: 50
+    Steel: 100
 
 - type: latheRecipe
   id: HolotagBoSKnight
@@ -29,7 +29,7 @@
   category: N14Identification
   completetime: 5
   materials:
-    Steel: 50
+    Steel: 100
 
 - type: latheRecipe
   id: HolotagBoSPaladin
@@ -37,7 +37,7 @@
   category: N14Identification
   completetime: 5
   materials:
-    Steel: 50
+    Steel: 100
 
 - type: latheRecipe
   id: HolotagBoSSeniorScribe
@@ -78,7 +78,7 @@
   category: N14Identification
   completetime: 5
   materials:
-    Steel: 50
+    Steel: 100
 
 - type: latheRecipe
   id: HolotagEnclaveNoncombat
@@ -86,4 +86,4 @@
   category: N14Identification
   completetime: 5
   materials:
-    Steel: 20
+    Steel: 100
