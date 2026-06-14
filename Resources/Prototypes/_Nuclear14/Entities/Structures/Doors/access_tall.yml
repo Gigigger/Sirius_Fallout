@@ -166,7 +166,7 @@
 - type: entity
   parent: N14DoorAirlockTall
   id: N14DoorBunkerLockedEnclaveOfficerTall
-  suffix: Enclave, Locked, Paladin
+  suffix: Enclave, Locked, Officer
   components:
   - type: ContainerFill
     containers:
@@ -177,7 +177,7 @@
 - type: entity
   parent: N14DoorBunkerGlass # needs replaced
   id: N14DoorBunkerGlassLockedEnclaveOfficerTall
-  suffix: Enclave, Locked, Paladin
+  suffix: Enclave, Locked, Officer
   categories: [ HideSpawnMenu ]
   components:
   - type: ContainerFill
