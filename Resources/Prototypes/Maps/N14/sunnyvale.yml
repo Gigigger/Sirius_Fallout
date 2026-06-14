@@ -71,7 +71,7 @@
             #NCRSoldier: [ 0, 0 ]
             NCRCadet: [ 15, 15 ]
             #NCRPisoner : [ 5, 5 ]
-            NCRMPinvestigator : [ 1, 1 ]
+            NCRMPinvestigator : [ 1, 1 ] # Misfits Change # #Misfits Tweak - 0 active slots (admin-notify role)
             NCRMilitaryPoliceSergeant: [ 2, 2 ]
             NCRMilitaryPoliceRecruit: [ 3, 3 ]
             NCRMilitaryPoliceCaptain: [ 1, 1 ]
@@ -97,13 +97,13 @@
             BoSMidSquire: [ 4, 4 ]
             BoSInitiate: [ 3, 3 ]  #Misfits Change /Add/
             # BoSWashingtonInitiate: [ 3, 3 ] #Misfits Change /Comment-out/: Washington BoS removed
-            VaultManagement: [ 1, 0 ]
+            VaultManagement: [ 1, 0 ] # #Misfits Tweak - 0 active slots (admin-notify role)
             Overseer: [ 1, 1 ]
             VaultDoctor: [ 2, 2 ]
             VaultDweller: [ 4, 6 ]
             VaultEngineer: [ 2, 2 ]
             VaultSecurity: [ 2, 3 ]
-            CaesarLegionLegate: [ 1, 1 ] # Forge-Legion # #Misfits Tweak - 0 active slots (admin-notify role)
+            CaesarLegionLegate: [ 1, 0 ] # Forge-Legion # #Misfits Tweak - 0 active slots (admin-notify role)
             CaesarLegionCenturion: [ 1, 1 ] # Forge-Legion
             CaesarLegionVeteranDecanus: [ 1, 1 ] # Forge-Legion
             CaesarLegionDean: [ 1, 1 ] # Forge-Legion
