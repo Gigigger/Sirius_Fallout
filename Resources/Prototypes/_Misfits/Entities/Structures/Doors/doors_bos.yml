@@ -13,7 +13,6 @@
   id: MisfitsDoorCellRustBoSMidwestKnight
   suffix: BoSMidwest, Locked, Knight
   components:
-  - type: ContainerFill
   - type: AccessReader
     access: [["BOSKnight"]]
   - type: Wires
