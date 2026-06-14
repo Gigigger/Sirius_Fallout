@@ -155,15 +155,6 @@
 
 - type: entity
   parent: N14BaseWeaponTurret
-  id: N14WeaponTurretEnclaveSecureArea
-  suffix: Enclave
-  components:
-  - type: NpcFactionMember
-    factions:
-    - EnclaveSecureArea
-
-- type: entity
-  parent: N14BaseWeaponTurret
   id: N14WeaponTurretEnclave
   suffix: Enclave
   components:
