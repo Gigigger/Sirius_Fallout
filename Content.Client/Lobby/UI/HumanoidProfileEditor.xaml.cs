@@ -1142,7 +1142,7 @@ namespace Content.Client.Lobby.UI
 
                     category.AddChild(new PanelContainer
                     {
-                        StyleClasses = { StyleNano.StyleClassPipBoyHighlight },
+                        StyleClasses = { StyleNano.StyleClassPipBoyHighlight }, // #Misfits Change - themeable highlight
                         Children =
                         {
                             new Label
@@ -1165,7 +1165,7 @@ namespace Content.Client.Lobby.UI
                     {
                         category.AddChild(new PanelContainer
                         {
-                            StyleClasses = { StyleNano.StyleClassPipBoyHighlight },
+                            StyleClasses = { StyleNano.StyleClassPipBoyHighlight }, // #Misfits Change - themeable highlight
                             MinSize = new Vector2(0, 2),
                             Margin = new Thickness(3f, 10f, 3f, 6f),
                         });
@@ -1307,7 +1307,7 @@ namespace Content.Client.Lobby.UI
 
                     category.AddChild(new PanelContainer
                     {
-                        StyleClasses = { StyleNano.StyleClassPipBoyHighlight },
+                        StyleClasses = { StyleNano.StyleClassPipBoyHighlight }, // #Misfits Change - themeable highlight
                         Children =
                         {
                             new Label
@@ -1330,7 +1330,7 @@ namespace Content.Client.Lobby.UI
                     {
                         category.AddChild(new PanelContainer
                         {
-                            StyleClasses = { StyleNano.StyleClassPipBoyHighlight },
+                            StyleClasses = { StyleNano.StyleClassPipBoyHighlight }, // #Misfits Change - themeable highlight
                             MinSize = new Vector2(0, 2),
                             Margin = new Thickness(3f, 10f, 3f, 6f),
                         });
