@@ -15,7 +15,7 @@ namespace Content.Shared.Weapons.Melee.Events
 
         /// <summary>
         /// Last fully confirmed client tick when the attack input was issued.
-        /// Used for server-side lag compensation during melee validation.
+        /// Used for server side lag compensation during melee validation.
         /// </summary>
         public GameTick? LastRealTick;
 

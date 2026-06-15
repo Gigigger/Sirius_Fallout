@@ -10,10 +10,20 @@ namespace Content.Shared.Weapons.Ranged.Components;
 [RegisterComponent]
 public sealed partial class RangedDamageSoundComponent : Component
 {
+    // TODO: Limb damage changing sound type.
+
+    /// <summary>
+    /// Specified sounds to apply when the entity takes damage with the specified group.
+    /// Will fallback to defaults if none specified.
+    /// </summary>
     [DataField("soundGroups",
         customTypeSerializer: typeof(PrototypeIdDictionarySerializer<SoundSpecifier, DamageGroupPrototype>))]
     public Dictionary<string, SoundSpecifier>? SoundGroups;
 
+    /// <summary>
+    /// Specified sounds to apply when the entity takes damage with the specified type.
+    /// Will fallback to defaults if none specified.
+    /// </summary>
     [DataField("soundTypes",
          customTypeSerializer: typeof(PrototypeIdDictionarySerializer<SoundSpecifier, DamageTypePrototype>))]
     public Dictionary<string, SoundSpecifier>? SoundTypes;

@@ -96,13 +96,36 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
         // A) Wide-damage is split anyway
         // B) We run the same validation we do for click attacks.
 
-        // Could also check the arc though future effort + if they're aimbotting it's not really going to make a difference.
+        EntityCoordinates targetCoords;
+        Angle targetLocalAngle;
 
-        // (This runs lagcomp internally and is what clickattacks use)
-        if (!Interaction.InRangeUnobstructed(ignore, targetUid, range + 0.1f))
-            return false;
+        if (session != null)
+        {
+            (targetCoords, targetLocalAngle) = _lag.GetCoordinatesAngle(targetUid, session);
+            if (!Interaction.InRangeUnobstructed(ignore, targetUid, targetCoords, targetLocalAngle, range + 0.1f))
+                return false;
+        }
+        else
+        {
+            var xform = Transform(targetUid);
+            targetCoords = xform.Coordinates;
+            targetLocalAngle = xform.LocalRotation;
+            if (!Interaction.InRangeUnobstructed(ignore, targetUid, range + 0.1f))
+                return false;
+        }
 
-        // TODO: Check arc though due to the aforementioned aimbot + damage split comments it's less important.
+        var targetMapPos = TransformSystem.ToMapCoordinates(targetCoords);
+        if (targetMapPos.MapId == mapId)
+        {
+            var toTarget = targetMapPos.Position - position;
+            if (toTarget.LengthSquared() > 0.001f)
+            {
+                var diff = Angle.ShortestDistance(angle, toTarget.ToWorldAngle());
+                if (Math.Abs((double) diff) > (double) arcWidth / 2.0 + 0.1)
+                    return false;
+            }
+        }
+
         return true;
     }
 
