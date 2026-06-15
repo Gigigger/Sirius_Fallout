@@ -1,13 +1,20 @@
 using System.Linq;
+using System.Diagnostics.CodeAnalysis;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Shared.Chat;
 using Content.Shared.Mind;
+using Content.Shared.Pointing;
+using Content.Shared.Power;
+using Content.Shared.Power.Components;
 using Content.Shared.Roles;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.StationAi;
+using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
+using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Physics;
 using Robust.Shared.Player;
 using static Content.Server.Chat.Systems.ChatSystem;
 
@@ -17,17 +24,28 @@ public sealed class StationAiSystem : SharedStationAiSystem
 {
     [Dependency] private readonly IChatManager _chats = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly SharedTransformSystem _xforms = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly SharedRoleSystem _roles = default!;
+    [Dependency] private readonly ViewSubscriberSystem _viewSubscriber = default!;
 
     private readonly HashSet<Entity<StationAiCoreComponent>> _ais = new();
+    private readonly Dictionary<EntityUid, HashSet<EntityUid>> _visionSubscriptions = new();
+    private readonly HashSet<EntityUid> _desiredVisionSubscriptions = new();
+
+    private EntityQuery<BroadphaseComponent> _broadphaseQuery;
 
     public override void Initialize()
     {
         base.Initialize();
 
+        _broadphaseQuery = GetEntityQuery<BroadphaseComponent>();
+
         SubscribeLocalEvent<ExpandICChatRecipientsEvent>(OnExpandICChatRecipients);
+        SubscribeLocalEvent<StationAiHeldComponent, GetPointingSourceEvent>(OnAiGetPointingSource);
+        SubscribeLocalEvent<StationAiVisionComponent, ComponentStartup>(OnAiVisionStartup);
+        SubscribeLocalEvent<StationAiVisionComponent, ComponentShutdown>(OnAiVisionShutdown);
     }
 
     private void OnExpandICChatRecipients(ExpandICChatRecipientsEvent ev)
@@ -66,12 +84,254 @@ public sealed class StationAiSystem : SharedStationAiSystem
         if (!base.SetVisionEnabled(entity, enabled, announce))
             return false;
 
+        if (enabled)
+            AddVisionToRelevantAis(entity.Owner);
+        else
+            RemoveVisionFromAllAis(entity.Owner);
+
         if (announce)
         {
             AnnounceSnip(entity.Owner);
         }
 
         return true;
+    }
+
+    private void OnAiGetPointingSource(Entity<StationAiHeldComponent> ent, ref GetPointingSourceEvent args)
+    {
+        args.Handled = true;
+
+        if (!TryGetStationAiCoreForHeld(ent, out var core) ||
+            !IsCorePowered(core.Value.Owner))
+        {
+            args.Cancelled = true;
+            return;
+        }
+
+        var coreGrid = Transform(core.Value.Owner).GridUid;
+        if (coreGrid == null)
+        {
+            args.Cancelled = true;
+            return;
+        }
+
+        var targetMap = args.Coordinates.ToMap(EntityManager, _xforms);
+        if (!_mapManager.TryFindGridAt(targetMap, out var gridUid, out var grid) ||
+            gridUid != coreGrid.Value ||
+            !_broadphaseQuery.TryComp(gridUid, out var broadphase))
+        {
+            args.Cancelled = true;
+            return;
+        }
+
+        var targetTile = grid.WorldToTile(targetMap.Position);
+
+        lock (Vision)
+        {
+            if (Vision.TryGetNearestVisibleSource((gridUid, broadphase, grid), targetTile, targetMap, out var source))
+            {
+                args.Source = source;
+                args.RotateSource = false;
+                return;
+            }
+
+            // Keep pointing usable if the stricter source attribution fails to find the
+            // exact seed. The existing Station AI visibility check is still authoritative
+            // for whether the target tile is supervised.
+            if (Vision.IsAccessible((gridUid, broadphase, grid), targetTile))
+            {
+                args.Source = core.Value.Owner;
+                args.RotateSource = false;
+                return;
+            }
+        }
+
+        args.Cancelled = true;
+    }
+
+    protected override void OnStationAiInserted(Entity<StationAiCoreComponent> core, EntityUid ai)
+    {
+        RefreshAiVisionSubscriptions(ai);
+    }
+
+    protected override void OnStationAiRemoved(Entity<StationAiCoreComponent> core, EntityUid ai)
+    {
+        ClearAiVisionSubscriptions(ai);
+    }
+
+    protected override void OnStationAiCoreMapInitialized(Entity<StationAiCoreComponent> core, EntityUid? ai)
+    {
+        if (ai != null)
+            RefreshAiVisionSubscriptions(ai.Value);
+    }
+
+    protected override void OnStationAiCoreShuttingDown(Entity<StationAiCoreComponent> core, EntityUid? ai)
+    {
+        if (ai != null)
+            ClearAiVisionSubscriptions(ai.Value);
+    }
+
+    protected override void OnStationAiCorePowerChanged(Entity<StationAiCoreComponent> core, bool powered, EntityUid? ai)
+    {
+        if (ai == null)
+            return;
+
+        if (powered)
+            RefreshAiVisionSubscriptions(ai.Value);
+        else
+            ClearAiVisionSubscriptions(ai.Value);
+    }
+
+    private void OnAiVisionStartup(Entity<StationAiVisionComponent> ent, ref ComponentStartup args)
+    {
+        if (ent.Comp.Enabled)
+            AddVisionToRelevantAis(ent.Owner);
+    }
+
+    private void OnAiVisionShutdown(Entity<StationAiVisionComponent> ent, ref ComponentShutdown args)
+    {
+        RemoveVisionFromAllAis(ent.Owner);
+    }
+
+    private void RefreshAiVisionSubscriptions(EntityUid ai)
+    {
+        if (!TryComp(ai, out ActorComponent? actor) ||
+            !TryComp(ai, out StationAiHeldComponent? held) ||
+            !TryGetStationAiCoreForHeld((ai, held), out var core) ||
+            !IsCorePowered(core.Value.Owner))
+        {
+            ClearAiVisionSubscriptions(ai);
+            return;
+        }
+
+        var coreGrid = Transform(core.Value.Owner).GridUid;
+        if (coreGrid == null)
+        {
+            ClearAiVisionSubscriptions(ai);
+            return;
+        }
+
+        _desiredVisionSubscriptions.Clear();
+        var visionQuery = EntityQueryEnumerator<StationAiVisionComponent, TransformComponent>();
+        while (visionQuery.MoveNext(out var visionUid, out var vision, out var xform))
+        {
+            if (!vision.Enabled || xform.GridUid != coreGrid.Value)
+                continue;
+
+            _desiredVisionSubscriptions.Add(visionUid);
+            AddVisionSubscription(ai, visionUid, actor);
+        }
+
+        if (!_visionSubscriptions.TryGetValue(ai, out var current))
+            return;
+
+        foreach (var visionUid in current.ToArray())
+        {
+            if (!_desiredVisionSubscriptions.Contains(visionUid))
+                RemoveVisionSubscription(ai, visionUid, actor);
+        }
+    }
+
+    private void AddVisionToRelevantAis(EntityUid vision)
+    {
+        var visionGrid = Transform(vision).GridUid;
+        if (visionGrid == null)
+            return;
+
+        var query = EntityQueryEnumerator<StationAiCoreComponent, TransformComponent>();
+        while (query.MoveNext(out var coreUid, out _, out var coreXform))
+        {
+            if (coreXform.GridUid != visionGrid.Value ||
+                !IsCorePowered(coreUid) ||
+                !TryComp(coreUid, out StationAiCoreComponent? core) ||
+                !TryGetInsertedAI((coreUid, core), out var insertedAi) ||
+                !TryComp(insertedAi.Value.Owner, out ActorComponent? actor))
+            {
+                continue;
+            }
+
+            AddVisionSubscription(insertedAi.Value.Owner, vision, actor);
+        }
+    }
+
+    private void RemoveVisionFromAllAis(EntityUid vision)
+    {
+        foreach (var (ai, _) in _visionSubscriptions.ToArray())
+            RemoveVisionSubscription(ai, vision);
+    }
+
+    private void AddVisionSubscription(EntityUid ai, EntityUid vision, ActorComponent actor)
+    {
+        if (!_visionSubscriptions.TryGetValue(ai, out var current))
+        {
+            current = new HashSet<EntityUid>();
+            _visionSubscriptions[ai] = current;
+        }
+
+        if (current.Contains(vision) || actor.PlayerSession.ViewSubscriptions.Contains(vision))
+            return;
+
+        _viewSubscriber.AddViewSubscriber(vision, actor.PlayerSession);
+        current.Add(vision);
+    }
+
+    private void RemoveVisionSubscription(EntityUid ai, EntityUid vision, ActorComponent? actor = null)
+    {
+        if (!_visionSubscriptions.TryGetValue(ai, out var current) ||
+            !current.Remove(vision))
+        {
+            return;
+        }
+
+        if (current.Count == 0)
+            _visionSubscriptions.Remove(ai);
+
+        if (!Resolve(ai, ref actor, false))
+        {
+            return;
+        }
+
+        _viewSubscriber.RemoveViewSubscriber(vision, actor.PlayerSession);
+    }
+
+    private void ClearAiVisionSubscriptions(EntityUid ai)
+    {
+        if (!_visionSubscriptions.TryGetValue(ai, out var current))
+            return;
+
+        foreach (var vision in current.ToArray())
+            RemoveVisionSubscription(ai, vision);
+    }
+
+    private bool IsCorePowered(EntityUid core)
+    {
+        SharedApcPowerReceiverComponent? receiver = null;
+        return PowerReceiverSystem.IsPowered((core, receiver));
+    }
+
+    private bool TryGetStationAiCoreForHeld(
+        Entity<StationAiHeldComponent> ai,
+        [NotNullWhen(true)] out Entity<StationAiCoreComponent>? core)
+    {
+        if (TryGetStationAiCore((ai.Owner, (StationAiHeldComponent?) ai.Comp), out core))
+            return true;
+
+        var query = EntityQueryEnumerator<StationAiCoreComponent>();
+        while (query.MoveNext(out var coreUid, out var coreComp))
+        {
+            var coreEnt = new Entity<StationAiCoreComponent>(coreUid, coreComp);
+            if (!TryGetInsertedAI(coreEnt, out var insertedAi) ||
+                insertedAi.Value.Owner != ai.Owner)
+            {
+                continue;
+            }
+
+            core = coreEnt;
+            return true;
+        }
+
+        core = null;
+        return false;
     }
 
     public override bool SetWhitelistEnabled(Entity<StationAiWhitelistComponent> entity, bool enabled, bool announce = false)

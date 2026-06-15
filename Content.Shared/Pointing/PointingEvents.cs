@@ -1,4 +1,5 @@
 using Robust.Shared.Serialization;
+using Robust.Shared.Map;
 
 namespace Content.Shared.Pointing;
 
@@ -16,6 +17,23 @@ public sealed class PointingAttemptEvent : EntityEventArgs
     {
         Target = target;
     }
+}
+
+/// <summary>
+/// Raised on the entity attempting to point so systems with remote vision can provide the
+/// entity that should act as the visual origin for the point.
+/// </summary>
+[ByRefEvent]
+public record struct GetPointingSourceEvent(EntityUid Pointer, EntityCoordinates Coordinates, EntityUid Pointed)
+{
+    public readonly EntityUid Pointer = Pointer;
+    public readonly EntityCoordinates Coordinates = Coordinates;
+    public readonly EntityUid Pointed = Pointed;
+
+    public EntityUid Source = Pointer;
+    public bool RotateSource = true;
+    public bool Handled;
+    public bool Cancelled;
 }
 
 /// <summary>

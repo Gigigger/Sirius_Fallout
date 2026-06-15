@@ -58,6 +58,15 @@ public abstract partial class SharedStationAiSystem : EntitySystem
     [Dependency] private readonly   SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly   StationAiVisionSystem _vision = default!;
 
+    protected SharedPowerReceiverSystem PowerReceiverSystem => PowerReceiver;
+    protected StationAiVisionSystem Vision => _vision;
+
+    protected virtual void OnStationAiInserted(Entity<StationAiCoreComponent> core, EntityUid ai) { }
+    protected virtual void OnStationAiRemoved(Entity<StationAiCoreComponent> core, EntityUid ai) { }
+    protected virtual void OnStationAiCoreMapInitialized(Entity<StationAiCoreComponent> core, EntityUid? ai) { }
+    protected virtual void OnStationAiCoreShuttingDown(Entity<StationAiCoreComponent> core, EntityUid? ai) { }
+    protected virtual void OnStationAiCorePowerChanged(Entity<StationAiCoreComponent> core, bool powered, EntityUid? ai) { }
+
     // StationAiHeld is added to anything inside of an AI core.
     // StationAiHolder indicates it can hold an AI positronic brain (e.g. holocard / core).
     // StationAiCore holds functionality related to the core itself.
@@ -326,6 +335,8 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         if (_net.IsClient)
             return;
 
+        OnStationAiCoreShuttingDown(ent, GetInsertedAI(ent));
+
         QueueDel(ent.Comp.RemoteEntity);
         ent.Comp.RemoteEntity = null;
     }
@@ -339,10 +350,12 @@ public abstract partial class SharedStationAiSystem : EntitySystem
                 return;
 
             AttachEye(ent);
+            OnStationAiCorePowerChanged(ent, true, GetInsertedAI(ent));
         }
         else
         {
             ClearEye(ent);
+            OnStationAiCorePowerChanged(ent, false, GetInsertedAI(ent));
         }
     }
 
@@ -350,6 +363,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
     {
         SetupEye(ent);
         AttachEye(ent);
+        OnStationAiCoreMapInitialized(ent, GetInsertedAI(ent));
     }
 
     public void SwitchRemoteEntityMode(Entity<StationAiCoreComponent> ent, bool isRemote)
@@ -457,6 +471,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         _metadata.SetEntityName(ent.Owner, MetaData(args.Entity).EntityName);
 
         AttachEye(ent);
+        OnStationAiInserted(ent, args.Entity);
     }
 
     private void OnAiRemove(Entity<StationAiCoreComponent> ent, ref EntRemovedFromContainerMessage args)
@@ -478,6 +493,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         }
 
         ClearEye(ent);
+        OnStationAiRemoved(ent, args.Entity);
     }
 
     private void UpdateAppearance(Entity<StationAiHolderComponent?> entity)
