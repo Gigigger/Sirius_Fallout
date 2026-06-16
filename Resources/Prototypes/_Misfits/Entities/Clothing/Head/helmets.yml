@@ -48,6 +48,7 @@
   - type: Clothing
     sprite: _Misfits/Clothing/Head/redbandana.rsi
 
+- type: entity
   parent: N14ClothingHeadHatCombatHelmet
   id: MisfitsClothingHeadRadstagHelmet
   name: radstag ritual skull helmet
