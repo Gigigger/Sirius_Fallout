@@ -7193,3 +7193,10 @@ Entries:
   id: 6082
   time: '2026-06-16T00:53:16.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/819
+- author: Oli
+  changes:
+    - type: Add
+      message: Old + Marching Satchel and Bandana to the loadout menu.
+  id: 6083
+  time: '2026-06-16T01:29:32.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/820
