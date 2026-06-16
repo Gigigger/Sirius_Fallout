@@ -47,3 +47,16 @@
     sprite: _Misfits/Clothing/Head/redbandana.rsi
   - type: Clothing
     sprite: _Misfits/Clothing/Head/redbandana.rsi
+  parent: N14ClothingHeadHatCombatHelmet
+  id: MisfitsClothingHeadRadstagHelmet
+  name: radstag ritual skull helmet
+  description: A radstag skull headdress, painted and draped in heavy leather.
+  components:
+  - type: Sprite
+    sprite: _Misfits/Clothing/Head/Helmets/radstag-helmet.rsi
+  - type: Clothing
+    sprite: _Misfits/Clothing/Head/Helmets/radstag-helmet.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
