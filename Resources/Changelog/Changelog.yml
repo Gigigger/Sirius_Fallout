@@ -7256,3 +7256,57 @@ Entries:
   id: 6091
   time: '2026-06-17T02:03:08.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/829
+- author: Superspheres
+  changes:
+    - type: Fix
+      message: missing in hand icons for NCR helmets
+    - type: Add
+      message: adds a new sprite for the pouched NCR desert vest.
+    - type: Tweak
+      message: Subdued the yellow on the NCR cavalry stetson.
+    - type: Tweak
+      message: Adds respective armor to NCR Trooper kits.
+    - type: Add
+      message: NCR Engineers get a unique armor sidegrade.
+    - type: Add
+      message: NCR Medic loadouts receive a unique steel helmet and uniform.
+    - type: Tweak
+      message: >-
+        Removes belt from NCR Troopers as they are issued one in loadout; this
+        reduces bloat of belts around the NCR base.
+    - type: Tweak
+      message: NCR Recruit Ranger gets a flak vest combat armor side grade.
+    - type: Tweak
+      message: >-
+        NCR Patrol Rangers get their respective FNV campaign hat and patrol
+        armor.
+    - type: Tweak
+      message: New NCR armor pieces have been adjusted to meet respective armor values.
+    - type: Tweak
+      message: >-
+        Pointman kit is now renamed the Trench Raider kit, which comes with an
+        additional trench club and a skirmisher mask, as well as unique
+        sidegrade armor.
+    - type: Add
+      message: Updated NCR Army Officer armor to match the new armor sprites.
+    - type: Add
+      message: >-
+        Updates the Patrol Ranger to have the full FNV patrol ranger set upon
+        spawn.
+    - type: Add
+      message: >-
+        Adds multiple flavor items to the NCRA which require general NCR
+        playtime dependent on item.
+    - type: Add
+      message: Adds welding goggles to NCR Engineers.
+    - type: Add
+      message: Adds uncovered brodie helmets to NCR Engineers.
+    - type: Add
+      message: >-
+        New field ranger armor and sprite, old field ranger coat is retained in
+        game files.
+    - type: Add
+      message: Replaced ranger vest sprite.
+  id: 6092
+  time: '2026-06-17T02:03:17.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/824
