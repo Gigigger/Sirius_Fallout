@@ -7310,3 +7310,12 @@ Entries:
   id: 6092
   time: '2026-06-17T02:03:17.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/824
+- author: trashalice
+  changes:
+    - type: Add
+      message: >-
+        California Girl, Highland and Four Leaf Ranger sets to field+ Rangers.
+        (helmets are vet only)
+  id: 6093
+  time: '2026-06-17T02:28:30.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/832
