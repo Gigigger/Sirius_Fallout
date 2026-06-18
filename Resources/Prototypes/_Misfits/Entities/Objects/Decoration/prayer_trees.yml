@@ -48,6 +48,10 @@
         density: 1000
         layer:
           - WallLayer
+  - type: PointLight
+    color: "#fadcc0"
+    radius: 5
+    power: 4
 
 - type: entity
   parent: BasePrayerTree
