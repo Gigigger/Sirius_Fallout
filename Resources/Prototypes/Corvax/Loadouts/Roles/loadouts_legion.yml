@@ -251,3 +251,40 @@
       min: 30000
   items:
     - MisfitsExplorerAssasinHelmet
+
+- type: loadout
+  id: LoadoutNeckLegionForgemaster
+  category: Roles
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - CaesarLegionAuxilia
+        - CaesarLegionForgemaster
+  items:
+    - M14ClothingNeckLegionForgemaster
+
+- type: loadout
+  id: LoadoutNeckLegionMedicus
+  category: Roles
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - CaesarLegionAuxilia
+  items:
+    - M14ClothingNeckLegionMedicus
+
+- type: loadout
+  id: LoadoutNeckLegionTreasurer
+  category: Roles
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - CaesarLegionAuxilia
+  items:
+    - M14ClothingNeckLegionTreasurer
