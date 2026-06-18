@@ -22,6 +22,9 @@
       "name": "stimpak-empty"
     },
     {
+      "name": "stimpak"
+    },
+    {
       "name": "stimpak-empty-inhand-right",
       "directions": 4
     },
