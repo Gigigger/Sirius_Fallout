@@ -160,7 +160,7 @@
 - type: latheRecipe
   id: N14ClothingOuterPowerArmorT60Enclave
   result: N14ClothingOuterPowerArmorT60
-  category: N14PowerArmor
+  category: N14Armor
   completetime: 120
   requiresBlueprint: true
   availableFaction:
