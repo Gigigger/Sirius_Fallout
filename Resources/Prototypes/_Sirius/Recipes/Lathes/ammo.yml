@@ -1,0 +1,50 @@
+# Energy
+- type: latheRecipe
+  id: SiriusPlasmaCartridge
+  result: N14PlasmaCartridge
+  category: N14AmmoMagazine
+  completetime: 15
+  availableFaction:
+  - Enclave
+  materials:
+    Circuitry: 60
+    Steel: 160
+    N14Gold: 2
+
+- type: latheRecipe
+  id: SiriusPlasmaCartridgeMultiplas
+  result: N14PlasmaCartridgeMultiplas
+  category: N14AmmoMagazine
+  completetime: 25
+  availableFaction:
+  - Enclave
+  materials:
+    Circuitry: 50
+    Steel: 175
+    N14Gold: 50
+
+- type: latheRecipe
+  id: SiriusMicrofusionCell
+  result: N14MicrofusionCell
+  category: N14AmmoMagazine
+  completetime: 7
+  availableFaction:
+  - Enclave
+  materials:
+    Circuitry: 70
+    Steel: 200
+    N14Silver: 200
+
+- type: latheRecipe
+  id: SiriusPowerCellSmall
+  result: N14PowerCellSmall
+  category: N14AmmoMagazine
+  completetime: 5
+  availableFaction:
+  - Enclave
+  materials:
+    Circuitry: 45
+    Steel: 150
+    N14Silver: 100
+
+

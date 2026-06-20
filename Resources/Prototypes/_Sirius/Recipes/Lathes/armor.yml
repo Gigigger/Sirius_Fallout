@@ -1,0 +1,71 @@
+# Armor
+# Srukov Sirius recipes
+- type: latheRecipe
+  id: SiriusClothingOuterPowerArmorT45Enclave
+  result: N14ClothingOuterPowerArmorT45
+  category: N14Armor
+  completetime: 120
+  availableFaction:
+  - Enclave
+  materials:
+    Steel: 8000
+    N14Iron: 200
+    Circuitry: 150
+    ScrapElectronic: 150
+    N14Brass: 700
+
+- type: latheRecipe
+  id: SiriusClothingOuterPowerArmorT51Enclave
+  result: N14ClothingOuterPowerArmorT51
+  category: N14Armor
+  completetime: 120
+  availableFaction:
+  - Enclave
+  materials:
+    Steel: 13000
+    N14Iron: 600
+    Circuitry: 350
+    ScrapElectronic: 300
+    N14Brass: 1350
+
+- type: latheRecipe
+  id: SiriusClothingOuterPowerArmorT60Enclave
+  result: N14ClothingOuterPowerArmorT60
+  category: N14Armor
+  completetime: 120
+  availableFaction:
+  - Enclave
+  materials:
+    Steel: 18500
+    N14Iron: 1000
+    Circuitry: 500
+    ScrapElectronic: 400
+    N14Brass: 1450
+
+- type: latheRecipe
+  id: SiriusClothingOuterPowerArmorX01Enclave
+  result: N14ClothingOuterPowerArmorAdvanced1
+  category: N14Armor
+  completetime: 160
+  availableFaction:
+  - Enclave
+  materials:
+    Steel: 20000
+    N14Iron: 1000
+    Circuitry: 600
+    ScrapElectronic: 500
+    N14Brass: 2000
+
+- type: latheRecipe
+  id: SiriusClothingOuterPowerArmorX02Enclave
+  result: N14ClothingOuterPowerArmorAdvanced2
+  category: N14Armor
+  completetime: 360
+  availableFaction:
+  - Enclave
+  materials:
+    Steel: 27000
+    N14Iron: 1000
+    Circuitry: 600
+    ScrapElectronic: 450
+    N14Brass: 2500
