@@ -47,4 +47,24 @@
     Steel: 150
     N14Silver: 100
 
+# 5mm
+- type: latheRecipe
+  id: SiriusCartridgePistol5
+  result: N14CartridgePistol5
+  category: N14Ammo
+  completetime: 2
+  materials:
+    Lead: 1
+    Steel: 2
+    N14Gunpowder: 2
+
+- type: latheRecipe
+  id: SiriusMagazineMinigun5mm
+  result: N14MagazineMinigun5mm
+  category: N14AmmoMagazine
+  completetime: 5
+  materials:
+    Lead: 500
+    Steel: 1100
+    N14Gunpowder: 1000
 
