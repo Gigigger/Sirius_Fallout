@@ -1,0 +1,109 @@
+# MARK: Plasma
+
+- type: latheRecipe
+  id: SiriusPlasmaRifle
+  result: N14WeaponPlasmaRifle
+  category: N14Weapons
+  availableFaction:
+  - Enclave
+  completetime: 25
+  materials:
+    Circuitry: 1200
+    Steel: 2800
+    ScrapElectronic: 4000
+    N14Gold: 200
+
+- type: latheRecipe
+  id: SiriusPlasmaRifleAuto
+  result: N14WeaponPlasmaRifleAuto
+  category: N14Weapons
+  availableFaction:
+  - Enclave
+  completetime: 40
+  materials:
+    Circuitry: 1500
+    Steel: 3500
+    ScrapElectronic: 7000
+    N14Gold: 250
+
+- type: latheRecipe
+  id: SiriusPlasmaPistol
+  result: N14WeaponPlasmaPistol
+  category: N14Weapons
+  availableFaction:
+  - Enclave
+  completetime: 15
+  materials:
+    Circuitry: 150
+    Steel: 1500
+    ScrapElectronic: 3000
+    N14Gold: 100
+
+# MARK: Laser
+
+- type: latheRecipe
+  id: SiriusLaserRifle
+  result: N14WeaponLaserRifle
+  category: N14Weapons
+  availableFaction:
+  - Enclave
+  completetime: 20
+  materials:
+    Circuitry: 110
+    Steel: 2400
+    ScrapElectronic: 40
+    N14Silver: 200
+
+- type: latheRecipe
+  id: SiriusLaserRifleAuto
+  result: N14WeaponLaserRifleAuto
+  category: N14Weapons
+  availableFaction:
+  - Enclave
+  completetime: 20
+  materials:
+    Circuitry: 110
+    Steel: 2900
+    ScrapElectronic: 40
+    N14Silver: 200
+
+- type: latheRecipe
+  id: SiriusLaserRifleAER12
+  result: N14WeaponLaserRifleAER12
+  category: N14Weapons
+  availableFaction:
+  - Enclave
+  completetime: 27
+  materials:
+    Circuitry: 145
+    Steel: 2800
+    ScrapElectronic: 700
+    N14Silver: 400
+
+- type: latheRecipe
+  id: SiriusLaserPistol
+  result: N14WeaponLaserPistol
+  category: N14Weapons
+  availableFaction:
+  - Enclave
+  completetime: 12
+  materials:
+    Circuitry: 90
+    Steel: 1400
+    ScrapElectronic: 250
+    N14Silver: 150
+
+# MARK: Heavy Guns
+
+- type: latheRecipe
+  id: SiriusMinigun
+  result: N14WeaponMinigun
+  category: N14Weapons
+  availableFaction:
+  - Enclave
+  completetime: 25
+  materials:
+    Circuitry: 200
+    Steel: 19000
+    N14Iron: 3300
+    N14Brass: 4500

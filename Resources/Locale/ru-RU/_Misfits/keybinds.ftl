@@ -9,7 +9,7 @@ ui-options-function-open-mentor-help = Помощь наставника
 ui-options-function-open-help-selector = Меню помощи
 
 ## Gun keybinds
-ui-options-function-eject-magazine = Извлечь журнал
+ui-options-function-eject-magazine = Извлечь магазин
 ui-options-function-toggle-bolt-action = Переключить болт
 
 ## RMC holster keybinds

@@ -2,7 +2,7 @@
 construction-category-explosives = Взрывчатые вещества
 
 lathe-category-ammo-box = Ящики для боеприпасов
-lathe-category-ammo-magazines = Журналы
+lathe-category-ammo-magazines = Магазины
 lathe-category-armor = Броня
 lathe-category-containers = Контейнеры
 lathe-category-chemistry = Химия
