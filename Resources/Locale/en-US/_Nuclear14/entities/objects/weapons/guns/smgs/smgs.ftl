@@ -15,7 +15,7 @@ ent-N14WeaponSMGAmerican180 = American 180
     .desc = A .22 LR submachine gun fed by a 35-round drum with an integrated suppressor. Whisper-quiet and ferociously fast. What it lacks in stopping power it more than compensates for in round volume.
 
 ent-N14MagazineSMG9mmDrum = 9mm drum magazine (35)
-    .desc = A 35-round drum magazine loaded with 9mm Parabellum cartridges. Compatible with the PPSh-41.
+    .desc = A 71-round drum magazine loaded with 9mm Parabellum cartridges. Compatible with the PPSh-41.
 
 ent-N14MagazineAmerican180Drum = .22 LR drum magazine (35)
-    .desc = A 35-round drum magazine loaded with .22 Long Rifle cartridges. Fits the American 180 submachine gun.
+    .desc = A 177-round drum magazine loaded with .22 Long Rifle cartridges. Fits the American 180 submachine gun.
