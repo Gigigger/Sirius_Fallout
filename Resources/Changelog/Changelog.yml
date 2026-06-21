@@ -7628,3 +7628,14 @@ Entries:
   id: 6121
   time: '2026-06-21T20:26:53.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/875
+- author: WazuraWasTaken
+  changes:
+    - type: Tweak
+      message: 9mm drum mag now holds 71 shots
+    - type: Fix
+      message: Wrong Description on 22lr Drum Mag
+    - type: Remove
+      message: Removed the ppsh from loadouts
+  id: 6122
+  time: '2026-06-21T20:29:45.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/865
