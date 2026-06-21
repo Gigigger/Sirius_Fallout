@@ -7597,3 +7597,20 @@ Entries:
   id: 6118
   time: '2026-06-21T04:23:23.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/869
+- author: Squagg
+  changes:
+    - type: Add
+      message: Added veteran ranger duster options for off-duty NCR Rangers.
+    - type: Fix
+      message: Fixed Super Mutants being unable to select physical traits.
+    - type: Fix
+      message: Fixed Salt Coven ranger mask hair bug.
+    - type: Add
+      message: Liver transplants now fix radiation.
+    - type: Fix
+      message: No more adminbus for Juniors.
+    - type: Fix
+      message: Fixed duplication glitch with crafting tiles.
+  id: 6119
+  time: '2026-06-21T20:21:26.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/870
