@@ -753,10 +753,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - NCRVeteranRanger
-        - NCRCitizen
-    - !type:CharacterPlaytimeRequirement
-      tracker: NCRVeteranRanger
-      min: 144000 # 2400 minutes
   items:
     - N14ClothingNeckRangerDuster
 
