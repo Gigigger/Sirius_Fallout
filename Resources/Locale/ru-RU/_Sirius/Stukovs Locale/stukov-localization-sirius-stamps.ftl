@@ -6,9 +6,9 @@ ent-SiriusRubberStampEnclavePresident = президентская печать 
     .desc = Сохранившаяся довоенная печать Президента США. Она - высший символ власти в Анклаве.
 sirius-stamp-component-stamped-name-enclave-president = Президент США
 
-ent-SiriusRubberStampEnclaveReformer = печать реформатора Анклава
-    .desc = Печать реформатора - регионального главы Анклава и ставленника Президента.
-sirius-stamp-component-stamped-name-enclave-reformer = Реформатор
+ent-SiriusRubberStampEnclaveReformer = печать губернатора штата США
+    .desc = Печать губернатора - сохранившийся довоенный символ регионального главы муниципальной власти и ставленника Президента.
+sirius-stamp-component-stamped-name-enclave-reformer = Губернатор Штата
 
 ent-SiriusRubberStampEnclaveHighComm = печать верховного командования Анклава
     .desc = Печать верховного командования - символ высшей военной власти Анклава, после Президента.
@@ -23,10 +23,6 @@ ent-SiriusRubberStampEnclaveMain = печать Анклава
 sirius-stamp-component-stamped-name-enclave-main = Анклав
 
 # # NCR
-
-ent-SiriusRubberStampNCRGovernor = печать губернатора штата НКР
-    .desc = Печать губернатора штата. Это символ высшей власти НКР на территории штата.
-sirius-stamp-component-stamped-name-ncr-governor = Губернатор Штата
 
 ent-SiriusRubberStampNCRHighComm = печать верховного командования НКР
     .desc = Печать верховного командования - символ высшей военной власти НКР, после Президента.
