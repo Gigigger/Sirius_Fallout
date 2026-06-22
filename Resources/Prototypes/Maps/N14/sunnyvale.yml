@@ -49,7 +49,7 @@
             #TownShopkeeperHelper: [ 0, 0 ] # Forge-Town
             Townsperson: [ 12, 12 ]
             #NCRMajor: [ 0, 1 ] # #Misfits Add - whitelist-only command role; 0 active late-join slots
-            NCRCommander: [ 1, 1 ]
+            NCRCommander: [ 1, 0 ] # #Sirius Add - whitelist-only command role; 0 active late-join slots
             NCRExecutiveOfficer: [ 1, 1 ]
             NCRPlatoonLeader: [ 2, 2 ]
             NCRChiefRanger: [ 1, 0 ]  # #Misfits Change - admin-only Chief Ranger; renamed from ChiefRanger
@@ -62,14 +62,14 @@
             NCRHeavyTrooper: [ 2, 2 ] # #Misfits Add - Heavy Trooper: 2 slots, between Specialist and Sergeant
             NCRNCO: [ 4, 4 ]
             NCRWS: [ 1, 1 ] # #Misfits Tweak - increased: absorbs Engineer (2) + Medic (1) slots
-            NCREngineer: [ 3, 3 ] #Misfits Change /Comment-out/: consolidated into Specialist
-            NCRDoctor: [ 3, 3 ]
-            #NCRMedic: [ 1, 1 ] #Misfits Change /Comment-out/: consolidated into Specialist
+            NCREngineer: [ 3, 3 ]
+            NCRDoctor: [ 1, 1 ]
+            NCRMedic: [ 3, 3 ]
             #NCRPrivateFirstClass: [ 0, 0 ]
             #NCRSoldier: [ 0, 0 ]
-            NCRCadet: [ 15, 15 ]
+            NCRCadet: [ 16, 16 ]
             #NCRPisoner : [ 5, 5 ]
-            NCRMPinvestigator : [ 1, 1 ] # Misfits Change # #Misfits Tweak - 0 active slots (admin-notify role)
+            #NCRMPinvestigator : [ 1, 1 ]
             NCRMilitaryPoliceSergeant: [ 2, 2 ]
             NCRMilitaryPoliceRecruit: [ 3, 3 ]
             NCRMilitaryPoliceCaptain: [ 1, 1 ]
