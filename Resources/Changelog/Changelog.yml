@@ -7692,3 +7692,18 @@ Entries:
   id: 6126
   time: '2026-06-22T00:50:52.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/872
+- author: Operator
+  changes:
+    - type: Fix
+      message: Shots fired from a motorbike colliding with it
+    - type: Fix
+      message: Exploding motorbikes no longer outright delete their riders
+    - type: Fix
+      message: Melee wideswing properly applies damage
+    - type: Fix
+      message: Melee wideswing no longer hits bikes you're on
+    - type: Fix
+      message: Laser sprites dont attach to bikes. [Again.]
+  id: 6127
+  time: '2026-06-22T20:52:16.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/878
