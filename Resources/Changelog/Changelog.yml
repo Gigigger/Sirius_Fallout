@@ -7677,3 +7677,18 @@ Entries:
   id: 6125
   time: '2026-06-22T00:00:17.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/877
+- author: Squagg
+  changes:
+    - type: Add
+      message: >-
+        Added a tribal settlement construction module to the Spirit-Tender
+        Protectron.
+    - type: Fix
+      message: Spirit-Tenders now spawn alongside the tribal roles on Wendover.
+    - type: Fix
+      message: >-
+        Objects constructed by RCDs no longer produce free materials or salvage
+        when dismantled or destroyed.
+  id: 6126
+  time: '2026-06-22T00:50:52.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/872
