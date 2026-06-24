@@ -1,2 +1,2 @@
-ent-N14ClothingOuterCoatFollowersArmored = бронированном лабораторный халат последователей
+ent-N14ClothingOuterCoatFollowersArmored = бронированный лабораторный халат последователей
     .desc = Жилет, используемый последователями. Под ним находится бронежилет.
