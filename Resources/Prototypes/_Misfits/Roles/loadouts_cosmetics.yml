@@ -257,7 +257,7 @@
         - BoSMidSerf
         - CaesarLegionSlave
         - NCRPisoner
-        - VaultDweller  
+        - VaultDweller
         - VaultEngineer
         - Overseer
   items:
@@ -330,11 +330,14 @@
         - NCRSoldier
         - NCRPrivateFirstClass
         - NCRWS
-        - NCRSGT
+        - NCREngineer
+        - NCRMedic
+        - NCRNCO
         - NCRFirstSergeant
         - NCRHeavyTrooper
-        - NCRLT
-        - NCRCaptain
+        - NCRExecutiveOfficer
+        - NCRPlatoonLeader
+        - NCRCommander
         - NCRMajor
         - NCRDoctor
   items:
@@ -484,6 +487,28 @@
   items:
     - N14ClothingHeadHatArmyBeretSpecial
 
+- type: loadout
+  id: MisfitsLoadoutHeadAntlerSkull
+  category: Head
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutHead
+    - !type:CharacterJobRequirement # Forge-Change
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPisoner
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+       - Vault
+  items:
+    - MisfitsClothingHeadAntlerSkull
+
+
 # === Head: NCR soldiers ===
 
 - type: loadout
@@ -497,11 +522,14 @@
         - NCRSoldier
         - NCRPrivateFirstClass
         - NCRWS
-        - NCRSGT
+        - NCREngineer
+        - NCRMedic
+        - NCRNCO
         - NCRFirstSergeant
         - NCRHeavyTrooper
-        - NCRLT
-        - NCRCaptain
+        - NCRExecutiveOfficer
+        - NCRPlatoonLeader
+        - NCRCommander
         - NCRMajor
         - NCRDoctor
   items:
@@ -514,8 +542,9 @@
   requirements:
     - !type:CharacterJobRequirement
       jobs:
-        - NCRLT
-        - NCRCaptain
+        - NCRExecutiveOfficer
+        - NCRPlatoonLeader
+        - NCRCommander
         - NCRMajor
   items:
     - N14ClothingHeadHatNCRBeretOfficer
@@ -539,7 +568,9 @@
     - !type:CharacterJobRequirement
       jobs:
         - NCRWS
-        - NCRSGT
+        - NCREngineer
+        - NCRMedic
+        - NCRNCO
         - NCRFirstSergeant
         - NCRHeavyTrooper
   items:
@@ -854,11 +885,14 @@
         - NCRSoldier
         - NCRPrivateFirstClass
         - NCRWS
-        - NCRSGT
+        - NCREngineer
+        - NCRMedic
+        - NCRNCO
         - NCRFirstSergeant
         - NCRHeavyTrooper
-        - NCRLT
-        - NCRCaptain
+        - NCRExecutiveOfficer
+        - NCRPlatoonLeader
+        - NCRCommander
         - NCRMajor
         - NCRDoctor
   items:
@@ -878,11 +912,14 @@
         - NCRSoldier
         - NCRPrivateFirstClass
         - NCRWS
-        - NCRSGT
+        - NCREngineer
+        - NCRMedic
+        - NCRNCO
         - NCRFirstSergeant
         - NCRHeavyTrooper
-        - NCRLT
-        - NCRCaptain
+        - NCRExecutiveOfficer
+        - NCRPlatoonLeader
+        - NCRCommander
         - NCRMajor
         - NCRDoctor
   items:
@@ -898,11 +935,12 @@
       group: N14LoadoutNeck
     - !type:CharacterJobRequirement
       jobs:
-        - NCRSGT
+        - NCRNCO
         - NCRFirstSergeant
         - NCRHeavyTrooper
-        - NCRLT
-        - NCRCaptain
+        - NCRExecutiveOfficer
+        - NCRPlatoonLeader
+        - NCRCommander
         - NCRMajor
   items:
     - N14ClothingNeckMantleNCR

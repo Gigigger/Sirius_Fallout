@@ -69,7 +69,7 @@
       - N14Clip308Rifle
   - type: BallisticAmmoProvider
     proto: N14Cartridge308Rifle
-    capacity: 7
+    capacity: 8
   - type: Sprite
     netsync: false
     sprite: _Nuclear14/Objects/Weapons/Guns/Ammunition/Magazines/308/mag2.rsi
@@ -164,7 +164,7 @@
       - N14Magazine308RifleSnipers
   - type: BallisticAmmoProvider
     proto: N14Cartridge308Rifle
-    capacity: 10
+    capacity: 15 #sirius change
   - type: Sprite
     netsync: false
     sprite: _Nuclear14/Objects/Weapons/Guns/Ammunition/Magazines/308/mag5.rsi

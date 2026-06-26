@@ -13,6 +13,7 @@
   - type: Damageable
   - type: PowerArmorIntegrity
     maxIntegrity: 400 # #Misfits Tweak: By Bill, 400 durability for a little more standing power.
+    brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
   - type: Repairable
     fuelCost: 10
     doAfterDelay: 18 # #Misfits Tweak - Increased weld repair time from 5s to 30s to 18s; 5s was too fast for combat balance, 30 is too slow, current proposal is 18.
@@ -41,9 +42,16 @@
         Blunt: 0.75
         Slash: 0.75
         Piercing: 0.75
-        Heat: 0.75
+        Heat: 0.55
         Caustic: 0.75
         Radiation: 0.6
+      flatReductions:  #sirius change
+        Blunt: 2
+        Slash: 2
+        Piercing: 2
+        Heat: 2
+        Caustic: 1
+        Radiation: 4
   - type: UserInterface
     interfaces:
       enum.ToggleClothingUiKey.Key:
@@ -100,6 +108,7 @@
   description: An old suit of T-51 Power Armor. It looks more advanced than your common everyday T-45.
   components:
   - type: PowerArmorIntegrity
+    brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
     maxIntegrity: 480 # #Misfits Tweak: By Bill, 480 durability.
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/t51.rsi
@@ -128,12 +137,54 @@
     damageCoefficient: 0.12 # #Misfits Tweak: T-51 blast resistance — ~14 HP at ground zero
 
 - type: entity
+  parent: N14ClothingOuterPowerArmorT45
+  id: MisfitsEnclavePowerArmor
+  name: Experimental X-01 Power Armor
+  description: A set of X-01 Power Armor made to fit a Supermutant, In exchange its less durable then a normal X-01
+  components:
+  - type: PowerArmorIntegrity
+    brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
+    maxIntegrity: 480 # #Misfits Tweak: By Bill, 480 durability.
+  - type: Sprite
+    sprite: _Misfits/Clothing/OuterClothing/PowerArmor/Mutant_PA.rsi
+  - type: Clothing
+    sprite: _Misfits/Clothing/OuterClothing/PowerArmor/Mutant_PA.rsi
+    equipDelay: 14400 # The Experimental X-01 Power armor is a living Tomb for whichever poor supermutant they put in it, so it takes the entire round to unequip/equip.
+    unequipDelay: 14400
+  - type: Armor # #Misfits Tweak: Added Heat and Piercing coefficients — pre-reduces damage before integrity absorption so PA stays above Centurion/Vet.Ranger at all integrity levels.
+    modifiers:
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.70
+        Piercing: 0.70
+        Heat: 0.70
+        Caustic: 0.75
+        Radiation: 0.6
+  - type: Unremoveable # This is your casket. Service garentees citizenship.
+  - type: Tag
+    tags:
+    - SuperMutantWearable
+  - type: UserInterface
+    interfaces:
+      enum.ToggleClothingUiKey.Key:
+        type: ToggleableClothingBoundUserInterface
+  - type: ToggleableClothing
+    clothingPrototypes:
+      head: MisfitsEnclavePowerArmorHelmet
+      gloves: N14ClothingPAGauntlets
+      shoes: N14ClothingPABoots
+      back: N14ClothingPowerSystemsBack
+  - type: ExplosionResistance
+    damageCoefficient: 0.12 # #Misfits Tweak: T-51 blast resistance — ~14 HP at ground zero
+
+- type: entity
   parent: N14ClothingOuterPowerArmorT51
   id: N14ClothingOuterPowerArmorT60
   name: t-60 power armor
   description: A suit of T-60 Power Armor. The T-60 series of power armor was designed to eventually replace the T-51 as the pinnacle of powered armor technology. It however suffered from a minor drawback in its armor placement, making it somewhat less armored.
   components:
   - type: PowerArmorIntegrity
+    brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
     maxIntegrity: 445 # #Misfits Tweak: By Bill, 445 durability.
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/t60.rsi
@@ -148,6 +199,13 @@
         Heat: 0.725
         Caustic: 0.75
         Radiation: 0.6
+      flatReductions:  #sirius change
+        Blunt: 4
+        Slash: 4
+        Piercing: 4
+        Heat: 4
+        Caustic: 3
+        Radiation: 4
   - type: UserInterface
     interfaces:
       enum.ToggleClothingUiKey.Key:
@@ -210,6 +268,7 @@
   description: A rare, bulky, and advanced suit of power armor. It includes partial hermetic sealing that helps protect against radiation!
   components:
   - type: PowerArmorIntegrity
+    brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
     maxIntegrity: 460 # #Misfits Tweak: By Bill, 460 a little better than T60 but not T51.
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/advanced1.rsi
@@ -250,6 +309,7 @@
   description: A mass-produced version of the original APA. It sports less plating but is easier to repair and maintain.
   components:
   - type: PowerArmorIntegrity
+    brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
     maxIntegrity: 485 # #Misfits Tweak: By Bill, better by a tiny bit than T51. TINY BIT
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/advanced2.rsi
@@ -267,6 +327,13 @@
         Heat: 0.70
         Caustic: 0.75
         Radiation: 0.6
+      flatReductions:  #sirius change
+        Blunt: 4
+        Slash: 4
+        Piercing: 4
+        Heat: 4
+        Caustic: 3
+        Radiation: 4
   - type: ExplosionResistance
     damageCoefficient: 0.10 # #Misfits Tweak: X-02 blast resistance — ~12 HP at ground zero
   - type: UserInterface
@@ -340,6 +407,7 @@
   description: Terrifying, robust, spiky. Everything a Raider needs in a power armor suit.
   components:
   - type: PowerArmorIntegrity
+    brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
     maxIntegrity: 300 # #Misfits Tweak: +150 flat integrity buff
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/raider.rsi
@@ -383,6 +451,7 @@
   description: A unknown model of power armor manufactured by the Brotherhood of Steel. It supports a lighter plating than the normal but is more ergonomic, allowing easier movement.
   components:
   - type: PowerArmorIntegrity
+    brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
     maxIntegrity: 400 # #Misfits Tweak: +150 flat integrity buff
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/midwest.rsi
@@ -429,7 +498,8 @@
   description: A unknown model of power armor manufactured by the Brotherhood of Steel. This modified version is commonly used by high-ranking Brotherhood of Steel Paladins.
   components:
   - type: PowerArmorIntegrity
-    maxIntegrity: 450 # #Misfits Tweak: By Bill, 450, a little better than T60.
+    brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
+    maxIntegrity: 485 # #Misfits Tweak: Very slightly above standard T-51.
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/midwestcommander.rsi
   - type: Clothing
@@ -437,37 +507,14 @@
   - type: Armor # #Misfits Tweak: Added Heat and Piercing coefficients — pre-reduces damage before integrity absorption so PA stays above Centurion/Vet.Ranger at all integrity levels.
     modifiers:
       coefficients:
-        Blunt: 0.70
-        Slash: 0.70
-        Piercing: 0.70
-        Heat: 0.70
-        Caustic: 0.75
-        Radiation: 0.6
-  - type: Storage
-    grid:
-    - 0,0,2,1
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
-      enum.ToggleClothingUiKey.Key:
-        type: ToggleableClothingBoundUserInterface
-      enum.WastelandMapUiKey.Key:
-        type: WastelandMapBoundUserInterface
-  - type: WastelandMap
-    mapTexturePath: _Misfits/Maps/wendover_map.png
-    mapTitle: Brotherhood Tactical HUD
-    # #Misfits Fix - Match the corrected Wendover AABB so helmet-linked tactical markers align with the map art.
-    worldBounds: "-517,-308,484,311"
-    tacticalFeed: Brotherhood
-    compactHud: true
-  # #Misfits Change - tactical HUD is provided by the helmet, not the suit itself
-  - type: WastelandMapAction
-    requiredSlot: HEAD
+        Blunt: 0.695
+        Slash: 0.695
+        Piercing: 0.695
+        Heat: 0.695
+        Caustic: 0.745
+        Radiation: 0.595
+  - type: ExplosionResistance
+    damageCoefficient: 0.118 # #Misfits Tweak: Very slightly above standard T-51 blast resistance.
   - type: ToggleableClothing
     clothingPrototypes:
       head: N14ClothingHeadHelmetPowerArmorMidwestCommander
@@ -482,6 +529,7 @@
   description: The pinnacle of pre-war technology appropriated by the Brotherhood of Steel. Commonly worn by Paladin Commanders.
   components:
   - type: PowerArmorIntegrity
+    brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
     maxIntegrity: 490 # #Misfits Tweak: By Bill, little more durability than normal T-51
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/t51bc.rsi
@@ -536,6 +584,7 @@
   description: Originally existing as T-45d power armor, it was recovered by and repurposed for use within the NCR.
   components:
   - type: PowerArmorIntegrity
+    brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
     maxIntegrity: 325 # #Misfits Tweak: +150 flat integrity buff
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/t45ncr.rsi
@@ -606,6 +655,7 @@
   description: A modified set of T-51 power armor, it seems to have some slight upgrades over the pre-war model and is in the colours of the Washington Brotherhood.
   components:
   - type: PowerArmorIntegrity
+    brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
     maxIntegrity: 400 # #Misfits Tweak: +150 flat integrity buff
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/t51wash.rsi
@@ -658,6 +708,7 @@
   description: A pinnacle of pre-war military engineering, the T-51b was standard issue for front-line infantry units during the Sino-American conflict. This suit's fusion-powered servos and composite plating have withstood the test of time.
   components:
   - type: PowerArmorIntegrity
+    brokenBleedthroughRatio: 1.0  # #Misfits Add - when broken, only armor coefficients apply
     maxIntegrity: 485 # #Misfits Tweak: By Bill, a little better than T51 but not as good as T51BC
   - type: Sprite
     sprite: _Nuclear14/Clothing/OuterClothing/PowerArmor/t51washelite.rsi
@@ -672,17 +723,8 @@
         Heat: 0.675
         Caustic: 0.75
         Radiation: 0.6
-  - type: Storage
-    grid:
-    - 0,0,2,1
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
   - type: UserInterface
     interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
       enum.ToggleClothingUiKey.Key:
         type: ToggleableClothingBoundUserInterface
       enum.WastelandMapUiKey.Key:

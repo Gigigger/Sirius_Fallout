@@ -56,6 +56,8 @@
           warcryMessage: warcry-message-mars
           warcryMessageCount: 6
           buffPopup: warcry-popup-buffed-mars
+          excludedJobs:
+          - SuperMutantGladiator
           cautionPopup: true
           activatorJobs:
           - CaesarLegionDean
@@ -81,7 +83,6 @@
     ears: N14ClothingHeadsetLegion
     back: N14ClothingBackpackMilitary
     id: N14IDLegionaryMedalRecruit
-    pocket1: LegionPriestessLoadoutKits
   storage:
     back:
       - N14BoxPlasticFilledMilitaryLegion

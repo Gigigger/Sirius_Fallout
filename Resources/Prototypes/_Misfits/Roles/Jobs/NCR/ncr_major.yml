@@ -5,7 +5,7 @@
 
 - type: job
   id: NCRMajor
-  setPreference: true
+  setPreference: false # RETIRED — Major is now a rank pin earned via NCRCommander/NCRDoctor progression
   hideWithoutJobWhitelist: true   # Whitelist-only; only visible to whitelisted players
   hideIfPlaytimeRequirementsNotMet: false
   jobWhitelistBypassesRoleTimers: true
@@ -58,7 +58,6 @@
     belt: ClothingBeltNCR
     eyes: ClothingEyesGlassesSunglasses
     ears: N14ClothingHeadsetNCR
-    pocket1: NCRcaptainloadoutkits
     pocket2: RadioHandheld
     id: N14IDNCRDogtagMajor
   innerClothingSkirt: N14ClothingOfficerUniformNCRDesert

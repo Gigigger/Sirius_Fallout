@@ -17,13 +17,11 @@
     - !type:CharacterSpeciesRequirement
       species:
       - Human
-      - Ghoul
-      - SuperMutant
     - !type:CharacterDepartmentTimeRequirement # #Misfits Tweak - T4 faction timelock (12h Enclave)
       department: Enclave
       min: 43200 # 12 hours
   startingGear: EnclaveScientistGear
-  icon: "JobIconScientist"
+  icon: "JobIconEnclaveScientist"
   supervisors: job-supervisors-enclave-scientist
   alwaysUseSpawner: true
   accessGroups:
@@ -47,7 +45,7 @@
     belt: ClothingBeltMilitary
     ears: N14ClothingHeadsetEnclave
     pocket2: EnclaveScientistloadoutkits
-    id: N14IDEnclaveNoncombat
+    id: SiriusIDEnclaveScientist
   satchel: N14ClothingBackpackSatchelMilitaryFilled
   storage:
     back:

@@ -48,6 +48,8 @@
         warcryMessage: warcry-message-legion
         warcryMessageCount: 6
         buffPopup: warcry-popup-buffed-legion
+        excludedJobs:
+        - SuperMutantGladiator
         cautionPopup: true
         activatorJobs:
         - CaesarLegionDean
@@ -74,7 +76,6 @@
     gloves: N14ClothingHandsGlovesTribal
     belt: N14Gladius
     suitstorage: N14PilumSpear
-    pocket1: LegionOratorloadoutkits
     id: N14IDLegionaryMedalOrator
   innerClothingSkirt: N14ClothingUniformJumpsuitLegionnaireOther
   storage:

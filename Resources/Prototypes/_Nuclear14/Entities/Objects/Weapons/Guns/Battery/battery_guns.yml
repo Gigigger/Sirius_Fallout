@@ -204,7 +204,7 @@
   - type: Gun
     soundGunshot:
       collection: N14PlasmaPistolGunshot
-    fireRate: 1.5
+    fireRate: 1
   - type: FollowDistance
     backStrength: 6
   - type: StaticPrice
@@ -346,8 +346,8 @@
   components:
   - type: Wieldable
   - type: GunWieldBonus
-    minAngle: -24 # #Misfits Tweak - wielded spread 1°/5°; matches RCW
-    maxAngle: -55
+    minAngle: -23 # #Misfits Tweak - wielded spread 2°/13°; fast fire. fast spread.
+    maxAngle: -47
   - type: Sprite
     sprite: _Nuclear14/Objects/Weapons/Guns/Battery/laser_autorifle.rsi
     layers:
@@ -377,7 +377,7 @@
           tags:
             - N14MicrofusionCell
   - type: Gun
-    fireRate: 5
+    fireRate: 8
     soundGunshot:
       collection: N14LaserAutoRifleGunshot
     selectedMode: FullAuto
@@ -433,7 +433,7 @@
     steps: 3
     zeroVisible: true
   - type: Gun
-    fireRate: 4
+    fireRate: 3
     soundGunshot:
       collection: N14PlasmaAutoRifleGunshot
     selectedMode: FullAuto
@@ -615,8 +615,8 @@
   components:
   - type: Wieldable
   - type: GunWieldBonus
-    minAngle: -25 # #Misfits Tweak - wielded spread 0°/4°; 0° min for rifles
-    maxAngle: -56
+    minAngle: -25 # #Misfits Tweak - wielded spread 0°/2°; 0° min for rifles
+    maxAngle: -58
   - type: Sprite
     sprite: _Nuclear14/Objects/Weapons/Guns/Battery/laser_rifle.rsi
     layers:
@@ -646,7 +646,7 @@
           tags:
             - N14MicrofusionCell
   - type: Gun
-    fireRate: 5
+    fireRate: 3
     soundGunshot:
       collection: N14LaserAutoRifleGunshot
     selectedMode: SemiAuto
@@ -799,7 +799,7 @@
     steps: 3
     zeroVisible: true
   - type: Gun
-    fireRate: 3
+    fireRate: 1.5
     soundGunshot:
       collection: N14PlasmaAutoRifleGunshot
     selectedMode: SemiAuto
@@ -848,7 +848,7 @@
           tags:
             - N14PlasmaCartridge
   - type: Gun
-    fireRate: 2.5
+    fireRate: 1
     soundGunshot:
       collection: N14PlasmaAutoRifleGunshot
     selectedMode: SemiAuto
@@ -899,12 +899,18 @@
     steps: 3
     zeroVisible: true
   - type: Gun
-    fireRate: 4
+    fireRate: 2
     soundGunshot:
       collection: N14PlasmaAutoRifleGunshot
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
+  - type: GunDamageBonus
+    hitscanProtoOverride: N14MFLaserYellow
+    bonusDamage:
+      types:
+        Heat: 33 #sirius change
+    fireCostMultiplier: 2.0
   - type: FollowDistance
     backStrength: 5
   - type: StaticPrice
@@ -951,7 +957,7 @@
     steps: 5
     zeroVisible: true
   - type: Gun
-    fireRate: 2 # #Misfits Tweak - reduced from 6; shotgun pacing (1 spread burst per 0.5s)
+    fireRate: 1.5 # #Misfits Tweak - reduced from 6; shotgun pacing (1 spread burst per 0.5s)
     soundGunshot:
       collection: N14MultiplasGunshot
     selectedMode: SemiAuto # #Misfits Fix - was Burst; Multiplas fires multiple bolts simultaneously like a shotgun
@@ -1019,7 +1025,7 @@
     hitscanProtoOverride: N14MFLaserYellow
     bonusDamage:
       types:
-        Heat: 23
+        Heat: 33 #sirius change
     fireCostMultiplier: 2.0
 
 - type: entity
@@ -1076,7 +1082,7 @@
     hitscanProtoOverride: N14MFLaserYellow
     bonusDamage:
       types:
-        Heat: 13
+        Heat: 28 #sirius change
     fireCostMultiplier: 2.0
 
 #MARK: Heavy
@@ -1111,18 +1117,18 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: N14PlasmaCartridge
+        startingItem: N14PlasmaShell
         insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
         whitelist:
           tags:
-            - N14PlasmaCartridge
+            - N14PlasmaShell
   - type: Gun
     minAngle: 2
     maxAngle: 12
     angleIncrease: 4
     angleDecay: 12
-    fireRate: 4
+    fireRate: 2
     soundGunshot:
       collection: N14PlasmaCasterGunshot
     selectedMode: FullAuto
@@ -1247,7 +1253,7 @@
     minAngle: -7 # #Misfits Tweak - wielded spread 1°/5°; rapid-fire weapons keep 1° minimum
     maxAngle: -20
   - type: Gun
-    fireRate: 5 #Misfits Change — reduced from 8; RCW is rapid-cycling but not a bullet hose, 5 keeps it distinctly auto without being oppressive
+    fireRate: 6 #Misfits Change — reduced from 8; RCW is rapid-cycling and accurate. But not as fast as a rotating barrel like the AER-9 auto
     minAngle: 8
     maxAngle: 25
     angleIncrease: 4

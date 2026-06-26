@@ -100,12 +100,11 @@
     size: Huge
   - type: SpawnItemsOnUse
     items:
-      - id: N14WeaponShotgunLever
+      - id: N14WeaponRifle762Marksman
       - id: N14LegionnaireShield
       - id: ClothingBeltRope
-      - id: MagazineBox20gauge
-      - id: Bola
-        amount: 2
+      - id: Magazine762Rifle
+        amount: 3
       - id: BoxHandcuff
       - id: N14HealingPoultice #Misfits Change /Tweak/: replaces dirty stimpak, Legion uses tribal medicine
         amount: 2
@@ -157,8 +156,9 @@
     items:
       - id: N14SledgeHammer
       - id: ClothingBeltRope
-      - id: ThrowingKnife
-        amount: 3
+      - id: N14WeaponRifle556Carbine
+      - id: LongMagazine556Rifle
+        amount: 4
       - id: N14HealingPoultice #Misfits Change /Tweak/: Legion uses tribal medicine, not stimpaks
         amount: 2
       #- id: N14MedkitFilled #Misfits Change /Remove/: Legion does not use stimpak medkits
@@ -585,7 +585,7 @@
       - id: MagazineBox50 # #Misfits Change by bill - one box? ...two box.
         amount: 2
       - id: ClothingBeltRope
-      - id: N14WeaponSMGGreaseGun # #Misfits Change: legion smg for hunting armor. 
+      - id: N14WeaponSMGGreaseGun # #Misfits Change: legion smg for hunting armor.
       - id: Magazine45SubMachineGun
         amount: 2
       - id: N14WeaponShotgunShort
@@ -2173,3 +2173,92 @@
     sound:
       path: /Audio/Effects/unwrap.ogg
 
+- type: entity
+  name: centurion-cinder-kit
+  parent: KitBase
+  id: KitCenturionCinder
+  description: "Cinder centurion armor and matching helmet."
+  components:
+  - type: Sprite
+    sprite: Corvax/Objects/Misc/kits.rsi
+    state: base
+  - type: Item
+    size: Huge
+  - type: SpawnItemsOnUse
+    items:
+      - id: MisfitsCenturionCinderCohort
+      - id: MisfitsCenturionCinderCohortHelmet
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  name: centurion-salt-column-kit
+  parent: KitBase
+  id: KitCenturionSaltColumn
+  description: "Salt column centurion armor and matching helmet."
+  components:
+  - type: Sprite
+    sprite: Corvax/Objects/Misc/kits.rsi
+    state: base
+  - type: Item
+    size: Huge
+  - type: SpawnItemsOnUse
+    items:
+      - id: MisfitsCenturionSaltColumn
+      - id: MisfitsCenturionSaltColumnHelmet
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  name: centurion-unbroken-kit
+  parent: KitBase
+  id: KitCenturionUnbroken
+  description: "Unbroken centurion armor and matching helmet."
+  components:
+  - type: Sprite
+    sprite: Corvax/Objects/Misc/kits.rsi
+    state: base
+  - type: Item
+    size: Huge
+  - type: SpawnItemsOnUse
+    items:
+      - id: MisfitsCenturionUnbroken
+      - id: MisfitsCenturionUnbrokenHelmet
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  name: centurion-warforged-kit
+  parent: KitBase
+  id: KitCenturionWarforged
+  description: "Warforged centurion armor and matching helmet."
+  components:
+  - type: Sprite
+    sprite: Corvax/Objects/Misc/kits.rsi
+    state: base
+  - type: Item
+    size: Huge
+  - type: SpawnItemsOnUse
+    items:
+      - id: MisfitsCenturionWarforged
+      - id: MisfitsCenturionWarforgedHelmet
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  name: centurion-warlord-kit
+  parent: KitBase
+  id: KitCenturionWarlord
+  description: "Warlord centurion armor and matching helmet."
+  components:
+  - type: Sprite
+    sprite: Corvax/Objects/Misc/kits.rsi
+    state: base
+  - type: Item
+    size: Huge
+  - type: SpawnItemsOnUse
+    items:
+      - id: MisfitsCenturionWarlord
+      - id: MisfitsCenturionWarlordHelmet
+    sound:
+      path: /Audio/Effects/unwrap.ogg

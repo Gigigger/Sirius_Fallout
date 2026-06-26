@@ -22,7 +22,7 @@
           - Rangers
   requirements:
     - !type:CharacterDepartmentTimeRequirement
-      department: NCR
+      department: Rangers
       min: 57600 # 16 hours
     - !type:CharacterSpeciesRequirement # #Misfits Change - robots, super mutants, and glowing ghouls cannot be Rangers
       inverted: true
@@ -40,6 +40,7 @@
       - RobotRobobrain # #Misfits Fix - missing robot chassis
       - RobotRobobrainLaser # #Misfits Fix - missing variant species
       - SuperMutant
+      - Nightkin
       - GhoulGlowing # #Misfits Tweak - glowing ghouls not allowed in NCR Rangers
 
 - type: startingGear
@@ -52,9 +53,8 @@
     shoes: N14ClothingBootsLeather
     belt: ClothingBeltRevolverdesertfilled
     pocket1: MagazineBox45-70
-    pocket2: NCRpatrolrangerloadoutkits
     eyes: ClothingEyesGlassesSunglasses
-    outerClothing: N14ClothingOuterNCRCombatArmor # Misfits Tweak - patrol rangers should start in NCR combat armor, not ranger combat armor
+    outerClothing: N14ClothingOuterRangerCoat # Misfits Tweak - patrol rangers should start in NCR combat armor, not ranger combat armor
     id: N14IDBadgeNCRDesertRangerRecruit
   innerClothingSkirt: N14ClothingUniformRangerV1 #placeholder
   satchel: N14ClothingBackpackSatchelMilitaryFilled

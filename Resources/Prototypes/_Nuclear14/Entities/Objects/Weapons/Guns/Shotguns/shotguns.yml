@@ -285,7 +285,7 @@
     maxAngle: 104
     angleIncrease: 4
     angleDecay: 16
-    fireRate: 1
+    fireRate: 1.5 #sirius change
     soundGunshot:
       collection: N14LeverShotgunGunshot
   - type: StaticPrice
@@ -397,7 +397,7 @@
   description: A semi automatic combat shotgun with a integrated drum mag, uses 12 gauge shells.
   components:
   - type: Gun
-    fireRate: 2
+    fireRate: 3 #sirius change
     soundGunshot:
       collection: N14ShotgunGunshot
   - type: GunRequiresWield
@@ -515,7 +515,7 @@
     whitelist:
       tags:
       - N14ShellShotgun12
-    capacity: 2
+    capacity: 3 #sirius change
     proto: N14ShellShotgun12
     soundInsert:
       path: /Audio/_Nuclear14/Weapons/Effects/Reload/Shotguns/shotgun_insert.ogg
@@ -537,7 +537,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 12
+        Blunt: 24 #sirius change
   - type: DamageOtherOnHit
     damage:
       types:
@@ -572,7 +572,7 @@
     whitelist:
       tags:
       - N14ShellShotgun12
-    capacity: 2
+    capacity: 3 #sirius change
     proto: N14ShellShotgun12
     soundInsert:
       path: /Audio/_Nuclear14/Weapons/Effects/Reload/Shotguns/shotgun_insert.ogg
@@ -595,8 +595,8 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Piercing: 6
-        Slash: 4
+        Piercing: 12 #sirius change
+        Slash: 8 #sirius change
   - type: DamageOtherOnHit
     damage:
       types:
@@ -702,6 +702,7 @@
   - type: Sprite
     sprite: _Nuclear14/Objects/Weapons/Guns/Shotguns/neostead.rsi
   - type: Wieldable
+  - type: GunRequiresWield
   - type: GunWieldBonus
     minAngle: -14
     maxAngle: -38
@@ -710,7 +711,7 @@
     maxAngle: 50
     angleIncrease: 4
     angleDecay: 14
-    fireRate: 3
+    fireRate: 2 #sirius change
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -720,7 +721,7 @@
     whitelist:
       tags:
       - N14ShellShotgun12
-    capacity: 12
+    capacity: 12 #sirius change
     proto: N14ShellShotgun12
     soundInsert:
       path: /Audio/_Nuclear14/Weapons/Effects/Reload/Shotguns/shotgun_insert.ogg

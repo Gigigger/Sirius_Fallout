@@ -29,13 +29,14 @@
     inverted: true
     departments:
     - Tribe
-  - !type:CharacterJobRequirement
-    jobs:
-    - NCRFieldRanger
-    - NCRVeteranRanger
-    - FollowerHead    # #Misfits Change - Followers job replaced by ranked hierarchy
-    - FollowerDoctor
-    - FollowerVolunteer
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - LanguageTribalGeneral
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Rangers
+    - FollowersOfTheApocalypse
   functions:
   - !type:TraitModifyLanguages
     languagesSpoken:
@@ -91,25 +92,25 @@
     - TribalElder
     - TownMayor
     - TownSheriff
-    - NCRCaptain
-    - NCRLT
+    - NCRCommander
+    - NCRExecutiveOfficer
+    - NCRPlatoonLeader
     - NCRVeteranRanger
     - NCRFieldRanger
     - NCRPatrolRanger
     - NCRDoctor
     - NCRFirstSergeant
     - NCRStaffSergeant
-    - NCRSGT
+    - NCRNCO
 #    - CaravanLeader
 #    - BoSWashingtonCommander
 #    - BoSWashingtonPaladin
     - BoSMidPaladinCommander
     - BoSMidPaladin
     # Forge-Change-Start
-    - NCRMPinvestigator
     - NCRWS
-    #- NCREngineer #Misfits Change /Comment-out/: consolidated into Specialist
-    #- NCRMedic #Misfits Change /Comment-out/: consolidated into Specialist
+    - NCREngineer
+    - NCRMedic
     - NCRPrivateFirstClass
     - NCRSoldier
     - NCRCadet
@@ -173,6 +174,7 @@
     - N14Stutter
     - N14ScottishAccent
     - N14Liar
+    - N14TribalAccent # Misfits
   functions:
   - !type:TraitAddComponent
     components:
@@ -189,6 +191,7 @@
     - N14Stutter
     - N14FrontalLisp
     - N14Liar
+    - N14TribalAccent # Misfits
   functions:
   - !type:TraitAddComponent
     components:

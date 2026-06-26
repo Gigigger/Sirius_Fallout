@@ -37,8 +37,8 @@
       coefficients:
         Blunt: 0.72
         Slash: 0.72
-        Piercing: 0.82
-        Heat: 0.82
+        Piercing: 0.72  #sirius change
+        Heat: 0.72  #sirius change
         Radiation: 0.90
 
 - type: entity
