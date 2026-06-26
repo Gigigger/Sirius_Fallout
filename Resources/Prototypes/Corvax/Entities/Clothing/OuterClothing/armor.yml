@@ -131,7 +131,7 @@
   parent: N14FalloutArmorBase
   id: N14ClothingOuterDeanLegionnairePrimeArmor
   name: heavy legionary armor
-  description: "The heavy version of legionary armor slows down the wearer, but gives good protection from external threats."
+  description: "Though this heavy plate offers no added mobility, it stands as the Forgemaster's most protective suit of armor."
   components:
   - type: Sprite
     sprite: Corvax/Clothing/OuterClothing/Armor/deanprimearmor.rsi
@@ -163,7 +163,7 @@
   - type: Clothing
     sprite: Corvax/Clothing/OuterClothing/Armor/deanrecruitarmor.rsi
   - type: ClothingSpeedModifier
-    walkModifier: 1
+    walkModifier: 1.05 # made a little faster since its just worse than combat mk2
     sprintModifier: 1.05
   - type: Armor
     modifiers:
