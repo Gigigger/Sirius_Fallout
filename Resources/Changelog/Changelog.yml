@@ -7870,3 +7870,12 @@ Entries:
   id: 6140
   time: '2026-06-26T01:31:09.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/884
+- author: Squagg
+  changes:
+    - type: Add
+      message: >-
+        Added item engraving with sharp objects, allowing players to permanently
+        name and redescribe items once.
+  id: 6141
+  time: '2026-06-26T15:17:34.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/899
