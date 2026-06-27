@@ -59,6 +59,42 @@ public sealed class FactionWarSystem : EntitySystem
     /// <summary>Cooldown after a war ends before same player can declare again.</summary>
     private static readonly TimeSpan WarCooldownAfterEnd = TimeSpan.FromMinutes(10);
 
+    /// <summary>Cooldown after a ceasefire rejection before the proposer can request again.</summary>
+    private static readonly TimeSpan CeasefireCooldownAfterRejection = TimeSpan.FromMinutes(20);
+
+    /// <summary>Factions that auto-enlist their members when a war is declared.</summary>
+    private static readonly HashSet<string> AutoEnlistFactions = new()
+    {
+        "NCR",
+        "CaesarLegion",
+        "BrotherhoodOfSteel",
+        "Tribal",
+        "Vault",
+        "Enclave",
+    };
+
+    /// <summary>Jobs that should never be auto-enlisted even if their faction is at war.</summary>
+    private static readonly HashSet<string> AutoEnlistJobExemptions = new()
+    {
+        "NCRPrisoner",
+        "CaesarLegionSlave",
+        "CaesarLegionFrumentarii",
+        "CaesarLegionCitizen",
+        "CaesarLegionTrader",
+        "NCRCitizen",
+        "NCRTrader",
+        "Townsperson",
+    };
+
+    /// <summary>Major factions — each can only be in ONE war at a time.</summary>
+    private static readonly HashSet<string> MajorFactions = new()
+    {
+        "NCR",
+        "CaesarLegion",
+        "BrotherhoodOfSteel",
+        "Enclave",
+    };
+
 
     // ── State ──────────────────────────────────────────────────────────────
 
