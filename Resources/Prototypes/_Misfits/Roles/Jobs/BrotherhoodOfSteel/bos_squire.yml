@@ -8,6 +8,7 @@
   overrideConsoleVisibility: true
   canBeAntag: false
   name: job-name-bos-mid-squire
+  overwatchCategory: OverwatchBosAspirant
   description: job-description-bos-mid-squire
   playTimeTracker: BoSMidSquire
   requirements:

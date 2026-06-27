@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Content.Server.Access.Components;
 using Content.Server.Chat.Managers; // #Misfits Add - faction death alert chat dispatch
 using Content.Server._Misfits.Group; // #Misfits Add - group blip injection
+using Content.Server._Misfits.Overwatch;
 using Content.Server._Misfits.TribalHunt;
 using Content.Shared.Access.Components;
 using Content.Shared.Humanoid; // #Misfits Add - Followers casualty filter for humanoid player bodies only
@@ -103,7 +104,7 @@ public sealed class WastelandMapSystem : EntitySystem
                 if (firstActor == null)
                     continue;
 
-                _uiSystem.SetUiState((uid, ui), WastelandMapUiKey.Key, BuildState(map, viewerMap, actor: firstActor));
+                _uiSystem.SetUiState((uid, ui), WastelandMapUiKey.Key, BuildState(uid, map, viewerMap, actor: firstActor));
             }
         }
         finally
@@ -117,7 +118,7 @@ public sealed class WastelandMapSystem : EntitySystem
     {
         var userMap = Transform(args.User).MapID;
         // #Misfits Add - pass the user so group member blips are seeded correctly on open
-        _uiSystem.SetUiState(uid, WastelandMapUiKey.Key, BuildState(comp, userMap, actor: args.User));
+        _uiSystem.SetUiState(uid, WastelandMapUiKey.Key, BuildState(uid, comp, userMap, actor: args.User));
     }
 
     private void OnAddAnnotationMessage(EntityUid uid, WastelandMapComponent comp, WastelandMapAddAnnotationMessage args)
@@ -147,9 +148,18 @@ public sealed class WastelandMapSystem : EntitySystem
     // #Misfits Add - optional actor param so group-member blips can be injected per-viewer
     public WastelandMapBoundUserInterfaceState BuildState(WastelandMapComponent comp, MapId mapId, WastelandMapTacticalFeedKind? feedOverride = null, EntityUid? actor = null)
     {
+        return BuildState(null, comp, mapId, feedOverride, actor);
+    }
+
+    // #Misfits Add - optional uid lets fixed TacMap entities expose Overwatch without leaking it to cartridges/HUDs.
+    public WastelandMapBoundUserInterfaceState BuildState(EntityUid? uid, WastelandMapComponent comp, MapId mapId, WastelandMapTacticalFeedKind? feedOverride = null, EntityUid? actor = null)
+    {
         var feed = feedOverride ?? GetEffectiveFeed(comp);
         var trackedBlips = GetTrackedBlips(feed, mapId, comp.WorldBounds, actor);
         var sharedAnnotations = GetSharedAnnotations(comp, mapId, feed).ToArray();
+        var overwatch = uid == null
+            ? null
+            : EntityManager.System<OverwatchConsoleSystem>().BuildUiState(uid.Value);
 
         return new WastelandMapBoundUserInterfaceState(
             comp.MapTitle,
@@ -160,7 +170,8 @@ public sealed class WastelandMapSystem : EntitySystem
             comp.WorldBounds.Right,
             comp.WorldBounds.Top,
             trackedBlips,
-            sharedAnnotations);
+            sharedAnnotations,
+            overwatch);
     }
 
     public WastelandMapTacticalFeedKind GetEffectiveFeed(WastelandMapComponent comp)
@@ -212,7 +223,18 @@ public sealed class WastelandMapSystem : EntitySystem
         if (!TryComp<UserInterfaceComponent>(uid, out var ui))
             return;
 
-        _uiSystem.SetUiState((uid, ui), WastelandMapUiKey.Key, BuildState(comp, mapId ?? Transform(uid).MapID));
+        _uiSystem.SetUiState((uid, ui), WastelandMapUiKey.Key, BuildState(uid, comp, mapId ?? Transform(uid).MapID));
+    }
+
+    public void RefreshUi(EntityUid uid, EntityUid actor)
+    {
+        if (!TryComp<WastelandMapComponent>(uid, out var comp) ||
+            !TryComp<UserInterfaceComponent>(uid, out var ui))
+        {
+            return;
+        }
+
+        _uiSystem.SetUiState((uid, ui), WastelandMapUiKey.Key, BuildState(uid, comp, Transform(actor).MapID, actor: actor));
     }
 
     private static WastelandMapAnnotation? SanitizeAnnotation(WastelandMapAnnotation annotation)
@@ -518,7 +540,7 @@ public sealed class WastelandMapSystem : EntitySystem
                 continue;
 
             _uiSystem.SetUiState((uid, ui), WastelandMapUiKey.Key,
-                BuildState(map, xform.MapID));
+                BuildState(uid, map, xform.MapID));
         }
     }
 

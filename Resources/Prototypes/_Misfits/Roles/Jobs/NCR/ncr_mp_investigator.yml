@@ -6,6 +6,7 @@
   overrideConsoleVisibility: true
   canBeAntag: false
   name: job-name-ncr-mp-investigator #Misfits Change
+  overwatchCategory: OverwatchNcrMp
   description: job-description-ncr-mp-investegator
   playTimeTracker: NCRMPinvestigator
   requirements:
