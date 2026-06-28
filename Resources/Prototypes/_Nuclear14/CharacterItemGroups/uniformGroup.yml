@@ -157,3 +157,7 @@
       id: N14LoadoutUniversalUniformNCRSnow
     - type: loadout
       id: N14LoadoutUniversalUniformRangerPatrol
+    - type: loadout
+      id: N14LoadoutClothingUniformJumpsuitEnclaveGrey
+    - type: loadout
+      id: N14LoadoutClothingUniformJumpsuitEnclaveBlue

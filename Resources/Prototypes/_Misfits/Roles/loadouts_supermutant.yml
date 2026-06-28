@@ -258,7 +258,7 @@
 
 - type: loadout
   id: MisfitsLoadoutSuperMutantNeckGuard
-  category: Accessories
+  category: Neck
   cost: 1
   exclusive: true
   requirements:
@@ -277,7 +277,7 @@
 
 - type: loadout
   id: MisfitsLoadoutSuperMutantNeckTrinket
-  category: Accessories
+  category: Neck
   cost: 1
   exclusive: true
   requirements:
@@ -296,7 +296,7 @@
 
 - type: loadout
   id: MisfitsLoadoutSuperMutantNeckCapeTribal
-  category: Accessories
+  category: Neck
   cost: 1
   exclusive: true
   requirements:
