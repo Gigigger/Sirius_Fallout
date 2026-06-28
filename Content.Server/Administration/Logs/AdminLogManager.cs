@@ -326,9 +326,10 @@ public sealed partial class AdminLogManager : SharedAdminLogManager, IAdminLogMa
         }
     }
 
+    // #Misfits Add - Admin action alerts. Sends High+ impact logs (godmode, antags, freeze, etc.) to admin chat.
     private void DoAdminAlerts(AdminLog log)
     {
-        if (log.Impact < LogImpact.Extreme)
+        if (log.Impact < LogImpact.High)
             return;
 
         if (_runLevel == GameRunLevel.PreRoundLobby)
