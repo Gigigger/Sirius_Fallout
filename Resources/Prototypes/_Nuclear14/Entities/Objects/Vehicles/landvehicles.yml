@@ -5,6 +5,44 @@
   description: A clean green motorbike.
   components:
   - type: Vehicle
+<<<<<<< HEAD
+=======
+  - type: Motorbike
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Motorbike
+  - type: Repairable
+    fuelCost: 10
+    doAfterDelay: 15
+    qualityNeeded: Welding
+  - type: Destructible
+    thresholds: []
+  - type: ExplosionResistance
+    worn: false
+    damageCoefficient: 1.1
+  - type: SolutionContainerManager
+    solutions:
+      motorbikeFuel:
+        maxVol: 200
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 200
+  - type: ExaminableSolution
+    solution: motorbikeFuel
+  - type: Strap
+    # #Misfits Change - vehicle riding requires the shared riding perk instead of any humanoid.
+    whitelist:
+      requireAll: true
+      components:
+      - HumanoidAppearance
+      - RidingPerk
+    # #Misfits Fix - Super Mutants and Power Armor wearers are too heavy to ride motorbikes
+    blacklist:
+      tags:
+      - CannotRide
+      components:
+      - PowerArmorWorn
+>>>>>>> 0377e45227 (Merge pull request #911 from silasadam/master)
   - type: Sprite
     sprite: _Nuclear14/Objects/Vehicles/bikesbuggy.rsi
     layers:
