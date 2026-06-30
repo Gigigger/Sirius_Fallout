@@ -3,6 +3,7 @@ using Content.Shared.PDA;
 using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Content.Shared.Roles;
 
 namespace Content.Shared.Access.Components;
 
@@ -54,6 +55,14 @@ public sealed partial class IdCardComponent : Component
     [DataField]
     [AutoNetworkedField]
     public List<LocId> JobDepartments = new();
+
+    /// <summary>
+    /// The prototype ID of the job this card represents.
+    /// Used for Overwatch categories and other job-based logic.
+    /// </summary>
+    [DataField]
+    [AutoNetworkedField]
+    public ProtoId<JobPrototype>? JobPrototype;
 
     /// <summary>
     /// Determines if accesses from this card should be logged by <see cref="AccessReaderComponent"/>

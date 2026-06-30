@@ -3,6 +3,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Maths;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
+using Content.Shared._Misfits.Overwatch;
 
 namespace Content.Shared._Misfits.WastelandMap;
 
@@ -97,12 +98,14 @@ public sealed class WastelandMapBoundUserInterfaceState : BoundUserInterfaceStat
     public readonly float BoundsTop;
     public readonly WastelandMapTrackedBlip[] TrackedBlips;
     public readonly WastelandMapAnnotation[] SharedAnnotations;
+    public readonly OverwatchConsoleState? Overwatch;
 
     public WastelandMapBoundUserInterfaceState(string mapTitle, string mapTexturePath,
         bool compactHud,
         float boundsLeft, float boundsBottom, float boundsRight, float boundsTop,
         WastelandMapTrackedBlip[]? trackedBlips = null,
-        WastelandMapAnnotation[]? sharedAnnotations = null)
+        WastelandMapAnnotation[]? sharedAnnotations = null,
+        OverwatchConsoleState? overwatch = null)
     {
         MapTitle = mapTitle;
         MapTexturePath = mapTexturePath;
@@ -113,6 +116,7 @@ public sealed class WastelandMapBoundUserInterfaceState : BoundUserInterfaceStat
         BoundsTop = boundsTop;
         TrackedBlips = trackedBlips ?? [];
         SharedAnnotations = sharedAnnotations ?? [];
+        Overwatch = overwatch;
     }
 }
 
