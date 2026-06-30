@@ -46,7 +46,8 @@ using Robust.Shared.Player;
 using System.Reflection;
 using Robust.Shared.Network;
 using Content.Client._NC.Sponsor;
-using Content.Client._NC.TTS; // Forge-Change
+using Content.Client._NC.TTS;
+using Content.Client.Stylesheets; // Forge-Change
 
 namespace Content.Client.Lobby.UI
 {

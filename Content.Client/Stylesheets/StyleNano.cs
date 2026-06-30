@@ -228,6 +228,10 @@ namespace Content.Client.Stylesheets
             var notoSansBold18 = resCache.NotoStack(variation: "Bold", size: 18);
             var notoSansBold20 = resCache.NotoStack(variation: "Bold", size: 20);
             var notoSansMono = resCache.GetFont("/EngineFonts/NotoSans/NotoSansMono-Regular.ttf", size: 12);
+            // Pip-Boy terminal fonts (reuse the engine monospace face, no new asset).
+            var pipBoyMono12 = resCache.GetFont("/EngineFonts/NotoSans/NotoSansMono-Regular.ttf", size: 12);
+            var pipBoyMono16 = resCache.GetFont("/EngineFonts/NotoSans/NotoSansMono-Regular.ttf", size: 16);
+            var pipBoyMono20 = resCache.GetFont("/EngineFonts/NotoSans/NotoSansMono-Regular.ttf", size: 20);
             var windowHeaderTex = resCache.GetTexture("/Textures/Interface/Nano/window_header.png");
             var windowHeader = new StyleBoxTexture
             {
@@ -752,6 +756,33 @@ namespace Content.Client.Stylesheets
                 Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(ButtonDanger)
                     .Pseudo(ContainerButton.StylePseudoClassDisabled)
                     .Prop(Control.StylePropertyModulateSelf, ButtonColorDangerDisabled),
+
+                // Colors for the Pip-Boy terminal buttons (lobby + character selection).
+                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(StyleClassPipBoyButton)
+                    .Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, PipBoyBtnDefault),
+
+                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(StyleClassPipBoyButton)
+                    .Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, PipBoyBtnHovered),
+
+                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(StyleClassPipBoyButton)
+                    .Pseudo(ContainerButton.StylePseudoClassPressed)
+                    .Prop(Control.StylePropertyModulateSelf, PipBoyBtnPressed),
+
+                Element<ContainerButton>().Class(ContainerButton.StyleClassButton).Class(StyleClassPipBoyButton)
+                    .Pseudo(ContainerButton.StylePseudoClassDisabled)
+                    .Prop(Control.StylePropertyModulateSelf, PipBoyBtnDisabled),
+
+                // Pip-Boy button label: monospace, phosphor green.
+                new StyleRule(new SelectorChild(
+                        new SelectorElement(typeof(ContainerButton), new[] {StyleClassPipBoyButton}, null, null),
+                        new SelectorElement(typeof(Label), null, null, null)),
+                    new[]
+                    {
+                        new StyleProperty(Label.StylePropertyFont, pipBoyMono16),
+                        new StyleProperty(Label.StylePropertyFontColor, PipBoyGreen),
+                    }),
 
                 // Colors for confirm buttons confirm states.
                 Element<ConfirmButton>()
