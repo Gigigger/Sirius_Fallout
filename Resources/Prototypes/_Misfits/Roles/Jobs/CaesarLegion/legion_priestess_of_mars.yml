@@ -30,7 +30,7 @@
   startingGear: CaesarLegionPriestessOfMarsGear
   alwaysUseSpawner: true
   icon: "JobIconlegionerRecruit"
-  supervisors: job-name-caesar-legion-other
+  supervisors: job-supervisor-caesar-legion-centurion
   canBeAntag: false
   # Priestesses share base Legion access; they are not combatants and gain
   # no additional restricted-area access beyond a standard Recruit.

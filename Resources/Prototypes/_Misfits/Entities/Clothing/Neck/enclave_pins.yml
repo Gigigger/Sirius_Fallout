@@ -4,12 +4,10 @@
 # Base Enclave pin — all others inherit from this.
 - type: entity
   parent: ClothingNeckPinBase
-  id: ClothingNeckPinEnclavePrivate
-  name: enclave private pin
+  id: ClothingNeckPinEnclaveBase
+  name: enclave pin
   description: A United States Government rank insignia showing the wearer's rank.
   components:
-  - type: RankTitle
-    rankTitle: Рядовой Анклава
   - type: Sprite
     sprite: _Nuclear14/Clothing/Neck/Misc/pins.rsi
     layers:
@@ -22,7 +20,19 @@
 
 # Enlisted ranks
 - type: entity
-  parent: ClothingNeckPinEnclavePrivate
+  parent: ClothingNeckPinEnclaveBase
+  id: ClothingNeckPinEnclavePrivate
+  name: enclave private pin
+  components:
+  - type: RankTitle
+    rankTitle: Рядовой Анклава
+  - type: Sprite
+    sprite: _Nuclear14/Clothing/Neck/Misc/pins.rsi
+    layers:
+    - state: private
+
+- type: entity
+  parent: ClothingNeckPinEnclaveBase
   id: ClothingNeckPinEnclavePFC
   name: enclave private first class pin
   components:
@@ -34,7 +44,7 @@
     - state: private1st
 
 - type: entity
-  parent: ClothingNeckPinEnclavePrivate
+  parent: ClothingNeckPinEnclaveBase
   id: ClothingNeckPinEnclaveSpecialist
   name: enclave specialist pin
   components:
@@ -47,7 +57,7 @@
 
 # NCO ranks
 - type: entity
-  parent: ClothingNeckPinEnclavePrivate
+  parent: ClothingNeckPinEnclaveBase
   id: ClothingNeckPinEnclaveSergeant
   name: enclave sergeant pin
   components:
@@ -59,7 +69,7 @@
     - state: sergeant
 
 - type: entity
-  parent: ClothingNeckPinEnclavePrivate
+  parent: ClothingNeckPinEnclaveBase
   id: ClothingNeckPinEnclaveStaffSergeant
   name: enclave staff sergeant pin
   components:
@@ -71,7 +81,7 @@
     - state: sergeant1st
 
 - type: entity
-  parent: ClothingNeckPinEnclavePrivate
+  parent: ClothingNeckPinEnclaveBase
   id: ClothingNeckPinEnclaveSFC
   name: enclave sergeant first class pin
   components:
@@ -83,7 +93,7 @@
     - state: mastersergeant
 
 - type: entity
-  parent: ClothingNeckPinEnclavePrivate
+  parent: ClothingNeckPinEnclaveBase
   id: ClothingNeckPinEnclaveMasterSergeant
   name: enclave master sergeant pin
   components:
@@ -96,12 +106,10 @@
 
 # Junior Officer ranks
 - type: entity
-  parent: ClothingNeckPinEnclavePrivate
-  id: ClothingNeckPinEnclaveSecondLieutenant
-  name: enclave second lieutenant pin
+  parent: ClothingNeckPinEnclaveBase
+  id: ClothingNeckPinEnclaveBaseOfficer
+  name: enclave officer pin
   components:
-  - type: RankTitle
-    rankTitle: 2й Лейтенант Анклава
   - type: Sprite
     sprite: _Nuclear14/Clothing/Neck/Misc/pins.rsi
     layers:
@@ -113,7 +121,19 @@
       - state: silver-equipped
 
 - type: entity
-  parent: ClothingNeckPinEnclaveSecondLieutenant
+  parent: ClothingNeckPinEnclaveBaseOfficer
+  id: ClothingNeckPinEnclaveSecondLieutenant
+  name: enclave second lieutenant pin
+  components:
+  - type: RankTitle
+    rankTitle: 2й Лейтенант Анклава
+  - type: Sprite
+    sprite: _Nuclear14/Clothing/Neck/Misc/pins.rsi
+    layers:
+    - state: secondlieutenant
+
+- type: entity
+  parent: ClothingNeckPinEnclaveBaseOfficer
   id: ClothingNeckPinEnclaveFirstLieutenant
   name: enclave first lieutenant pin
   components:
@@ -126,7 +146,7 @@
 
 # Senior Officer ranks
 - type: entity
-  parent: ClothingNeckPinEnclaveSecondLieutenant
+  parent: ClothingNeckPinEnclaveBaseOfficer
   id: ClothingNeckPinEnclaveCaptain
   name: enclave captain pin
   components:
@@ -138,7 +158,7 @@
     - state: captain
 
 - type: entity
-  parent: ClothingNeckPinEnclaveSecondLieutenant
+  parent: ClothingNeckPinEnclaveBaseOfficer
   id: ClothingNeckPinEnclaveMajor
   name: enclave major pin
   components:
@@ -151,7 +171,7 @@
 
 # Commander ranks
 - type: entity
-  parent: ClothingNeckPinEnclaveSecondLieutenant
+  parent: ClothingNeckPinEnclaveBaseOfficer
   id: ClothingNeckPinEnclaveLtColonel
   name: enclave lieutenant colonel pin
   components:
@@ -163,7 +183,7 @@
     - state: major
 
 - type: entity
-  parent: ClothingNeckPinEnclaveSecondLieutenant
+  parent: ClothingNeckPinEnclaveBaseOfficer
   id: ClothingNeckPinEnclaveColonel
   name: enclave colonel pin
   components:
@@ -175,7 +195,7 @@
     - state: captain
 
 - type: entity
-  parent: ClothingNeckPinEnclaveSecondLieutenant
+  parent: ClothingNeckPinEnclaveBaseOfficer
   id: ClothingNeckPinEnclaveGeneral
   name: enclave general pin
   components:
@@ -187,7 +207,7 @@
     - state: captain
 
 - type: entity
-  parent: ClothingNeckPinEnclaveSecondLieutenant
+  parent: ClothingNeckPinEnclaveBaseOfficer
   id: ClothingNeckPinEnclaveGovernor
   name: enclave state governor pin
   components:
@@ -198,7 +218,7 @@
 
 # Science ranks
 - type: entity
-  parent: ClothingNeckPinEnclavePrivate
+  parent: ClothingNeckPinEnclaveBase
   id: ClothingNeckPinEnclaveJuniorScientist
   name: enclave junior scientist pin
   description: A United States Government research division insignia showing the wearer's rank.

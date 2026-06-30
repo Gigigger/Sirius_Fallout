@@ -244,9 +244,9 @@
 - type: ncrRankPinProgression
   id: EnclaveEnlistedPins
   jobs:
-    - NCRCadet
-  tracker: NCR
-  departmentTracker: true
+    - EnclaveEnlisted
+  tracker: EnclaveEnlisted
+  departmentTracker: false
   thresholds:
     - min: 0
       entity: ClothingNeckPinEnclavePrivate

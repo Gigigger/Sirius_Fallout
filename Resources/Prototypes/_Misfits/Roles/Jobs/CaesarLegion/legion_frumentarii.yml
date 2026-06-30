@@ -22,7 +22,7 @@
   startingGear: CaesarLegionFrumentariiGear
   alwaysUseSpawner: true
   icon: "JobIconlegionerVenator"
-  supervisors: job-name-caesar-legion-supervisors
+  supervisors: job-supervisor-caesar-legion-legate
   canBeAntag: false
   accessGroups:
   - CaesarLegionFrumentarii
