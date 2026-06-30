@@ -8236,3 +8236,14 @@ Entries:
   id: 6167
   time: '2026-06-30T02:52:32.0000000+00:00'
   url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/933
+- author: Vixting
+  changes:
+    - type: Add
+      message: Intel now gives access to additional hand craftable recipes
+    - type: Remove
+      message: Removed intel reducing material cost
+    - type: Tweak
+      message: Reduced circuit costs
+  id: 6168
+  time: '2026-06-30T12:32:08.0000000+00:00'
+  url: https://github.com/Misfit-Sanctuary/nuclear-14/pull/882
