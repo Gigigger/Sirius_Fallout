@@ -49,7 +49,7 @@
     - min: 0
       entity: ClothingNeckPinNCRSecondLieutenant
     - min: 72000   # 20 hours
-      entity: ClothingNeckPinNCRFirstlLieutenant
+      entity: ClothingNeckPinNCRFirstLieutenant
 
 # Junior Officers: 2LT (O-1) → 1LT (O-2) at 20h NCR dept time → Captain (O-3) at 50h NCR dept time
 - type: ncrRankPinProgression
@@ -63,7 +63,7 @@
     - min: 0
       entity: ClothingNeckPinNCRSecondLieutenant
     - min: 72000   # 20 hours
-      entity: ClothingNeckPinNCRFirstlLieutenant
+      entity: ClothingNeckPinNCRFirstLieutenant
     - min: 180000   # 50 hours
       entity: ClothingNeckPinNCRCaptain
 
@@ -78,7 +78,7 @@
     - min: 0
       entity: ClothingNeckPinNCRSecondLieutenant
     - min: 108000   # 30 hours
-      entity: ClothingNeckPinNCRFirstlLieutenant
+      entity: ClothingNeckPinNCRFirstLieutenant
     - min: 216000  # 60 hours
       entity: ClothingNeckPinNCRCaptain
 
