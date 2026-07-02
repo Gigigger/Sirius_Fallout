@@ -21,10 +21,13 @@
     - NCRVeteranRanger
     - NCRFieldRanger
     - NCRPatrolRanger
+    - NCRRangerRecruit
     - NCRFirstSergeant
     - NCRStaffSergeant
     - NCRNCO
+    - NCRRO
     - NCRWS
+    - NCRHeavyTrooper
     - NCREngineer
     - NCRMedic
     - NCRPrivateFirstClass
@@ -44,8 +47,9 @@
     - CaesarLegionPrimeDecanus
     - CaesarLegionVexillarius
     - CaesarLegionExplorer
-    - CaesarLegionOrator
+    - CaesarLegionOptio
     - CaesarLegionDean
+    - CaesarLegionForgemaster
     - CaesarLegionLegionnaireVeteran
     - CaesarLegionLegionnaireWarrior
     - CaesarLegionLegionnaireRecruit
