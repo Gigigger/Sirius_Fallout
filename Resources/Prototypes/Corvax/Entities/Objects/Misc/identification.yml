@@ -327,7 +327,7 @@
 
 - type: entity
   parent: N14IDPassportBlank
-  id: N14IDLegionaryMedalOptio
+  id: N14IDLegionaryMedalOrator
   name: legion optio medallion
   description: "A medal worn by a Legion Optio."
   components:
