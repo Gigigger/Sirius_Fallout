@@ -1,18 +1,17 @@
 - type: job
-  id: CaesarLegionOptio
+  id: CaesarLegionOrator
   setPreference: true
   hideIfPlaytimeRequirementsNotMet: false # #Misfits Tweak - all jobs visible in selection
   jobWhitelistBypassesRoleTimers: true # #Misfits Change
-  whitelisted: true # #Misfits Fix — allow job-whitelist fallback in lobby visibility filter
   weight: 180
   showBorder: true  # Starts the "Support Officers" tier block below Centurion/Legate
-  name: job-name-caesar-legion-optio
-  description: job-description-caesar-legion-optio
-  playTimeTracker: CaesarLegionOptio
+  name: job-name-caesar-legion-orator
+  description: job-description-caesar-legion-orator
+  playTimeTracker: CaesarLegionOrator
   requirements:
     - !type:CharacterDepartmentTimeRequirement # #Misfits Tweak - T4 faction timelock (12h Legion)
       department: CaesarLegion
-      min: 72000 #
+      min: 43200 # 12 hours
     #- !type:CharacterPlaytimeRequirement # TEMP REMOVED
     #  tracker: CaesarLegionRecruit
     #  min: 18000 # 5 hours
@@ -23,13 +22,13 @@
       sex: Male
     - !type:CharacterGenderRequirement
       gender: Male
-  startingGear: CaesarLegionOptioGear
+  startingGear: CaesarLegionOratorGear
   alwaysUseSpawner: true
   icon: "JobIconlegionerVenator"
-  supervisors: job-name-caesar-legion-supervisors # #Misfits Fix - Optio outranks Decanus, should not be listed as obeying Decani
+  supervisors: job-name-caesar-legion-other
   canBeAntag: false
   accessGroups:
-  - CaesarLegionOptio
+  - CaesarLegionOrator
   special:
   - !type:AddComponentSpecial
     components:
@@ -53,19 +52,18 @@
         - SuperMutantGladiator
         cautionPopup: true
         activatorJobs:
-        - CaesarLegionVexillarius
         - CaesarLegionDean
         - CaesarLegionPrimeDecanus
         - CaesarLegionVeteranDecanus
         - CaesarLegionCenturion
         - CaesarLegionLegate
-        - CaesarLegionOptio
+        - CaesarLegionOrator
         - CaesarLegionPriestessOfMars
   - !type:AddTraitSpecial
     traits: [ LanguageLatin ]
 
 - type: startingGear
-  id: CaesarLegionOptioGear
+  id: CaesarLegionOratorGear
   equipment:
     jumpsuit: N14ClothingUniformJumpsuitLegionnaire
     ears: N14ClothingHeadsetLegion
@@ -74,11 +72,12 @@
     back: N14ClothingBackpackMilitary
     shoes: N14ClothingShoesKaligi
     head: N14ClothingHeadHatLegionHood
-    outerClothing: N14ClothingOuterLegionnaireOptioArmor
+    outerClothing: N14ClothingOuterLegionnaireOratorArmor
     gloves: N14ClothingHandsGlovesTribal
     belt: N14Gladius
     suitstorage: N14PilumSpear
-    id: N14IDLegionaryMedalOptio
+    pocket1: LegionOratorloadoutkits
+    id: N14IDLegionaryMedalOrator
   innerClothingSkirt: N14ClothingUniformJumpsuitLegionnaireOther
   storage:
     back:
@@ -86,4 +85,4 @@
     - N14HealingPowder
 
 - type: playTimeTracker
-  id: CaesarLegionOptio
+  id: CaesarLegionOrator
