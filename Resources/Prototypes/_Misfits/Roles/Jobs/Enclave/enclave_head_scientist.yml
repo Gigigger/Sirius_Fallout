@@ -48,6 +48,7 @@
     head: N14ClothingHeadHatEnclaveScientist
     back: N14ClothingBackpackSatchelMilitary
     jumpsuit: N14ClothingUniformJumpsuitEnclave
+    outerClothing: ClothingOuterCoatGreatcoat
     shoes: N14ClothingBootsLeatherFilled
     neck: ClothingNeckPinEnclaveHeadScientist
     belt: ClothingBeltMilitary

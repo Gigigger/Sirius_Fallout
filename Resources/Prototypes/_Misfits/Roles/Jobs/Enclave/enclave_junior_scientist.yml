@@ -36,7 +36,6 @@
 - type: startingGear
   id: EnclaveJuniorScientistGear
   equipment:
-    head: N14ClothingHeadHatEnclaveScientist
     back: N14ClothingBackpackSatchelMilitary
     jumpsuit: N14ClothingUniformJumpsuitEnclave
     shoes: N14ClothingBootsLeatherFilled
