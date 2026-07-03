@@ -86,7 +86,7 @@
   name: enclave sergeant first class pin
   components:
   - type: RankTitle
-    rankTitle: Сержант 1го кл. Анклава
+    rankTitle: Старший сержант Анклава
   - type: Sprite
     sprite: _Nuclear14/Clothing/Neck/Misc/pins.rsi
     layers:
@@ -98,7 +98,7 @@
   name: enclave master sergeant pin
   components:
   - type: RankTitle
-    rankTitle: Мастер-сержант Анклава
+    rankTitle: Сержант-майор Анклава
   - type: Sprite
     sprite: _Nuclear14/Clothing/Neck/Misc/pins.rsi
     layers:
@@ -126,7 +126,7 @@
   name: enclave second lieutenant pin
   components:
   - type: RankTitle
-    rankTitle: 2й Лейтенант Анклава
+    rankTitle: 2й лейтенант Анклава
   - type: Sprite
     sprite: _Nuclear14/Clothing/Neck/Misc/pins.rsi
     layers:
@@ -138,7 +138,7 @@
   name: enclave first lieutenant pin
   components:
   - type: RankTitle
-    rankTitle: 1й Лейтенант Анклава
+    rankTitle: 1й лейтенант Анклава
   - type: Sprite
     sprite: _Nuclear14/Clothing/Neck/Misc/pins.rsi
     layers:

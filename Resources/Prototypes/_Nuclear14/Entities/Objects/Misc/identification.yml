@@ -404,6 +404,23 @@
 
 - type: entity
   parent: N14IDPassportBlank
+  id: SiriusIDEnclaveCommunicationsOfficer
+  name: Enclave junior officer holotag
+  description: An ID holotag worn by higher ranking memebers of the Enclave. This one belongs to a communications officer.
+  categories: [ HideSpawnMenu ]
+  suffix: Communications Officer; 2nd Lieutenant, 1st Lieutenant
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Objects/Misc/identification.rsi
+    state: enclave_officer
+  - type: IdCard # #Misfits Add - display "holotags" instead of default "ID card"
+    nameLocId: n14-id-holotag-name
+    fullNameLocId: n14-id-holotag-full-name
+  - type: PresetIdCard
+    job: EnclaveCommunicationsOfficer
+
+- type: entity
+  parent: N14IDPassportBlank
   id: SiriusIDEnclaveNCO
   name: Enclave sergeant holotag
   description: An ID holotag worn by the Enclave. This one is for sergeant. Don't call me sarge!

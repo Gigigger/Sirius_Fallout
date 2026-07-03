@@ -143,6 +143,7 @@
             EnclaveReformer: [ 1, 1 ]      # admin-only leader (The Reformer); 0 active latejoin slots
             EnclaveCommander: [ 1, 1 ]
             EnclaveSeniorOfficer: [ 1, 1 ]
+            EnclaveCommunicationsOfficer: [ 1, 1 ]
             EnclaveJuniorOfficer: [ 2, 2 ]
             EnclaveNCO: [ 4, 4 ]
             EnclaveEnlisted: [ 9, 9 ]

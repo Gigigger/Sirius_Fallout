@@ -229,6 +229,19 @@
     - min: 72000   # 20 hours
       entity: ClothingNeckPinEnclaveMajor
 
+# Enclave Communications Officer
+- type: ncrRankPinProgression
+  id: EnclaveCommunicationsOfficerPins
+  jobs:
+    - EnclaveCommunicationsOfficer
+  tracker: EnclaveCommunicationsOfficer
+  departmentTracker: false
+  thresholds:
+    - min: 0
+      entity: ClothingNeckPinEnclaveFirstLieutenant
+    - min: 72000   # 20 hours
+      entity: ClothingNeckPinEnclaveCaptain
+
 # Enclave Junior Officer
 - type: ncrRankPinProgression
   id: EnclaveJrOfficerPins
