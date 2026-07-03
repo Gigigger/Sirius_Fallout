@@ -7,6 +7,7 @@
   id: ClothingNeckPinEnclaveBase
   name: enclave pin
   description: A United States Government rank insignia showing the wearer's rank.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Nuclear14/Clothing/Neck/Misc/pins.rsi
@@ -108,6 +109,7 @@
 - type: entity
   parent: ClothingNeckPinEnclaveBase
   id: ClothingNeckPinEnclaveBaseOfficer
+  categories: [ HideSpawnMenu ]
   name: enclave officer pin
   components:
   - type: Sprite
