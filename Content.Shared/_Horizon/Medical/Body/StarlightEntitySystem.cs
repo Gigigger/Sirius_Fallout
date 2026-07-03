@@ -2,9 +2,6 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Content.Shared._Horizon;
 
-/// <summary>
-/// Вспомогательная система для работы с Entity
-/// </summary>
 public sealed class StarlightEntitySystem : EntitySystem
 {
     public bool TryEntity<T>(EntityUid uid, out Entity<T> entity) where T : IComponent

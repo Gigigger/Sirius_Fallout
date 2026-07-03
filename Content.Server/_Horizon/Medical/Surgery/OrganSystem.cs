@@ -37,14 +37,12 @@ public sealed class OrganSystem : EntitySystem
 
     private void OnFunctionalOrganImplanted(Entity<FunctionalOrganComponent> ent, ref SurgeryOrganImplantationCompleted args)
     {
-        // Используем правильное имя поля - OnAddComponents
         if (ent.Comp.OnAddComponents is not null)
             EntityManager.AddComponents(args.Body, ent.Comp.OnAddComponents, false);
     }
 
     private void OnFunctionalOrganExtracted(Entity<FunctionalOrganComponent> ent, ref SurgeryOrganExtracted args)
     {
-        // Используем правильное имя поля - OnAddComponents
         if (ent.Comp.OnAddComponents is not null)
             EntityManager.RemoveComponents(args.Body, ent.Comp.OnAddComponents);
     }

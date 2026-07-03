@@ -85,20 +85,19 @@ public sealed class EyeImplantSystem : EntitySystem
             RemComp<ShowHealthBarsComponent>(args.OldBody);
     }
 
-    // Medical Implant - <--- ИСПРАВЛЕНО
     private void OnMedicalImplantAdded(Entity<EyeImplantMedicalComponent> ent, ref OrganAddedToBodyEvent args)
     {
         if (!HasComp<ShowHealthBarsComponent>(args.Body))
         {
             var barsComp = AddComp<ShowHealthBarsComponent>(args.Body);
-            barsComp.DamageContainers = new List<string> { "Biological" }; // <--- ДОБАВЛЕНО
+            barsComp.DamageContainers = new List<string> { "Biological" };
             Dirty(args.Body, barsComp);
         }
 
         if (!HasComp<ShowHealthIconsComponent>(args.Body))
         {
             var iconsComp = AddComp<ShowHealthIconsComponent>(args.Body);
-            iconsComp.DamageContainers = new List<string> { "Biological" }; // <--- ДОБАВЛЕНО
+            iconsComp.DamageContainers = new List<string> { "Biological" };
             Dirty(args.Body, iconsComp);
         }
     }

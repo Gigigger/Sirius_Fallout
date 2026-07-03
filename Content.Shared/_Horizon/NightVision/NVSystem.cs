@@ -56,10 +56,8 @@ public sealed class NVSystem : EntitySystem
 
     private void OnComponentInit(EntityUid uid, NVComponent component, ComponentInit args)
     {
-        // Проверяем, является ли этот объект органом в теле
         if (TryComp<OrganComponent>(uid, out var organ) && organ.Body is { } body)
         {
-            // Если это орган, добавляем NV на тело
             if (!TryComp<NightVisionUserComponent>(body, out var nvComp))
             {
                 nvComp = AddComp<NightVisionUserComponent>(body);
@@ -72,7 +70,6 @@ public sealed class NVSystem : EntitySystem
             return;
         }
 
-        // Существующая логика для предметов
         if (!TryComp<NightVisionUserComponent>(uid, out var userComp))
             return;
 
@@ -82,19 +79,15 @@ public sealed class NVSystem : EntitySystem
 
     private void OnComponentRemove(EntityUid uid, NVComponent component, ComponentRemove args)
     {
-        // Проверяем, является ли этот объект органом в теле
         if (TryComp<OrganComponent>(uid, out var organ) && organ.Body is { } body)
         {
-            // Удаляем Action с тела
             if (TryComp<NightVisionUserComponent>(body, out var nvComp))
             {
                 _actionsSystem.RemoveAction(body, nvComp.ActionContainer);
-                // Не удаляем NightVisionUserComponent сразу, так как могут быть другие источники
             }
             return;
         }
 
-        // Для предметов
         if (TryComp<NightVisionUserComponent>(uid, out var userComp))
         {
             _actionsSystem.RemoveAction(uid, component.ActionContainer);
@@ -103,7 +96,6 @@ public sealed class NVSystem : EntitySystem
 
     private void OnOrganAdded(Entity<NVComponent> ent, ref OrganAddedToBodyEvent args)
     {
-        // Добавляем NightVisionUserComponent на тело если его нет
         if (!TryComp<NightVisionUserComponent>(args.Body, out var nvComp))
         {
             nvComp = AddComp<NightVisionUserComponent>(args.Body);
@@ -112,25 +104,20 @@ public sealed class NVSystem : EntitySystem
             Dirty(args.Body, nvComp);
         }
 
-        // Добавляем Action
         _actionsSystem.AddAction(args.Body, ref nvComp.ActionContainer, ent.Comp.ActionProto);
         UpdateNightVision(args.Body);
     }
 
     private void OnOrganRemoved(Entity<NVComponent> ent, ref OrganRemovedFromBodyEvent args)
     {
-        // Проверяем, есть ли NightVisionUserComponent на теле
         if (!TryComp<NightVisionUserComponent>(args.OldBody, out var nvComp))
             return;
 
-        // Удаляем Action
         _actionsSystem.RemoveAction(args.OldBody, nvComp.ActionContainer);
 
-        // Проверяем, есть ли другие источники ПНВ на теле
         var hasOtherNV = false;
         var entUid = ent.Owner;
 
-        // Проверяем другие органы с NVComponent
         foreach (var organ in EntityManager.GetComponents<OrganComponent>(args.OldBody))
         {
             if (organ.Body == args.OldBody &&
@@ -142,13 +129,10 @@ public sealed class NVSystem : EntitySystem
             }
         }
 
-        // Проверяем экипированные предметы с NVComponent
         if (!hasOtherNV && TryComp<InventoryComponent>(args.OldBody, out var invComp))
         {
-            // Используем InventorySystem для проверки слотов
             foreach (var slot in invComp.Slots)
             {
-                // Пытаемся получить содержимое слота через InventorySystem
                 if (_inventory.TryGetSlotEntity(args.OldBody, slot.Name, out var slotEntity))
                 {
                     if (HasComp<NVComponent>(slotEntity.Value))
@@ -160,14 +144,12 @@ public sealed class NVSystem : EntitySystem
             }
         }
 
-        // Если нет других источников - удаляем компонент
         if (!hasOtherNV)
         {
             RemComp<NightVisionUserComponent>(args.OldBody);
         }
         else
         {
-            // Иначе просто обновляем состояние
             UpdateNightVision(args.OldBody);
         }
     }
