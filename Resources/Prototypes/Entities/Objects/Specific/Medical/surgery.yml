@@ -621,3 +621,112 @@
   - type: Item
     size: Small
     heldPrefix: evil
+
+  # Cybernetic Tools by Horizon
+
+- type: entity
+  name: cybernetic cautery
+  id: CauteryCyber
+  parent: Cautery
+  description: A cybernetic cautery integrated into a limb.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Medical/surgery.rsi
+    state: cautery
+  - type: SurgeryTool
+    speed: 0.5
+    startSound:
+      path: /Audio/_Horizon/Medical/Surgery/cautery1.ogg
+    endSound:
+      path: /Audio/_Horizon/Medical/Surgery/cautery2.ogg
+
+- type: entity
+  name: cybernetic drill
+  id: DrillCyber
+  parent: Drill
+  description: A cybernetic drill integrated into a limb.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Medical/surgery.rsi
+    state: drill
+  - type: SurgeryTool
+    speed: 0.5
+    startSound:
+      path: /Audio/_Horizon/Medical/Surgery/saw.ogg
+
+- type: entity
+  name: cybernetic scalpel
+  id: ScalpelCyber
+  parent: Scalpel
+  description: A cybernetic scalpel integrated into a limb.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Medical/surgery.rsi
+    state: scalpel
+  - type: SurgeryTool
+    speed: 0.3
+    startSound:
+      path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
+    endSound:
+      path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg
+
+- type: entity
+  name: cybernetic retractor
+  id: RetractorCyber
+  parent: Retractor
+  description: A surgical tool used to hold open incisions.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Medical/surgery.rsi
+    state: retractor
+  - type: SurgeryTool
+    speed: 0.4
+    startSound:
+      path: /Audio/_Horizon/Medical/Surgery/retractor1.ogg
+    endSound:
+      path: /Audio/_Horizon/Medical/Surgery/retractor2.ogg
+
+- type: entity
+  name: cybernetic hemostat
+  id: HemostatCyber
+  parent: Hemostat
+  description: A surgical tool used to compress blood vessels to prevent bleeding.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Medical/surgery.rsi
+    state: hemostat
+  - type: SurgeryTool
+    speed: 0.4
+    startSound:
+      path: /Audio/_Horizon/Medical/Surgery/hemostat1.ogg
+
+- type: entity
+  name: cybernetic bone setter
+  id: BoneSetterCyber
+  parent: Bonesetter
+  description: A surgical tool used for setting bones.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Medical/surgery.rsi
+    state: bonesetter
+  - type: SurgeryTool
+    speed: 0.4
+    startSound:
+      path: /Audio/_Horizon/Medical/Surgery/bone_setter.ogg
+
+- type: entity
+  name: cybernetic saw
+  id: SawCyber
+  parent: SawElectric
+  description: You think you can cut anything with it.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Medical/surgery.rsi
+    state: saw
+  - type: SurgeryTool
+    speed: 0.2
+    startSound:
+      path: /Audio/_Horizon/Medical/Surgery/saw.ogg
+    endSound:
+      path: /Audio/Items/drill_hit.ogg
+      # i hate fucking horizon
