@@ -28,7 +28,7 @@
       traits:
         - N14Muted
   startingGear: EnclaveHeadScientistGear
-  icon: "JobIconEnclaveHeadScientist"
+  icon: "JobIconSiriusEnclaveAdministrator"
   supervisors: job-supervisors-enclave-head-scientist
   requireAdminNotify: true
   alwaysUseSpawner: true
