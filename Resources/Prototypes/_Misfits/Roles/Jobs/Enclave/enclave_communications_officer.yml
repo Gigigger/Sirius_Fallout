@@ -23,7 +23,7 @@
       tracker: EnclaveNCO
       min: 36000 # 10 hours
   startingGear: EnclaveCommunicationsOfficerGear
-  icon: "JobIconEnclaveJuniorOfficer"
+  icon: "JobIconSiriusEnclaveCommunicationsOfficer"
   supervisors: job-supervisors-enclave-junior-officer
   alwaysUseSpawner: true
   accessGroups:

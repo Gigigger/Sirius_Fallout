@@ -51,11 +51,11 @@
             NCRExecutiveOfficer: [ 1, 1 ] # #Misfits Add - EXO slot
             NCRPlatoonLeader: [ 1, 1 ] # #Sirius Add - Field Officer slot
             NCRRO: [ 1, 1 ] # #Misfits Add - NCR QM slot
-            NCRChiefRanger: [ 1, 1 ]  # #Misfits Change - admin-only Chief Ranger; renamed from ChiefRanger
-            NCRVeteranRanger: [ 1, 1 ] # #Misfits Change - renamed from RangerVeteran
-            NCRFieldRanger: [ 1, 1 ]   # #Misfits Add - Field Ranger slot
-            NCRPatrolRanger: [ 2, 2 ]  # #Misfits Change - renamed from RangerRecruit (was Patrol Ranger by FTL)
-            NCRRangerRecruit: [ 2, 2 ] # #Misfits Add - entry-level Ranger Recruit slot
+            #NCRChiefRanger: [ 1, 1 ]  # #Misfits Change - admin-only Chief Ranger; renamed from ChiefRanger
+            #NCRVeteranRanger: [ 1, 1 ] # #Misfits Change - renamed from RangerVeteran
+            #NCRFieldRanger: [ 1, 1 ]   # #Misfits Add - Field Ranger slot
+            #NCRPatrolRanger: [ 2, 2 ]  # #Misfits Change - renamed from RangerRecruit (was Patrol Ranger by FTL)
+            #NCRRangerRecruit: [ 2, 2 ] # #Misfits Add - entry-level Ranger Recruit slot
             #NCRFirstSergeant: [ 1, 1 ]
             #NCRStaffSergeant: [ 1, 1 ] # #Misfits Removed - replaced by NCRHeavyTrooper as T5 specialist slot
             NCRHeavyTrooper: [ 2, 2 ] # #Misfits Add - Heavy Trooper: 2 slots, between Specialist and Sergeant
