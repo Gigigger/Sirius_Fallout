@@ -64,7 +64,7 @@
       - Bucket
   - type: PhysicalComposition
     materialComposition:
-      Iron: 50
+      Steel: 50
   - type: TrashOnSolutionEmpty # Frontier
     solution: bucket # Frontier
 
