@@ -6,6 +6,20 @@
 
 ##MARK: Pistols
 - type: loadout
+  id: N14LoadoutWeaponPistolZipgun
+  category: Firearms
+  cost: 1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGuns
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Wastelander
+        - Townsfolk
+  items:
+    - N14WeaponPistolZipgunSirius
+
+- type: loadout
   id: N14LoadoutWeaponPistol22lr
   category: Firearms
   cost: 2
@@ -52,6 +66,26 @@
       - NCRPrisoner
   items:
     - N14WeaponPistol9mm
+
+- type: loadout
+  id: N14LoadoutWeaponPistol10mm
+  category: Firearms
+  cost: 2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGuns
+    - !type:CharacterDepartmentRequirement # Corvax-Change
+      inverted: true
+      departments:
+      - Vault
+    - !type:CharacterJobRequirement # Forge-Change
+      inverted: true
+      jobs:
+      - BoSMidSerf
+      - CaesarLegionSlave
+      - NCRPrisoner
+  items:
+    - N14WeaponPistol10mm
 
 - type: loadout
   id: N14LoadoutWeaponPistol45Colt
@@ -173,6 +207,19 @@
     - N14WeaponRevolver10mm
 
 - type: loadout
+  id: N14LoadoutWeaponRevolverCalico
+  category: Firearms
+  cost: 4
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: N14LoadoutGuns
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - CaesarLegion
+  items:
+    - N14WeaponRevolverCalicoSirius
+
+- type: loadout
   id: N14LoadoutWeaponRevolver44Tribal
   category: Firearms
   cost: 2
@@ -182,7 +229,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Wastelander
-        - Townsfolk
         - Tribe
         - CaesarLegion
   items:
@@ -198,7 +244,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Wastelander
-        - Townsfolk
         - Tribe
         - CaesarLegion
   items:
@@ -236,7 +281,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Wastelander
-        - Townsfolk
         - Tribe
         - CaesarLegion
   items:
@@ -268,9 +312,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Wastelander
-        - Townsfolk      
+        - Townsfolk
   items:
-    - N14WeaponRevolverWebley
     - N14WeaponRevolverWebley
 
 - type: loadout
@@ -498,7 +541,7 @@
       group: N14LoadoutGuns
     - !type:CharacterDepartmentRequirement
       departments:
-        - CaesarLegion      
+        - CaesarLegion
   items:
     - N14WeaponSMG10mm
 
@@ -511,7 +554,7 @@
       group: N14LoadoutGuns
     - !type:CharacterDepartmentRequirement
       departments:
-        - CaesarLegion      
+        - CaesarLegion
   items:
     - N14WeaponSMG45
 
@@ -540,7 +583,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Wastelander
-        - Townsfolk
         - Tribe
         - CaesarLegion
   items:
@@ -720,7 +762,7 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - NCR
-        - Rangers      
+        - Rangers
   items:
     - N14WeaponRifle762Fal
 
@@ -734,7 +776,7 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - NCR
-        - Rangers       
+        - Rangers
   items:
     - N14WeaponRifle556GalilSirius
 
@@ -748,22 +790,22 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - NCR
-        - Rangers  
-        - BrotherhoodOfSteel  
+        - Rangers
+        - BrotherhoodOfSteel
   items:
     - N14WeaponRifleAk112
 
 - type: loadout
   id: N14LoadoutWeaponRifle556SteirSirius
   category: Firearms
-  cost: 3
+  cost: 5
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutGuns
     - !type:CharacterDepartmentRequirement
       departments:
         - NCR
-        - Rangers      
+        - Rangers
   items:
     - N14WeaponRifle556SteirSirius
 
@@ -777,7 +819,7 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Wastelander
-        - Townsfolk        
+        - Townsfolk
   items:
     - N14WeaponRifle762ClassicrifleSirius
 
@@ -790,21 +832,21 @@
       group: N14LoadoutGuns
     - !type:CharacterDepartmentRequirement
       departments:
-        - CaesarLegion      
+        - CaesarLegion
   items:
     - N14WeaponRifle762M14
 
 - type: loadout
   id: N14LoadoutWeaponRifle556M16A1Sirius
   category: Firearms
-  cost: 6
+  cost: 3
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutGuns
     - !type:CharacterDepartmentRequirement
       departments:
         - NCR
-        - Rangers        
+        - Rangers
   items:
     - N14WeaponRifle556M16A1Sirius
 
@@ -817,7 +859,7 @@
       group: N14LoadoutGuns
     - !type:CharacterDepartmentRequirement
       departments:
-        - NCR      
+        - NCR
   items:
     - N14WeaponRifle556R91
 
@@ -830,7 +872,7 @@
       group: N14LoadoutGuns
     - !type:CharacterDepartmentRequirement
       departments:
-        - NCR          
+        - NCR
   items:
     - N14WeaponRifle556R82Sirius
 
@@ -843,7 +885,7 @@
       group: N14LoadoutGuns
     - !type:CharacterDepartmentRequirement
       departments:
-        - NCR       
+        - NCR
   items:
     - N14WeaponRifle556EnfieldXL70E3Sirius
 
@@ -859,7 +901,7 @@
       group: N14LoadoutGuns
     - !type:CharacterDepartmentRequirement
       departments:
-        - Rangers      
+        - Rangers
   items:
     - N14WeaponSniper308LeverRifle
 
@@ -887,7 +929,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Wastelander
-        - Townsfolk
         - Tribe
         - CaesarLegion
   items:
@@ -902,10 +943,7 @@
       group: N14LoadoutGuns
     - !type:CharacterDepartmentRequirement
       departments:
-        - Wastelander
-        - Townsfolk
         - Tribe
-        - CaesarLegion
   items:
     - N14WeaponSniper308TribalUpgraded
 
@@ -931,7 +969,7 @@
       group: N14LoadoutGuns
     - !type:CharacterDepartmentRequirement
       departments:
-        - CaesarLegion
+        - NCR
   items:
     - N14WeaponSniperHunting
 
@@ -1030,21 +1068,21 @@
       group: N14LoadoutGuns
     - !type:CharacterDepartmentRequirement
       departments:
-        - NCR      
+        - NCR
   items:
     - N14WeaponLMGAutoRifle
 
 - type: loadout
   id: N14LoadoutWeaponRifleAk112pn
   category: Firearms
-  cost: 8
+  cost: 9
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutGuns
     - !type:CharacterDepartmentRequirement
       departments:
         - NCR
-        - BrotherhoodOfSteel      
+        - BrotherhoodOfSteel
   items:
     - N14WeaponRifleAk112pn
 
@@ -1091,7 +1129,7 @@
         - CaesarLegion
     - !type:CharacterJobRequirement
       jobs:
-        - CaesarLegionCenturion    
+        - CaesarLegionCenturion
         - CaesarLegionLegate
   items:
     - N14WeaponM60GPMG
@@ -1109,7 +1147,7 @@
     - !type:CharacterJobRequirement
       jobs:
         - NCRWS
-        - NCRHeavyTrooper      
+        - NCRHeavyTrooper
   items:
     - N14WeaponMinigun
 
@@ -1134,7 +1172,7 @@
 - type: loadout
   id: N14LoadoutWeaponLauncherGrenade
   category: Firearms
-  cost: 18
+  cost: 25
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutGuns
@@ -1265,7 +1303,7 @@
   id: N14LoadoutWeaponLaserRifleAuto
   category: Energy
   exclusive: true
-  cost: 4
+  cost: 7
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutGuns
@@ -1479,6 +1517,7 @@
       departments:
         - Wastelander
         - Tribe
+        - CaesarLegion
   items:
     - N14WastelandTribalSpear
 
@@ -1602,7 +1641,7 @@
   id: N14LoadoutWastelandFlagSpear
   category: Melee
   exclusive: true
-  cost: 5
+  cost: 2
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutMelee
@@ -1628,7 +1667,7 @@
 - type: loadout
   id: N14LoadoutFireAxe
   category: Melee
-  cost: 4
+  cost: 6
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutMelee
@@ -1641,12 +1680,13 @@
 - type: loadout
   id: N14LoadoutTribalBigClubDecorated
   category: Melee
-  cost: 4
+  cost: 5
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutMelee
     - !type:CharacterDepartmentRequirement
       departments:
+        - Tribe
         - CaesarLegion
   items:
     - N14TribalBigClubDecorated
@@ -1669,7 +1709,7 @@
 - type: loadout
   id: N14LoadoutClothingHandsPowerFistGoliath
   category: Melee
-  cost: 4
+  cost: 7
   requirements:
     - !type:CharacterItemGroupRequirement
       group: N14LoadoutMelee

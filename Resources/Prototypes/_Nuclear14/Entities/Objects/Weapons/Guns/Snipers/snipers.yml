@@ -67,6 +67,8 @@
     whitelist:
       tags:
       - N14Cartridge308Rifle
+    capacity: 8
+    proto: N14Cartridge308Rifle
   - type: StaticPrice
     price: 100
   # #Misfits Add — scope attachment slot on Lee Enfield
@@ -555,7 +557,7 @@
     angleDecay: 16
     soundGunshot:
       collection: N14MarksmanGunshot
-    fireRate: 2.4 #sirius change
+    fireRate: 2.0 #sirius change
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
