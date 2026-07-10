@@ -148,7 +148,7 @@ job-description-bos-initiate = Изучите кодекс Братства, в�
 # #Misfits Add — Squire loadout kit locale for new Misfits_SqrBasic_Set.
 # #Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
 undecided-loadout-category-misfits-sqr-basic-name = Базовый комплект
-undecided-loadout-category-misfits-sqr-basic-description = 
+undecided-loadout-category-misfits-sqr-basic-description =
     A cache containing belongings of a Brotherhood chapter member.
     Includes 1 AEP-7, 2 energy cells, 1 combat knife, 1 roll of gauze,
     1 stimpak, and 1 K ration MRE.
@@ -156,12 +156,12 @@ undecided-loadout-category-misfits-sqr-basic-description =
 # #Misfits Tweak: Paladin-tier kit reverted from Wattz 2000 back to Bozar.
 # #Misfits Tweak: Removed rank prefix so the kit name is role-neutral.
 undecided-loadout-category-misfits-pal-wattz-name = Бозар Кит
-undecided-loadout-category-misfits-pal-wattz-description = 
+undecided-loadout-category-misfits-pal-wattz-description =
     A cache containing belongings of a Brotherhood chapter member.
     Includes 1 Bozar, 3 rifle magazines, 1 12.7mm pistol,
     2 12.7mm pistol magazines, 1 roll of gauze, 1 stimpak,
     and 1 K ration MRE.
-	
+
 # Tribal Robot
 job-name-synthetic-protectron-tribal = Протектрон Душевный-Ткач
 job-description-synthetic-protectron-tribal = Сельскохозяйственный робот, который был принят местным племенем и модифицирован на протяжении десятилетий или столетий.

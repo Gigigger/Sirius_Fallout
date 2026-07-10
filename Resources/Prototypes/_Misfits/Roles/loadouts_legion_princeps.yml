@@ -1,7 +1,7 @@
 - type: loadout
   id: LoadoutLegionPrinceps
-  category: Roles
-  cost: 10
+  category: Outer
+  cost: 18
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
